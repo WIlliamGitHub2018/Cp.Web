@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+    <aside class="sidebar active">
+    </aside>
+    <div class="main-body">
+        <div class="route">
+            <h3 class="">图文管理</h3>
+            <span>当前位置：<a href="">图文管理</a></span>
+        </div>
+
+        <div class="content-body picture-ms">
+
+                <div class="list-info-section border-blue">
+                    <div class="sec-filter">
+                        <form action="" class="layui-form selector">
+                            <div class="layui-form-item">
+                                <div class="layui-inline ">
+                                    <label class="layui-form-label">酒店名称</label>
+                                    <div class="layui-input-block option-box">
+                                        <select name="modules" lay-verify="required" lay-search="">
+                                            <option value="">直接选择</option>
+                                            <option value="1">layer</option>
+                                            <option value="2">form</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">所属页面</label>
+                                    <div class="layui-input-block">
+                                        <select name="" lay-filter="">
+                                            <option value=""></option>
+                                            <option value="0">首页</option>
+                                            <option value="1">酒店列表页</option>
+                                            <option value="2" >酒店详情页</option>
+                                            <option value="3" >房型列表页</option>
+                                            <option value="4" >房型详情页</option>
+                                            <option value="5" >优惠活动页</option>
+                                            <option value="6" >关于</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">图片分类</label>
+                                    <div class="layui-input-block">
+                                        <select name="" lay-filter="">
+                                            <option value=""></option>
+                                            <option value="0">轮播图</option>
+                                            <option value="1">banner图</option>
+                                            <option value="2" >酒店图片</option>
+                                            <option value="3" >房型图片</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block btn-list">
+                                    <button type="submit" class="layui-btn ">条件筛选</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="list-info-section ">
+                    <h4 class="sec-title">
+                        <b>图文管理列表</b>
+                        <div class="operate-btns">
+                            <a href="javascript:;" class="operate-btn insert-btn ">新建</a>
+                            <a href="javascript:;" class="operate-btn edit-btn">编辑</a>
+                            <a href="javascript:;" class="operate-btn delete-btn">删除</a>
+                        </div>
+                    </h4>
+                    <div class="sec-item1">
+                        <table class="table table-hover table-bordered table-picture-lists">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" name="" class="all-checkbox"></th>
+                                <th class="table-sort-btn">编号
+                                    <a href="javascript:;" class="">
+                                        <i class="fa fa-caret-down"></i>
+                                    </a>
+                                </th>
+
+                                <th>名称</th>
+                                <th>图片分类</th>
+                                <th>所属酒店</th>
+                                <th>所属页面</th>
+                                <th>排序</th>
+                                <th>启用</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input type="checkbox" name="" class="list-checkbox"></td>
+                                <td>1</td>
+                                <td>中国100家最美度假酒店</td>
+                                <td>banner图</td>
+                                <td>文凡</td>
+                                <td>首页</td>
+                                <td>1</td>
+                                <td>是</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="" class="list-checkbox"></td>
+                                <td>2</td>
+                                <td>中国100家最美度假酒店</td>
+                                <td>banner图</td>
+                                <td>文凡</td>
+                                <td>首页</td>
+                                <td>2</td>
+                                <td>是</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="" class="list-checkbox"></td>
+                                <td>3</td>
+                                <td>中国100家最美度假酒店</td>
+                                <td>banner图</td>
+                                <td>文凡</td>
+                                <td>首页</td>
+                                <td>3</td>
+                                <td>是</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+<div class="layer-common layer-add-all  ">
+            <div class="modal-body">
+                <form action="" class="layui-form selector">
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入名称" class="layui-input" lay-verify="required">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>标题</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入标题" class="layui-input" lay-verify="required">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>所属页面</label>
+                            <div class="layui-input-block">
+                                <select name="" lay-filter="" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">首页</option>
+                                    <option value="1">房型详情页</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">酒店名称</label>
+                            <div class="layui-input-block option-box">
+                                <select name="modules" lay-verify="required" lay-search="">
+                                    <option value="">直接选择</option>
+                                    <option value="1">layer</option>
+                                    <option value="2">form</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">图片分类</label>
+                            <div class="layui-input-block">
+                                <select name="" lay-filter="" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">轮播图</option>
+                                    <option value="1">banner图</option>
+                                    <option value="2" >酒店图片</option>
+                                    <option value="3" >房型图片</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">URL</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="http://" class="layui-input" lay-verify="required">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">alt</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input" >
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>启用</label>
+                            <div class="layui-input-block">
+                                <select name="" lay-filter="" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">是</option>
+                                    <option value="1">否</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>排序</label>
+                            <div class="layui-input-block">
+                                <input type="number" name=""  placeholder="1" class="layui-input" lay-verify="required">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">配图文字介绍</label>
+                            <div class="layui-input-block">
+                                <textarea placeholder="请输入内容" class="layui-textarea" name=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item" pane="">
+
+                        <label class="layui-form-label">图片</label>
+                        <ul class="upload-img">
+                            <li><img src="images/logo.png" alt="" class="img-thumbnail"></li>
+                            <li>
+                                <a href="javascript:;" class="file-upload layui-btn">上传图片
+                                    <input type="file">
+                                </a>
+                                <a href="#" class="tips-info">建议轮播图像素大小为1920*1080px.</a>
+                            </li>
+                            <li> </li>
+                        </ul>
+                    </div>
+                <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="layui/layui_my.js"></script>
+<script>
+    $('.insert-btn').on('click',function () {
+        addLayer('新建图文','.layer-add-all',750,400 );
+    });
+    $('.edit-btn').on('click',function () {
+        editLayer('编辑图文','.layer-add-all',750,400 );
+    });
+</script>
+</html>

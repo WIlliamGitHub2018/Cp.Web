@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+    <aside class="sidebar active">
+    </aside>
+    <div class="main-body">
+            <div class="route">
+                <h3 class="">酒店设施</h3>
+                <span>当前位置：<a href="">CMS酒店设施</a></span>
+            </div>
+                
+            <div class="content-body">
+
+                <div class="main-content">
+                    <div class="list-info-section">
+                        <h4 class="sec-title">
+                            <b>服务项目</b>
+                            <div class="operate-btns">
+                                <a href="javascript:;" class="operate-btn sec-edit-btn">编辑</a>
+                            </div>
+                        </h4>
+                        <div class="sec-item1">
+                            <form class="layui-form selector facility-list" >
+                                <div class="layui-form-item" pane="">
+                                    <div class="layui-inline">
+                                        <!--<label class="layui-form-label">订单状态</label>-->
+                                        <div class="layui-input-block checkbox-input">
+                                            <!--<input type="checkbox" class="" name="" lay-skin="primary" title="全选"  lay-filter="list-select-all">-->
+                                            <input type="checkbox" name="" lay-skin="primary" title="接机服务" lay-filter="list-checkbox" disabled>
+                                            <input type="checkbox" name="" lay-skin="primary" title="行李寄存" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="叫车服务" lay-filter="list-checkbox" >
+                                            <input type="checkbox" name="" lay-skin="primary" title="租车服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="儿童乐园" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="24小时前台服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="部分时段前台服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="旅游票务服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="邮政服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="叫醒服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="送餐服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="外送洗衣服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="信用卡结算服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="一次性账单结算服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="商务服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="接站服务" lay-filter="list-checkbox">
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="sec-item2 ">
+                            <form class="layui-form selector facility-list" >
+                                <div class="layui-form-item" pane="">
+                                    <div class="layui-inline">
+                                        <!--<label class="layui-form-label">订单状态</label>-->
+                                        <div class="layui-input-block checkbox-input">
+                                            <input type="checkbox" class="" name="" lay-skin="primary" title="全选"  lay-filter="list-select-all">
+                                            <input type="checkbox" name="" lay-skin="primary" title="接机服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="行李寄存" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="叫车服务" lay-filter="list-checkbox" >
+                                            <input type="checkbox" name="" lay-skin="primary" title="租车服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="儿童乐园" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="24小时前台服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="部分时段前台服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="旅游票务服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="邮政服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="叫醒服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="送餐服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="外送洗衣服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="信用卡结算服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="一次性账单结算服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="商务服务" lay-filter="list-checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="接站服务" lay-filter="list-checkbox">
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-input-block btn-list ">
+                                    <a href="javascript:void(0);" class="layui-btn "  type="submit">保存</a>
+                                    <a href="javascript:void(0);" class="layui-btn cancel-common"  type="button">取消</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="layui/layui_my.js"></script>
+</html>

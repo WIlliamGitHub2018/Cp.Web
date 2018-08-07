@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.all.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+    <aside class="sidebar active">
+    </aside>
+        <div class="main-body">
+            <!-- <iframe src="de.html" width="100%" height="100%"></iframe>  -->
+            <div class="route">
+                <h3 class="">联系方式</h3>
+                <span>当前位置：<a href="">酒店信息后台管理 > 联系方式</a></span>
+            </div>
+                
+            <div class="content-body">
+                <div class="main-content">
+                    <div class="list-info-section">
+                        <h4 class="sec-title">
+                            <b>销售部</b>
+                            <div class="operate-btns">
+                                <a href="javascript:;" class="operate-btn sec-edit-btn">编辑</a>
+                            </div>
+                        </h4>
+                        <div class="sec-item1">
+                            <table class="  table-contact">
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <span>姓名</span>
+                                        </th>
+                                        <td>
+                                            <div class="" id="" >张洋洋</div>
+                                        </td>
+                                        <th>
+                                            <span>电话</span>
+                                        </th>
+                                        <td>
+                                            <div class="" id="" >无</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span>手机</span>
+                                        </th>
+                                        <td>
+                                            <div class="" id="" >15885023453</div>
+                                        </td>
+                                        <th>
+                                            <span>邮箱</span>
+                                        </th>
+                                        <td>
+                                            <div class="" id="" >liandazhang@vencourtyard.com</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <form class="sec-item2 layui-form  form-contact ">
+                            <table class="table  table-contact">
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <span>姓名</span>
+                                        </th>
+                                        <td>
+                                            <div class="layui-form-item">
+                                                <div class="layui-inline">
+                                                    <div class="layui-input-block">
+                                                        <input type="text" name="contactorName" placeholder="请输入联系人姓名" class="layui-input" value="张洋洋">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>
+                                            <span>电话</span>
+                                        </th>
+                                        <td>
+                                            <div class="layui-form-item">
+                                                <div class="layui-inline">
+                                                    <div class="layui-input-block area-code">
+                                                        <input type="text" name="telephone1" placeholder="区号" class="layui-input" value="">
+                                                    </div>                                                        
+                                                </div>
+                                                <span class="layui-inline">-</span>
+                                                <div class="layui-inline">
+                                                    <div class="layui-input-block phone">
+                                                        <input type="text" name="telephone2" placeholder="座机号/手机号" class="layui-input" value="">
+                                                    </div>                                                        
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span>手机</span>
+                                        </th>
+                                        <td>
+                                            <div class="layui-form-item">
+                                                <div class="layui-inline">
+                                                    <div class="layui-input-block">
+                                                        <input type="text" name="contactorTelNumber" placeholder="请输入联系人电话" class="layui-input" value="15885023453">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>
+                                            <span>邮箱</span>
+                                        </th>
+                                        <td>
+                                            <div class="layui-form-item">
+                                                <div class="layui-inline">
+                                                    <div class="layui-input-block">
+                                                        <input type="text" name="contactorEmail" placeholder="请输入联系人邮箱" value="" class="layui-input">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block btn-list ">
+                                    <a href="javascript:void(0);" class="layui-btn " id="" type="submit">保存</a>
+                                    <a href="javascript:void(0);" class="layui-btn cancel-common" id="" type="button">取消</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="list-info-section">
+                        <h4 class="sec-title">
+                            <b>销售总监/经理</b>
+                            <div class="operate-btns">
+                                <a href="javascript:;" class="operate-btn sec-edit-btn">编辑</a>
+                            </div>
+                        </h4>
+                        <div class="sec-item1">
+                            <table class="  table-contact">
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <span>姓名</span>
+                                        </th>
+                                        <td>
+                                            <div class="" id="" >张洋洋</div>
+                                        </td>
+                                        <th>
+                                            <span>电话</span>
+                                        </th>
+                                        <td>
+                                            <div class="" id="" >无</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span>手机</span>
+                                        </th>
+                                        <td>
+                                            <div class="" id="" >15885023453</div>
+                                        </td>
+                                        <th>
+                                            <span>邮箱</span>
+                                        </th>
+                                        <td>
+                                            <div class="" id="" >liandazhang@vencourtyard.com</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <form class="sec-item2 layui-form form-contact ">
+                            <table class="table  table-contact">
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <span>姓名</span>
+                                        </th>
+                                        <td>
+                                            <div class="layui-form-item">
+                                                <div class="layui-inline">
+                                                    <div class="layui-input-block">
+                                                        <input type="text" name="contactorName" placeholder="请输入联系人姓名" class="layui-input" value="张洋洋">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>
+                                            <span>电话</span>
+                                        </th>
+                                        <td>
+                                            <div class="layui-form-item">
+                                                <div class="layui-inline">
+                                                    <div class="layui-input-block area-code">
+                                                        <input type="text" name="telephone1" placeholder="区号" class="layui-input" value="">
+                                                    </div>                                                        
+                                                </div>
+                                                <span class="layui-inline">-</span>
+                                                <div class="layui-inline">
+                                                    <div class="layui-input-block phone">
+                                                        <input type="text" name="telephone2" placeholder="座机号/手机号" class="layui-input" value="">
+                                                    </div>                                                        
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span>手机</span>
+                                        </th>
+                                        <td>
+                                            <div class="layui-form-item">
+                                                <div class="layui-inline">
+                                                    <div class="layui-input-block">
+                                                        <input type="text" name="contactorTelNumber" placeholder="请输入联系人电话" class="layui-input" value="15885023453">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>
+                                            <span>邮箱</span>
+                                        </th>
+                                        <td>
+                                            <div class="layui-form-item">
+                                                <div class="layui-inline">
+                                                    <div class="layui-input-block">
+                                                        <input type="text" name="contactorEmail" placeholder="请输入联系人邮箱" value="liandazhang@vencourtyard.com" class="layui-input">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block btn-list ">
+                                    <a href="javascript:void(0);" class="layui-btn " id="" type="submit">保存</a>
+                                    <a href="javascript:void(0);" class="layui-btn cancel-common" id="" type="button">取消</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="list-info-section">
+                        <h4 class="sec-title">
+                            <b>管理层</b>
+                            <div class="operate-btns">
+                                <a href="javascript:;" class="operate-btn sec-edit-btn">编辑</a>
+                            </div>
+                        </h4>
+                        <div class="sec-item1">
+                            <table class="  table-contact">
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <span>姓名</span>
+                                        </th>
+                                        <td>
+                                            <div class="" id="" >张洋洋</div>
+                                        </td>
+                                        <th>
+                                            <span>电话</span>
+                                        </th>
+                                        <td>
+                                            <div class="" id="" >无</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span>手机</span>
+                                        </th>
+                                        <td>
+                                            <div class="" id="" >15885023453</div>
+                                        </td>
+                                        <th>
+                                            <span>邮箱</span>
+                                        </th>
+                                        <td>
+                                            <div class="" id="" >liandazhang@vencourtyard.com</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <form class="sec-item2 layui-form form-contact">
+                            <table class="table  table-contact">
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <span>姓名</span>
+                                        </th>
+                                        <td>
+                                            <div class="layui-form-item">
+                                                <div class="layui-inline">
+                                                    <div class="layui-input-block">
+                                                        <input type="text" name="contactorName" placeholder="请输入联系人姓名" class="layui-input" value="张洋洋">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>
+                                            <span>电话</span>
+                                        </th>
+                                        <td>
+                                            <div class="layui-form-item">
+                                                <div class="layui-inline">
+                                                    <div class="layui-input-block area-code">
+                                                        <input type="text" name="telephone1" placeholder="区号" class="layui-input" value="">
+                                                    </div>                                                        
+                                                </div>
+                                                <span class="layui-inline">-</span>
+                                                <div class="layui-inline">
+                                                    <div class="layui-input-block phone">
+                                                        <input type="text" name="telephone2" placeholder="座机号/手机号" class="layui-input" value="">
+                                                    </div>                                                        
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span>手机</span>
+                                        </th>
+                                        <td>
+                                            <div class="layui-form-item">
+                                                <div class="layui-inline">
+                                                    <div class="layui-input-block">
+                                                        <input type="text" name="contactorTelNumber" placeholder="请输入联系人电话" class="layui-input" value="15885023453">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>
+                                            <span>邮箱</span>
+                                        </th>
+                                        <td>
+                                            <div class="layui-form-item">
+                                                <div class="layui-inline">
+                                                    <div class="layui-input-block">
+                                                        <input type="text" name="contactorEmail" placeholder="请输入联系人邮箱" value="liandazhang@vencourtyard.com" class="layui-input">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block btn-list ">
+                                    <a href="javascript:void(0);" class="layui-btn " id="" type="submit">保存</a>
+                                    <a href="javascript:void(0);" class="layui-btn cancel-common" id="" type="button">取消</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>   
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/custom.js"></script>
+<script src="layui/layui_my.js"></script>
+</html>

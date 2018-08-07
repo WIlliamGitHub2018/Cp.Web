@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/crm_custom.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/yangyan.js"></script>
+</head>
+<body>
+<!--sabana积分流水-->
+<div class="list-info-section border-blue">
+    <div class="sec-filter">
+        <form action="" class="layui-form selector">
+            <div class="layui-form-item">
+                <!--<label class="layui-form-label">联动选择框</label>-->
+                <div class="layui-inline">
+                    <label class="layui-form-label">所属酒店</label>
+                    <div class="layui-input-block ">
+                        <select name="modules" lay-verify="required" lay-search="" >
+                            <option value="">全部酒店</option>
+                            <option value="0">99</option>
+                            <option value="1">文凡</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">开始日期</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="date1" >
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">结束日期</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="date2" >
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">操作类型</label>
+                    <div class="layui-input-block ">
+                        <select name="modules" lay-verify="required" lay-search="" >
+                            <option value="">全部酒店</option>
+                            <option value="0">消费</option>
+                            <option value="1">产生</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list">
+                    <button type="submit" class="layui-btn ">查询</button>
+                    <input type="reset" class="layui-btn " value="重置">
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+<div class="list-info-section ">
+    <h4 class="sec-title">
+        <b>积分列表</b>
+        <div class="operate-btns">
+            <a href="javascript:;" class="operate-btn export-btn" >导出</a>
+            <!--<a href="javascript:;" class="operate-btn edit-btn" >编辑</a>-->
+            <!--<a href="javascript:;" class="operate-btn delete-btn" >删除</a>-->
+        </div>
+
+    </h4>
+    <div class="sec-item1">
+        <table class="layui-table" id="sabana_points_table" lay-filter="sabana_points_table"></table>
+    </div>
+</div>
+<div class="layer-common layer-points " >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input mid_selector">
+            <div class="layui-form-item points_method1 points_method_sum" pane="">
+                <div class="layui-inline">
+                    <label class="layui-form-label">选中条件</label>
+                    <div class="layui-input-block" id="radio_box">
+                        <input class="page_data" type="radio" title="当前页面数据" name="point_condition" checked=""><br>
+                        <input class="check_data" type="radio" title="当前选中数据" name="point_condition"><br>
+                        <input class="find_data" type="radio" title="当前查询数据" name="point_condition"><br>
+                    </div>
+                </div>
+
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn sure_pay" type="submit">确定</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="layui/layui_my.js"></script>
+<script>
+    layui.use('table', function() {
+
+        var table = layui.table;
+        table.render({
+            elem: '#sabana_points_table'
+            // ,url:''
+            , cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            , cols: [[
+                {type: 'checkbox'}
+                , {field: 'points_id', title: '编号', sort: true}
+                , {field: 'points_hotel', title: '所属酒店'}
+                , {field: 'points_card', title: '会员卡'}
+                , {field: 'points_from', title: '积分来源'}
+                , {field: 'points_status', title: '操作类型'}
+                , {field: 'points_sum', title: '积分'}
+                , {field: 'points_description', title: '积分描述'}
+            ]]
+            , data: [{
+                "points_id": "10001"
+                , "points_hotel": "A酒店"
+                , "points_card": "13355264589"
+                , "points_from": "入住酒店"
+                , "points_status": "产生"
+                , "points_sum": "100"
+                , "points_description": "满1000送100积分"
+            }]
+            , even: true
+            , page: true
+        });
+        $('.export-btn').on('click', function () {
+                var val = $(".export-btn").text()
+                addLayer(val + '条件', '.layer-points', 400, 230);
+                $(".sure_pay").on("click", function () {
+                    $('#radio_box input[name=point_condition]').each(function () {
+                        if ($(this).prop('checked')) {
+                            //alert()
+                            if($(this).attr("title")=='当前选中数据'){
+                                var checkStatus = table.checkStatus('sabana_points_table')
+                                    , data = checkStatus.data;
+                                if (data.length == 0) {
+                                    layer.msg('请选中一条数据！');
+                                }
+                            }
+                        }
+                    })
+                    // layer.confirm("确认结清所有选中数据吗？");
+                })
+        });
+    })
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#date1' //
+        });
+        laydate.render({
+            elem: '#date2'
+        });
+    })
+</script>
+</body>
+
+</html>

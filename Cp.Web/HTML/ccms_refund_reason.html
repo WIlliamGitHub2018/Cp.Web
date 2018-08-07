@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+</head>
+<body>
+<div class="list-info-section ">
+    <h4 class="sec-title">
+        <b>退款原因列表</b>
+        <div class="operate-btns">
+            <a href="javascript:;" class="operate-btn insert-btn">新增</a>
+            <a href="javascript:;" class="operate-btn edit-btn">编辑</a>
+            <a href="javascript:;" class="operate-btn log-btn">操作记录</a>
+        </div>
+
+    </h4>
+    <div class="sec-item1">
+        <table class="table table-hover table-bordered ">
+            <thead>
+            <tr>
+                <th><input type="checkbox" name="" class="all-checkbox" /></th>
+                <th class="table-sort-btn">排序
+                    <a href="javascript:;" class="" >
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                </th>
+                <th>退款原因</th>
+                <th>编辑人员</th>
+                <th>退款原因描述</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="checkbox" name="" class="list-checkbox" /></td>
+                <td>1</td>
+                <td>个人原因</td>
+                <td>张三</td>
+                <td>地方根深蒂固</td>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" class="list-checkbox" /></td>
+                <td>1</td>
+                <td>个人原因</td>
+                <td>张三</td>
+                <td>地方根深蒂固</td>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" class="list-checkbox" /></td>
+                <td>1</td>
+                <td>个人原因</td>
+                <td>张三</td>
+                <td>地方根深蒂固</td>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" class="list-checkbox" /></td>
+                <td>1</td>
+                <td>个人原因</td>
+                <td>张三</td>
+                <td>地方根深蒂固</td>
+
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <!--新增编辑弹框-->
+    <div class=" layer-common layer-add-all ">
+          <div class="modal-body">
+                    <form action="" class="layui-form selector">
+                        <div class="layui-form-item" pane="">
+                            <div class="layui-inline">
+                                <label class="layui-form-label"><em class="xing">*</em>退款原因</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="" placeholder="请输入退款原因" class="layui-input" lay-verify="required">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label"><em class="xing">*</em>排序</label>
+                                <div class="layui-input-block">
+                                    <input type="number" name="" placeholder="1" class="layui-input" lay-verify="required">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item" pane="">
+                            <div class="layui-inline">
+                                <label class="layui-form-label"><em class="xing">*</em>退款描述</label>
+                                <div class="layui-input-block">
+                                    <textarea placeholder="请输入内容" class="layui-textarea" name=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block btn-list ">
+                                <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+    </div>
+    <!--操作日志弹框-->
+    <div class="layer-common layer-log-operate">
+        <div class="modal-body">
+            <div class="modal-table">
+                <table class="table table-hover ">
+                    <thead>
+                    <tr>
+                        <th>状态</th>
+                        <th>类型</th>
+                        <th>详情</th>
+                        <th>产生日期</th>
+                        <th>积分值</th>
+                        <th>是否使用</th>
+                        <th>有效期</th>
+                        <th>备注</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>未使用</td>
+                        <td>张三</td>
+                        <td>男</td>
+                        <td>2017-8-9</td>
+                        <td>500</td>
+                        <td>否</td>
+                        <td>2017-12-8</td>
+                        <td class="table-comments"></td>
+                    </tr>
+                    <tr>
+                        <td>未使用</td>
+                        <td>张三</td>
+                        <td>男</td>
+                        <td>2017-8-9</td>
+                        <td>500</td>
+                        <td>否</td>
+                        <td>2017-12-8</td>
+                        <td class="table-comments"></td>
+                    </tr>
+                    <tr>
+                        <td>未使用</td>
+                        <td>张三</td>
+                        <td>男</td>
+                        <td>2017-8-9</td>
+                        <td>500</td>
+                        <td>否</td>
+                        <td>2017-12-8</td>
+                        <td class="table-comments"></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+<script src="layui/layui_my.js"></script>
+<script>
+    $('.insert-btn').on('click',function () {
+        addLayer('新建退款原因','.layer-add-all',400,400 );
+    });
+    $('.edit-btn').on('click',function () {
+        editLayer('编辑退款原因','.layer-add-all',400,400 );
+    });
+    $('.log-btn').on('click',function () {
+        if(isDataSelected()){
+            //获取当前数据内容赋值;
+
+            layerShow(' ','.layer-log-operate',500,500 );
+        }
+    });//查看操作日志
+</script>
+
+</html>

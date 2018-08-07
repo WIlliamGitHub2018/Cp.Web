@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/crm_custom.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/yangyan.js"></script>
+</head>
+<body>
+<!--签到送积分-->
+<div class="list-info-section border-blue">
+    <div class="sec-filter">
+        <form action="" class="layui-form selector">
+            <div class="layui-form-item">
+                <!--<label class="layui-form-label">联动选择框</label>-->
+                <div class="layui-input-inline layui-inline">
+                    <select name="quiz1">
+                        <option value="">请选择渠道</option>
+                        <option value="web" selected="">web</option>
+                        <option value="h5">h5</option>
+                        <option value="wx">wx</option>
+                        <option value="pms">pms</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline layui-inline">
+                    <select name="quiz2">
+                        <option value="">请选择会员级别</option>
+                        <option value="vip">vip</option>
+                        <option value="vip1">vip1</option>
+                        <option value="vip2">vip2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list">
+                    <button type="submit" class="layui-btn ">查询</button>
+                    <input type="reset" class="layui-btn " value="重置">
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+<div class="list-info-section ">
+    <h4 class="sec-title">
+        <b>积分配置列表</b>
+        <div class="operate-btns">
+            <a href="javascript:;" class="operate-btn insert-btn" >新建</a>
+            <a href="javascript:;" class="operate-btn edit-btn" >编辑</a>
+            <a href="javascript:;" class="operate-btn delete-btn" >删除</a>
+        </div>
+
+    </h4>
+    <div class="sec-item1">
+        <table class="table table-hover table-bordered ">
+            <thead>
+            <tr>
+                <th><input type="checkbox" name="" class="all-checkbox"/></th>
+                <th>编号</th>
+                <th>渠道</th>
+                <th>会员级别</th>
+                <th>策略名称</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="checkbox" name="" class="list-checkbox" /></td>
+                <td>1</td>
+                <td>web</td>
+                <td>vip</td>
+                <td>赠送10积分</td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" name="" class="list-checkbox" /></td>
+                <td>2</td>
+                <td>h5</td>
+                <td>vip1</td>
+                <td>赠送20积分</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" class="list-checkbox" /></td>
+                <td>3</td>
+                <td>app</td>
+                <td>vip2</td>
+                <td>赠送50积分</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--新建编辑弹框-->
+<div class="layer-common layer-points-ms " >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input mid_selector">
+            <div class="layui-form-item find_layui-form-item" pane="">
+                <div class="layui-inline">
+                    <label class="layui-form-label">渠道</label>
+                    <div class="layui-input-block ">
+                        <select name="modules" lay-verify="required" lay-search="" >
+                            <option value="">请选择渠道</option>
+                            <option value="0">web</option>
+                            <option value="1">h5</option>
+                            <option value="2">app</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline points_methods">
+                    <label class="layui-form-label">会员类别</label>
+                    <div class="layui-input-block ">
+                        <select name="modules" lay-verify="required" lay-search="" >
+                            <option value="">请选择会员级别</option>
+                            <option value="0">vip</option>
+                            <option value="1">vip1</option>
+                            <option value="2">vip2</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline mini-inline">
+                    <label class="layui-form-label">有效期</label>
+                    <div class="layui-input-inline layui-mini-input" >
+                        <input type="text" name=""  placeholder="" class="layui-input " lay-verify="required" value="1">
+                    </div>
+                    <div class="layui-form-mid">年</div>
+                    <div class="layui-input-inline layui-mini-select">
+                        <select lay-search="">
+                            <option value="0">自然年</option>
+                            <option value="1">整年</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline points_methods">
+                    <label class="layui-form-label">策略类型</label>
+                    <div class="layui-input-block ">
+                        <select name="modules" lay-verify="required" lay-search="" id="strategy-points" lay-filter="strategy-points">
+                            <option value="-1">直接选择</option>
+                            <option value="1">固定积分</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item points_method1 points_method_sum" pane="">
+                <div class="layui-inline strategy_checkbox">
+                    <label class="layui-form-label layui-form-label-points">固定积分</label>
+                    <div class="layui-input-block">
+                        <input class="" type="checkbox" name="" lay-skin="primary" title="10积分" checked="">
+                        <input class="" type="checkbox" name="" lay-skin="primary" title="20积分">
+                        <input class="" type="checkbox" name="" lay-skin="primary" title="30积分">
+                    </div>
+                </div>
+
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">确定</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="layui/layui_my.js"></script>
+<script>
+
+    layui.use('form', function(){
+        var form = layui.form;
+        form.on('select(strategy-points)', function(data){
+            if(data.value == 0){
+                $(this).parents(".find_layui-form-item").siblings(".points_method_sum").hide().siblings(".points_method_full").hide().siblings(".points_method_scale").show();
+            }else if(data.value == 1){
+                $(this).parents(".find_layui-form-item").siblings(".points_method_scale").hide().siblings(".points_method_full").hide().siblings(".points_method_sum").show();
+            }else if(data.value == 2){
+                $(this).parents(".find_layui-form-item").siblings(".points_method_full").show().siblings(".points_method_sum").hide().siblings(".points_method_scale").hide();
+            }else if(data.value == -1){
+                $(this).parents(".find_layui-form-item").siblings(".points_method_full").show().siblings(".points_method_sum").show().siblings(".points_method_scale").show();
+            }
+        });
+
+    });
+
+    $('.insert-btn').on('click',function () {
+        addLayer('新建','.layer-points-ms',530,300 );
+    });
+    $('.edit-btn').on('click',function () {
+        editLayer('编辑','.layer-points-ms',530,300 );
+    });
+
+
+</script>
+</body>
+
+</html>

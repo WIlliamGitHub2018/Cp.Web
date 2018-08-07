@@ -1,0 +1,794 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+    <aside class="sidebar active">
+    </aside>
+    <div class="main-body">
+        <!-- <iframe src="de.html" width="100%" height="100%"></iframe>	 -->
+        <div class="route">
+            <h3 class="">房价代码</h3>
+            <span>当前位置：<a href="">CRS>房价代码维护</a></span>
+        </div>
+
+        <div class="content-body ">
+            <div class="list-info-section ">
+                <div class="sec-filter border-blue">
+                    <form class="layui-form selector " >
+                        <div class="layui-form-item">
+                            <div class="layui-inline special-inline-one">
+                                <label class="layui-form-label">房价代码</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="" placeholder="请输入" class="layui-input">
+                                </div>
+                                <label class="label-layer-btn layer-search-btn"> <i class="fa fa-search"></i></label>
+                                <label class="label-layer-btn layer-reset-btn"> <i class="fa fa-close"></i></label>
+                            </div>
+                            <div class="layui-inline special-inline">
+                                <label class="layui-form-label">房价代码</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="" placeholder="请输入" class="layui-input">
+                                </div>
+                                <label class="label-layer-btn layer-search-btn"> <i class="fa fa-search"></i></label>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="switch-div">
+                    <a  class=" search-switch">收起查询 <i class="fa fa-angle-up"></i></a>
+                </div>
+            </div>
+            <div class="list-info-section ">
+                <h4 class="sec-title">
+                    <b>房价代码</b>
+                    <div class="operate-btns">
+                        <a href="javascript:;" class="operate-btn insert-op"  >新增</a>
+                        <a href="javascript:;" class="operate-btn edit-op " >编辑</a>
+                        <a href="javascript:;" class="operate-btn  delete-op" >删除</a>
+                        <a href="javascript:;" class="operate-btn -op " >激活</a>
+                        <a href="javascript:;" class="operate-btn -op" >禁用</a>
+                        <a href="javascript:;" class="operate-btn log-op " >操作日志</a>
+                    </div>
+                </h4>
+                <div class="sec-item1">
+                    <table class="layui-table" id="rateCode" lay-filter="rateCode"></table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--房价代码新建弹框-->
+<div class="layer-common layer-edit">
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input">
+            <ul class="nav nav-pills nav-list border-blue">
+                <li role="presentation" class="active"><a href="#order-base-info" data-toggle="tab">主参数</a></li>
+                <!--<li role="presentation"><a href="#order-room-info" data-toggle="tab">房间信息</a></li>-->
+                <li role="presentation"><a href="#room_code_price_collect" data-toggle="tab">价格集合</a></li>
+            </ul>
+            <div class="tab-content">
+                <section id="order-base-info" class="tab-pane fade active in">
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>房价代码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="" placeholder="请输入" class="layui-input" lay-verify="required">
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label"><em class="xing">*</em>大类代码</label>
+                            <div class="layui-input-block ">
+                                <select name="modules" lay-verify="required" lay-search="">
+                                    <option value="">直接选择</option>
+                                    <option value="1">layer</option>
+                                    <option value="2">form</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label"><em class="xing">*</em>小类代码</label>
+                            <div class="layui-input-block ">
+                                <select name="modules" lay-verify="required" lay-search="">
+                                    <option value="">直接选择</option>
+                                    <option value="1">layer</option>
+                                    <option value="2">form</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">市场代码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn code-choose-btn" ><i class="fa fa-bars"></i></label>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">来源代码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn code-choose-btn" ><i class="fa fa-bars"></i></label>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">启用</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="orderType" value="" title="是" checked="">
+                                <input type="radio" name="orderType" value="" title="否">
+                            </div>
+
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>开始时间</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" placeholder="从" id="date1" >
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>截至时间</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" placeholder="到" id="date2" >
+                            </div>
+                        </div>
+
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">会员邮箱</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="email" lay-verify="email" autocomplete="off" class="layui-input" placeholder="请输入会员邮箱">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>证件类型</label>
+                            <div class="layui-input-block">
+                                <select name="" lay-filter="" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">二代身份证</option>
+                                    <option value="1">护照</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>证件号码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="" placeholder="请输入证件号码" class="layui-input" lay-verify="required">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">会员级别</label>
+                            <div class="layui-input-block">
+                                <select name="" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">银卡</option>
+                                    <option value="1">金卡</option>
+                                    <option value="2">vip</option>
+                                    <option value="3">vvip</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+
+                        <label class="layui-form-label">描述</label>
+                        <div class="layui-input-block">
+                            <textarea placeholder="请输入内容" class="layui-textarea" name=""></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item ">
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">
+                                账项代码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn code-choose-btn" ><i class="fa fa-bars"></i></label>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">
+                                账项代码(夜)</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn code-choose-btn" ><i class="fa fa-bars"></i></label>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">交易代码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="" placeholder="请输入" class="layui-input" >
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">币种代码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="" placeholder="请输入" class="layui-input" >
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">交易标识</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="trx_tax_incl_yn" value="" title="是" checked="">
+                                <input type="radio" name="trx_tax_incl_yn" value="" title="否">
+                            </div>
+
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">产品标识</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="pkg_trx_tax_incl_yn" value="" title="是" checked="">
+                                <input type="radio" name="pkg_trx_tax_incl_yn" value="" title="否">
+                            </div>
+
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">
+                                产品/组代码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn -btn" ><i class="fa fa-bars"></i></label>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">促销代码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="" placeholder="请输入" class="layui-input" >
+                            </div>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">
+                                会员类型</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn code-choose-btn" ><i class="fa fa-bars"></i></label>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">含服务费</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="service_type" value="" title="是" checked="">
+                                <input type="radio" name="service_type" value="" title="否">
+                            </div>
+
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">服务费比例</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="" placeholder="请输入" class="layui-input" >
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">入住天数</label>
+                            <div class="layui-input-block">
+                                <input type="number" name="" placeholder="请输入" class="layui-input" value="1">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">入住人数</label>
+                            <div class="layui-input-block">
+                                <input type="number" name="" placeholder="请输入" class="layui-input" value="1">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">
+                                排序号</label>
+                            <div class="layui-input-block">
+                                <input type="number" name="" placeholder="请输入" class="layui-input" value="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">标识</label>
+                            <div class="layui-input-block checkbox-input">
+                                <input type="checkbox" class="" name="" lay-skin="primary" title="全选"  lay-filter="list-select-all">
+                                <input type="checkbox" name="orderStatus[todo]" lay-skin="primary" title="包价标识" lay-filter="list-checkbox">
+                                <input type="checkbox" name="orderStatus[accept]" lay-skin="primary" title="保密房标识" lay-filter="list-checkbox">
+                                <input type="checkbox" name="orderStatus[refuse]" lay-skin="primary" title="日用房标识" lay-filter="list-checkbox" >
+                                <input type="checkbox" name="orderStatus[cancel]" lay-skin="primary" title="显示价标识" lay-filter="list-checkbox">
+                                <input type="checkbox" name="orderStatus[cancel]" lay-skin="primary" title="房价是否固定" lay-filter="list-checkbox">
+                                <input type="checkbox" name="orderStatus[cancel]" lay-skin="primary" title="免费房标识" lay-filter="list-checkbox">
+                                <input type="checkbox" name="orderStatus[cancel]" lay-skin="primary" title="自用房标识" lay-filter="list-checkbox">
+                                <input type="checkbox" name="orderStatus[cancel]" lay-skin="primary" title="打折标识" lay-filter="list-checkbox">
+                                <input type="checkbox" name="orderStatus[cancel]" lay-skin="primary" title="会员价标识" lay-filter="list-checkbox">
+                                <input type="checkbox" name="orderStatus[cancel]" lay-skin="primary" title="促销产品标识" lay-filter="list-checkbox">
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="room_code_price_collect" class="tab-pane fade ">
+                    <div class="list-info-section ">
+                        <h4 class="sec-title">
+                            <b>价格集合</b>
+                            <div class="operate-btns">
+                                <a href="javascript:;" class="operate-btn insert-price-detail-op"  >新增</a>
+                                <a href="javascript:;" class="operate-btn edit-price-detail-op " >编辑</a>
+                                <a href="javascript:;" class="operate-btn  delete-op" >删除</a>
+                                <a href="javascript:;" class="operate-btn -op " >激活</a>
+                                <a href="javascript:;" class="operate-btn -op" >禁用</a>
+                            </div>
+                        </h4>
+                        <div class="sec-item1">
+                            <table class="layui-table" id="table_priceCollect" lay-filter="table_priceCollect"></table>
+
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--市场代码、等弹框-->
+<div class=" layer-common layer-code-choose">
+
+</div>
+<!--新建编辑 价格集合弹框-->
+<div class="layer-common layer-price-collect-edit">
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input">
+            <ul class="nav nav-pills nav-list border-blue">
+                <li role="presentation" class="active"><a href="#price_collect_form" data-toggle="tab">价格集合参数</a></li>
+                <li role="presentation"><a href="#price_collect_detail" data-toggle="tab">房价集合明细</a></li>
+            </ul>
+            <div class="tab-content">
+                <section id="price_collect_form" class="tab-pane fade active in">
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline mid-input">
+                            <label class="layui-form-label"><em class="xing">*</em>
+                                房型代码</label>
+                            <div class="layui-input-block ">
+                            <select name="modules" lay-verify="required" lay-search="">
+                                <option value="">直接选择</option>
+                                <option value="1">layer</option>
+                                <option value="2">form</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label"><em class="xing">*</em>季节代码</label>
+                            <div class="layui-input-block ">
+                                <select name="modules" lay-verify="required" lay-search="">
+                                    <option value="">直接选择</option>
+                                    <option value="1">layer</option>
+                                    <option value="2">form</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline range-inline">
+                            <label class="layui-form-label">有效时间</label>
+                            <div class="layui-input-inline" >
+                                <input type="text" name=""  placeholder="1" class="layui-input" lay-verify="required" id="date3">
+                            </div>
+                            <div class="layui-form-mid">-</div>
+                            <div class="layui-input-inline">
+                                <input type="text" name=""  placeholder="1" class="layui-input" lay-verify="required" id="date4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item ratecode-mini-checkbox" pane="">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">星期一</label>
+                            <div class="layui-input-block ">
+                                <input type="checkbox" class="" name="" lay-skin="primary" title="周末价"  checked>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">星期二</label>
+                            <div class="layui-input-block ">
+                                <input type="checkbox" class="" name="" lay-skin="primary" title="周末价"  checked>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">星期三</label>
+                            <div class="layui-input-block ">
+                                <input type="checkbox" class="" name="" lay-skin="primary" title="周末价"  checked>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">星期四</label>
+                            <div class="layui-input-block ">
+                                <input type="checkbox" class="" name="" lay-skin="primary" title="周末价"  checked>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">星期五</label>
+                            <div class="layui-input-block ">
+                                <input type="checkbox" class="" name="" lay-skin="primary" title="周末价"  checked>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">星期六</label>
+                            <div class="layui-input-block ">
+                                <input type="checkbox" class="" name="" lay-skin="primary" title="周末价"  checked>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">星期日</label>
+                            <div class="layui-input-block ">
+                                <input type="checkbox" class="" name="" lay-skin="primary" title="周末价"  checked>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item rateCode-mini" pane="">
+                        <fieldset>
+                            <legend>平常价</legend>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">1人</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input" value="2198.00">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">2人</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input" value="2198.00">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">3人</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input" value="2198.00">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">4人</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input" value="2198.00">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">5人</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input" value="2198.00">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">额外成人</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input" value="1">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">额外小孩</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input" value="2">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="layui-form-item rateCode-mini" pane="">
+                        <fieldset>
+                            <legend>周末价</legend>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">1人</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input" value="2198.00">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">2人</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input" value="2198.00">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">3人</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input" value="2198.00">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">4人</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input" value="2198.00">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">5人</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input" value="2198.00">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">额外成人</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input" value="1">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">额外小孩</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input" value="2">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </section>
+                <section id="price_collect_detail" class="tab-pane fade ">
+                    <table class="layui-table" id="table_priceCollect_detail" lay-filter="table_priceCollect_detail"></table>
+                </section>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script src="layui/layui_my.js"></script>
+<script>
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#date1' //
+        });
+        laydate.render({
+            elem: '#date2'
+        });
+        laydate.render({
+            elem: '#date3' //
+        });
+        laydate.render({
+            elem: '#date4'
+        });
+    });
+    layui.use('table', function(){
+        var table = layui.table;
+        //房价代码table渲染+操作
+        table.render({
+            elem: '#rateCode'
+            // ,url:''
+            ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            ,cols: [[
+                {type:'checkbox'}
+                ,{field:'id', title: '房价代码', sort: true}
+                ,{field:'username', title: '小类代码'}
+                ,{field:'sex',title: '大类代码', sort: true}
+                ,{field:'city', title: '开始时间'}
+                ,{field:'sign', title: '结束时间', minWidth: 100}
+                ,{field:'experience', title: '启用', sort: true}
+                ,{field:'score',  title: '排序号', sort: true}
+            ]]
+            ,data: [{
+                "id": "10001"
+                ,"username": "杜甫"
+                ,"sex": "男"
+                ,"city": "浙江杭州"
+                ,"sign": "人生恰似一场修行"
+                ,"experience": "116"
+                ,"score": "108"
+
+            }, {
+                "id": "10002"
+                ,"username": "李白"
+                ,"email": "xianxin@layui.com"
+                ,"sex": "男"
+                ,"city": "浙江杭州"
+                ,"sign": "人生恰似一场修行"
+                ,"experience": "12"
+                ,"score": "108"
+            }, {
+                "id": "10005"
+                ,"username": "贤心"
+                ,"email": "xianxin@layui.com"
+                ,"sex": "男"
+                ,"city": "浙江杭州"
+                ,"sign": "人生恰似一场修行"
+                ,"experience": "86"
+                ,"score": "108"
+            }, {
+                "id": "10007"
+                ,"username": "贤心"
+                ,"email": "xianxin@layui.com"
+                ,"sex": "男"
+                ,"city": "浙江杭州"
+                ,"sign": "人生恰似一场修行"
+                ,"experience": "16"
+                ,"score": "108"
+            }]
+            ,even: true
+            ,page: true
+        });
+        $('.insert-op').on('click',function () {
+            addLayer('新建房价代码','.layer-edit',940,450 );
+        });
+        $('.edit-op').on('click',function () {
+            var checkStatus = table.checkStatus('rateCode')
+                ,data = checkStatus.data;
+            if(data.length ==0 ){
+                layer.msg('请选中一条数据！');
+            }
+            else{
+                //获取数据
+                // table.on('checkbox(rateCode)', function(obj){
+                //     console.log(obj['data']['room_type'])
+                // });
+                addLayer('编辑房价代码','.layer-edit',940,450 );
+            }
+        });
+        $('.delete-op').on('click',function(){
+            var checkStatus = table.checkStatus('rateCode')
+                ,data = checkStatus.data;
+            if(data.length ==0 ){
+                layer.msg('请选中一条数据！');
+            }
+            else{
+                layer.confirm("确认删除吗？");
+            }
+        });
+
+        //价格集合table渲染+操作
+        table.render({
+            elem: '#table_priceCollect'
+            // ,url:''
+            ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            ,cols: [[
+                {type:'checkbox'}
+                ,{field:'id', title: '房价代码', sort: true}
+                ,{field:'username', title: '房型代码'}
+                ,{field:'sex',title: '季节代码 ', sort: true}
+                ,{field:'city', title: '开始时间'}
+                ,{field:'sign', title: '结束时间', minWidth: 100}
+                ,{field:'experience', title: 'Mon ', sort: true}
+                ,{field:'score',  title: 'Tue ', sort: true}
+                ,{field:'score',  title: 'Wed ', sort: true}
+                ,{field:'score',  title: 'Thu  ', sort: true}
+                ,{field:'score',  title: 'Fri  ', sort: true}
+                ,{field:'score',  title: 'Sat ', sort: true}
+                ,{field:'score',  title: 'Sun ', sort: true}
+                ,{field:'score',  title: '启用 ', sort: true}
+
+            ]]
+            ,data: [{
+                "id": "10001"
+                ,"username": "杜甫"
+                ,"sex": "男"
+                ,"city": "浙江杭州"
+                ,"sign": "人生恰似一场修行"
+                ,"experience": "116"
+                ,"score": "108"
+
+            }, {
+                "id": "10002"
+                ,"username": "李白"
+                ,"email": "xianxin@layui.com"
+                ,"sex": "男"
+                ,"city": "浙江杭州"
+                ,"sign": "人生恰似一场修行"
+                ,"experience": "12"
+                ,"score": "108"
+            }, {
+                "id": "10005"
+                ,"username": "贤心"
+                ,"email": "xianxin@layui.com"
+                ,"sex": "男"
+                ,"city": "浙江杭州"
+                ,"sign": "人生恰似一场修行"
+                ,"experience": "86"
+                ,"score": "108"
+            }, {
+                "id": "10007"
+                ,"username": "贤心"
+                ,"email": "xianxin@layui.com"
+                ,"sex": "男"
+                ,"city": "浙江杭州"
+                ,"sign": "人生恰似一场修行"
+                ,"experience": "16"
+                ,"score": "108"
+            }]
+            ,even: true
+            ,page: true
+        });
+        $('.insert-price-detail-op').on('click',function () {
+            addLayer('新建价格集合','.layer-price-collect-edit',790,400 );
+        });
+        $('.edit-price-detail-op').on('click',function () {
+            var checkStatus = table.checkStatus('table_priceCollect')
+                ,data = checkStatus.data;
+            if(data.length ==0 ){
+                layer.msg('请选中一条数据！');
+            }
+            else{
+                //获取数据
+                // table.on('checkbox(rateCode)', function(obj){
+                //     console.log(obj['data']['room_type'])
+                // });
+                addLayer('编辑价格集合','.layer-price-collect-edit',790,400 );
+            }
+        });
+
+        //房价集合明细table渲染+操作
+        table.render({
+            elem: '#table_priceCollect_detail'
+            // ,url:''
+            ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            ,cols: [[
+                {type:'checkbox'}
+                ,{field:'id', title: '日期 ', sort: true}
+                ,{field:'username', title: '1人 '}
+                ,{field:'sex',title: '2人 ', sort: true}
+                ,{field:'city', title: '3人'}
+                ,{field:'sign', title: '4人', minWidth: 100}
+                ,{field:'experience', title: '5人  ', sort: true}
+                ,{field:'score',  title: '额外成人 ', sort: true}
+                ,{field:'score',  title: '额外小孩 ', sort: true}
+            ]]
+            ,data: [{
+                "id": "10001"
+                ,"username": "杜甫"
+                ,"sex": "男"
+                ,"city": "浙江杭州"
+                ,"sign": "人生恰"
+                ,"experience": "116"
+                ,"score": "108"
+
+            }, {
+                "id": "10002"
+                ,"username": "李白"
+                ,"email": "xianx"
+                ,"sex": "男"
+                ,"city": "浙江杭州"
+                ,"sign": "人生恰"
+                ,"experience": "12"
+                ,"score": "108"
+            }]
+            ,even: true
+            ,page: true
+        });
+    });
+
+    //市场代码等弹框load
+    $('.layer-code-choose').load('crs_code_query.html');
+    $('.code-choose-btn').on('click',function () {
+        var input = $(this).siblings('.layui-input-block').children('input');
+        var  title = $(this).siblings('.layui-form-label').text();
+        layerShow(title,'.layer-code-choose',500,400,maxmin);
+    });
+
+</script>
+</html>

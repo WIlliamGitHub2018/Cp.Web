@@ -1,0 +1,287 @@
+/*--border颜色----*/
+.border-primary{
+    border:1px solid #ccc;
+}
+.border-blue{
+    border:1px solid #00c1de;
+}
+/*--border颜色----*/
+/*lay颜色------------*/
+.layui-btn {
+    background-color: #00c1de;
+}
+.layui-form-radio i:hover, .layui-form-radioed i {
+    color: #00c1de;
+}
+.layui-form-select dl dd.layui-this {
+    background-color: #00c1de;
+    color: #fff;
+}
+.layui-form-checked[lay-skin=primary] i {
+    border-color: #00c1de;
+    background-color: #00c1de;
+    color: #fff;
+}
+.selector .layui-laydate .layui-this {
+    background-color: #00c1de!important;
+    color: #fff!important;
+}
+
+.selector .layui-textarea{
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.selector .layui-textarea:focus{
+    border:1px solid #00c1de !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+
+}
+
+.layui-layer-btn .layui-layer-btn0 {
+    border-color: #00c1de!important;
+    background-color: #00c1de!important;
+}
+
+.layui-form-checkbox[lay-skin=primary]:hover i {
+    border-color: #00c1de;
+    color: #fff;
+}
+.layui-form-select dl dd:hover {
+    background-color: #00c1de;
+    color: #fff;
+}
+/*layer颜色------------*/
+
+/*---boostrap更改颜色----*/
+.modal-title{
+    color: #00c1de;
+}
+.table>tbody>tr.active>td {
+    background-color: #eee;
+    /*color: #fff;*/
+}
+.table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th{
+    background-color: #eee;
+    /*color: #fff;*/
+}
+.table-hover>tbody>tr.active:hover>td{
+    background-color: #eee;
+    /*color: #fff;*/
+}
+.form-control:focus {
+    border-color: #00C1DE;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+/*---boostrap更改颜色----*/
+
+/*---common颜色部分*/
+.sidebar .nav-items .nav-item .btn-dropdown:hover{
+    background-color: #00C1DE;
+    color: #fff;
+}
+.sidebar .nav-items .nav-item .drop-menu li a:hover{
+    background: #00C1DE;
+    color: #fff;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #00C1DE;
+    border:1px solid #00C1DE;
+}
+.btn-primary:active ,.btn-primary:focus,.btn-primary:hover {
+    border:1px solid #00C1DE;
+    color: #00C1DE;
+}
+.xing {
+    color: #f67317;
+    padding: 0 3px;
+}
+
+.pages .layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background-color: #00c1de;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus{
+    border-color: #00C1DE!important;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+/*---common颜色部分*/
+
+/*----login颜色----*/
+.tabs>li.active>a, .tabs>li.active>a:focus, .tabs>li.active>a:hover {
+    color: #00C1DE;
+}
+
+.extra-content  a:hover{
+    color: #00C1DE;
+}
+/*----login颜色----*/
+
+/*----CRS-----*/
+
+.nav-list>li.active>a, .nav-list>li.active>a:hover, .nav-list>li.active>a:focus,.nav-list>li>a:hover {
+    color: #fff;
+    background-color: #00c1de;
+}
+
+.yu-tag {
+    padding: 0 5px;
+    color: #f67317;
+    border: 1px solid #f67317;
+}
+.xian-tag {
+    padding: 0 5px;
+    color: #00c1de;
+    border: 1px solid #00c1de;
+}
+
+.ota-form .layui-form-label {
+    color: #f67317;
+    font-weight: bold;
+    /*width: 120px;*/
+}
+.order-todo-body  h4.title a.operate-btn{
+    /*background: #00C1DE;*/
+    color: #00C1DE;
+    border: 1px solid #00C1DE;
+    line-height: 28px;
+    display: inline-block;
+    padding: 0px 9px;
+    float: right;
+    margin: 9px 10px;
+    cursor: pointer;
+}
+.order-todo-body  .tags{
+    color: #fff;
+}
+.order-todo-body  .tags.tags-new{
+    background: #8ec11f;
+}
+.order-todo-body  .tags.tags-cancel{
+    background: #a2b1c8;
+}
+.order-todo-body  .tags.tags-modify{
+    background: #f67317;
+}
+.order-todo-body .order-todo-content .order-tit span:nth-child(4){
+
+    color: #f67317;
+    border:1px solid #f67317;
+}
+
+.order-todo-body .order-todo-content .order-todo-detail .list-detail li .info-detail .price-box .price{
+    color: #f67317;
+    font-style: normal;
+}
+/*---CRS房价维护----*/
+
+.xianfu{
+    color: #00c1de;
+}
+.yufu{
+    color: #f67317;
+}
+.fa-cutlery{
+    color: #8ec11f;
+}
+.bu{
+    color: rgb(191, 111, 48);
+}
+.full_room {
+    color: red;
+}
+.enough_room {
+    color: #8ec11f;
+}
+.limit_room {
+    color: #ffca59;
+}
+.room_num_box {
+
+}
+room_num_box .box-list .enough_room{
+
+}
+.room_num_box.enough_room_block{
+    background: white;
+}
+.room_num_box.full_room_block{
+    background: red;
+}
+.room_num_box.full_room_block .date-price .box-list .full_num{
+    color:#fff;
+
+}
+.room_num_box.limit_room_block .date-price .box-list .limit_num{
+    color:#fff;
+
+}
+.room_num_box.limit_room_block{
+    background: #ffca59;
+}
+.room-price .price-query-body .price-list .price-box .date-price:hover{
+    border:1px solid #00c1de;
+}
+
+/*---CRS房价维护----*/
+/*----CRS-----*/
+
+/*--酒店基本信息--*/
+
+.simple-btn{
+    color: #00c1de;
+}
+
+.hotel-info-table .t-ct>span .fa-star{
+    color: #f67317;
+}
+
+.hotel-info-table .t-edt .edt-body .degreeStar a.selected i.fa-star{
+    color: #f67317;
+}
+
+.hotel-info-table .t-edt .edt-body .tips-info{
+    color: #f67317;
+    font-size: 12px;
+}
+
+.hotel-info-table .t-edt .edt-btn .layui-btn:nth-child(2){
+    border:1px solid #ddd;
+    background: #fff;
+    color: #00c1de;
+}
+
+.list-info-section .sec-title .operate-btns .operate-btn{
+    color: #fff;
+    border:1px solid #00c1de;
+    background: #00c1de;
+}
+
+.list-info-section .sec-title.active{
+    background: #00c1de;
+    color: #fff;
+}
+/*--酒店基本信息--*/
+
+.yellow-style {
+    color: #f67317;
+    border: 1px solid #f67317;
+    padding: 2px 10px ;
+}
+.yellow-style:hover {
+    color: #fff;
+    background:#f67317;
+}
+.layui-form-onswitch {
+    border-color: #5FB878;
+    background-color: #00c1de;
+}

@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>汽车服务系统</title>
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="~/Content/layui/css/layui.css">
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/css/common.css">
+    <link rel="stylesheet" href="~/Content/css/custom.css">
+    <link rel="stylesheet" href="~/Content/css/crm_custom.css">
+    <link rel="stylesheet" href="~/Content/css/theme.css">
+    <link href="~/Content/css/customize.css" rel="stylesheet" media="all" />
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="~/Content/js/echarts.common.min.js"></script>
+    <script src="~/Content/js/jquery-2.1.1.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/layui/layui.js"></script>
+    <script src="~/Content/js/DateTimeExtend.js"></script>
+    <script src="~/Content/js/customize/custom.js"></script>
+    @RenderSection("top", required: false)
+    <script>
+        var form;
+        var layer;
+        var table;
+        var laydate;
+        var $;
+        layui.use(['form', 'layer', 'laydate', 'table', 'laypage'], function () {
+            form = layui.form;
+            layer = layui.layer;
+            table = layui.table;
+            laydate = layui.laydate;
+            $ = layui.$;
+            form.render();
+            table.render();
+            initNav();
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+        <!--左侧logo-->
+        <div class="navbar-header logo">
+            <a class="navbar-brand" href="/" style="text-align: center;line-height: 70px;font-size: 24px;color:#fff">
+                汽车服务系统
+                @*<img src="~/Content/images/logo.png" style="width:auto;">*@
+            </a>
+        </div>
+        <!--中间一级菜单-->>
+        <div class="nav-midbar">
+            <ul>
+                <li><a href="/">首页</a></li>
+                <li><a href="/">系统设置</a></li>
+            </ul>
+        </div>
+        <!-- 右侧菜单 -->
+        <ul class="nav navbar-right top-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user"></i> userName <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i>个人信息</a>
+                        </li>
+                        <li class="divider"></li>
+                    <li>
+                        <a href="javascript:;" onclick="LogOut()"><i class="fa fa-fw fa-power-off"></i>退出系统</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </nav>
+    <div class="body">
+        <!--左侧菜单-->
+        <aside class="sidebar active">
+            <div class="nav-items">
+                <div class="nav-item">
+                    <a class="icon-fold"> <i class="fa fa-bars fa-lg"></i></a>
+                </div>
+                <div class="nav-item active">
+                    <a class="btn-dropdown"><i class="fa fa-caret-right"></i>进件管理</a>
+
+                    <ul class="drop-menu">
+                        <li id="nav_CreateOrder"><a href="/Order/OrderManager/CreateOrder"> <i class="fa fa-home"></i>新增进件提报</a></li>
+                        <li id="nav_MyOrder"><a href="/Order/OrderManager/MyOrder"> <i class="fa fa-home"></i>我的提报记录</a></li>
+                        <li id="nav_AllOrder"><a href="/Order/OrderManager/AllOrder"> <i class="fa fa-home"></i>所有提报记录</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <!--右侧内容-->
+        @RenderBody()
+    </div>
+    @RenderSection("bottom", required: false)
+</body>
+@RenderSection("scripts", required: false)
+</html>

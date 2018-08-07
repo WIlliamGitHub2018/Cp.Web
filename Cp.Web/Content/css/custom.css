@@ -1,0 +1,2018 @@
+
+/*-----登录css-----*/
+.header-login{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(255,255,255,.3);
+	z-index: 10;
+}
+.login-content{
+    background-size: cover;
+    /*position: relative;*/
+    min-width: 1200px;
+    /*min-height: 600px;*/
+    height: 100%;
+    
+}
+.login-content .bg{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;  
+}
+.login-content .bg img{
+	width: 100%;
+	height: 100%;
+	/*animation: bg 4s linear infinite ;*/
+    /* Firefox: 
+	-moz-animation: bg 4s linear infinite ;
+	/* Safari and Chrome: */
+	/*-webkit-animation: bg 4s linear infinite ;
+	/* Opera: */
+	/*-o-animation: bg 4s linear infinite ;*/
+	/*IE9*/
+	/*-ms-animation :bg 4s linear infinite ;*/
+}
+
+
+.login-content .content{
+	width: 990px;
+	padding: 144px 0 118px;
+    text-align: center;
+    margin: auto;
+    position: relative;
+}
+.login-content .content .title{
+	color: #fff;
+	float: left;
+}
+.login-content .login-body{
+	width: 380px;
+    padding: 20px;
+    min-height: 340px;
+	position: relative;
+	float: right;
+	background: white;
+}
+.login-content .login-body .title h3{
+	margin: 10px  0 10px 0;
+}
+.login-content .login-body .tabs {
+     border-bottom: none; 
+     margin-bottom: 10px;
+	text-align: center;
+}
+.login-content .login-body .tips{
+	margin: 0;
+	border: 1px solid #f67317;
+	line-height: 30px;
+	background:#fceee8;
+	color:#f67317;
+	margin-left: 60px;
+	display: none;
+}
+.login-content .login-body  .form-login .btn-primary{
+	margin-left: 60px;
+	width: 280px;
+	margin-bottom: 10px;
+}
+.form-login{
+
+}
+.form-login label{
+text-align: left;
+}
+.form-login .selector .layui-inline {
+	width: 100%;
+}
+.form-login .selector .layui-input-block{
+	margin-left: 0px;
+	float: left;
+	width: 280px;
+}
+.form-login .selector .layui-input-block input[type="text"],
+.form-login .selector .layui-input-block input[type="password"]{
+height: 40px;
+}
+.form-login .selector .layui-form-label{
+	width: 40px;
+	text-align: justify;
+	margin-right: 20px;
+	height: 38px;
+}
+.form-login .selector .layui-form-label:after{
+	content:"";
+	display:inline-block;
+	width:100%;
+}
+.form-login .selector .layui-form-label>span{
+	display:inline-block;
+	width:100%;
+
+}
+a.forget-btn{
+	float: right;
+	font-size: 12px;
+	/*padding: 5px 10px;*/
+	color:#666;
+	transition: color .3s ease;
+    -webkit-transition: color .3s ease;
+    -moz-transition: color .3s ease;
+	line-height: 36px;
+}
+ .remeber-password {
+	float: left;
+	 margin-left: 60px;
+	color:#9B9EA0;
+}
+.form-login .selector .remeber-password .layui-input-block{
+	width: auto;
+}
+/*！-----登录-----*/
+
+/*-----index-----*/
+/*！-----index-----*/
+
+
+/*-----keyframes-----*/
+/*-----bg-----*/
+@keyframes bg
+{
+	from{
+		transform: scale(1); 
+	}
+	to{
+		transform: scale(1.1);
+	}
+}
+@-moz-keyframes bg /*Firefox*/ 
+{
+	from{
+		-moz-transform: scale(1); 
+	}
+	to{
+		-moz-transform: scale(1.1);
+	}
+}
+@-webkit-keyframes bg /* Safari and Chrome */
+{
+	from{
+		-webkit-transform: scale(1); 
+	}
+	to{
+		-webkit-transform: scale(1.1);
+	}
+}
+@-o-keyframes bg /* Opera */
+{
+	from{
+		-o-transform: scale(1); 
+	}
+	to{
+		-o-transform: scale(1.1);
+	}
+}
+/*!-----bg-----*/
+/*!-----keyframes-----*/
+
+/*---CMS----*/
+/*--酒店基本信息开始--*/
+.hotel-info{
+
+}
+.hotel-info .hotel-info-progress{
+	margin-bottom:30px;
+}
+.hotel-info .hotel-info-progress .layui-progress{
+	/*height: 40px;*/
+}
+.hotel-info .title{
+	text-align: center;
+	color: #222;
+	font-size: 18px;
+	font-weight: 600;
+    margin-bottom: 20px;
+}
+.hotel-info .title span{
+	font-size: 14px;
+}
+.hotel-info-table{
+	font-size: 14px;
+}
+.hotel-info-table .col-md-9{
+	padding-right: 20px;
+
+}
+.hotel-info-table .col-md-3{
+	background: #eee;
+	text-align: right;
+}
+.simple-btn{
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin-right: 20px;
+}
+.hotel-info-table {
+    font-size: 14px;
+    position: relative;
+}
+.hotel-info-table tbody>tr>td,
+.hotel-info-table tbody>tr>th{
+	padding: 15px ;
+}
+.hotel-info-table .t-ct {
+	display: block;
+	position: relative;
+}
+.hotel-info-table .t-ct>span {
+	    padding-right: 50px;
+    display: inline-block;
+}
+.hotel-info-table .t-ct .info-location{
+	width: 500px;
+	height: 250px;
+	margin-top: 20px;
+}
+.hotel-info-table .t-ct .info-location img{
+	width: 100%;
+	height: 100%;
+}
+.hotel-info-table .t-edt{
+	display: none;
+	position: relative;
+}
+.hotel-new-config .t-edt {
+	display: block;
+}
+
+.hotel-info-table .t-edt .layui-input-block {
+    margin-left: 0;
+}
+.hotel-info-table .t-edt .edt-body{
+	padding: 0;
+}
+.hotel-info-table .t-edt .edt-body .layui-input-float-left{
+
+}
+.hotel-info-table .t-edt .edt-body .layui-input-float-left .layui-input-block{
+	float: left;
+}
+.hotel-info-table .t-edt .edt-body .degreeStar{
+
+}
+.hotel-info-table .t-edt .edt-body .degreeStar a i.fa-star{
+	color: #666;	
+}
+.hotel-info-table .t-edt .edt-body .degreeStar span{
+	 margin-left: 20px;
+}
+.hotel-info-table .t-edt .edt-body .degreeStar span em{
+ 	font-style: normal;
+ }
+.hotel-info-table .t-edt .edt-btn{
+	float: right;
+	padding: 0;
+	background: #fff;
+}
+.hotel-info-table .t-edt .edt-btn .layui-btn{
+line-height: 28px;
+height: 28px;
+}
+/*---CMS酒店基本信息结束----*/
+
+/*---CMS酒店政策开始----*/
+.list-info-section {
+margin-bottom: 20px;
+	position: relative;
+}
+.switch-div {
+	text-align: center;
+	margin-top: 2px;
+}
+.search-switch {
+	/*display: block;*/
+padding: 5px 10px;
+background: #00C1DE;
+	color: #fff;
+	cursor: pointer;
+}
+.search-switch:hover{
+	background: #00C1DE;
+	color: #fff;
+}
+.list-info-section .layui-input-block{
+	/*margin-left: 0;*/
+}
+.list-info-section .sec-title{
+	font-size: 16px;
+	background: #eee;
+	line-height: 40px;
+	padding-left: 20px;
+	position: relative;
+	margin-bottom: 20px;
+}
+.list-info-section .sec-title .operate-btns{
+	position: absolute;
+	right: 0;
+	margin:9px 20px 9px 0;
+	line-height: 20px;
+	display: block;
+	top:0;
+}
+.list-info-section .sec-title .operate-btns .operate-btn{
+	margin-left: 20px;
+	display: inline-block;
+	font-size: 14px;
+	padding:0  8px;
+}
+.list-info-section .sec-title .sec-edit-btn{
+
+}
+.list-info-section .sec-title.active .sec-edit-btn{
+	display: none;
+}
+.list-info-section .sec-item1{
+	display: block;
+	margin:0 10px;
+	overflow-x: auto;
+	overflow-y: visible;
+}
+.list-info-section .sec-item1 .table{
+	width: 100%;
+	/*overflow-x: scroll;*/
+
+}
+.list-info-section .sec-item1 .table thead>tr>th,
+.list-info-section .sec-item1 .table tbody>tr>td{
+	white-space: nowrap;
+}
+.list-info-section .sec-item2 {
+	display: none;
+	margin: 20px;
+}
+.select-margin  .layui-input-block {
+    /*margin-left: 110px;*/
+}
+.list-info-section .sec-item2 .edt-btn{
+
+}
+.list-info-section .sec-item2 .edt-btn a{
+	margin:auto;
+}
+.cancel-common{
+	background: #fff !important;
+    border: 1px solid #ccc !important;
+    color: #666 !important;
+}
+.list-info-section .sec-item1  li{
+	list-style: square;
+	    padding: 3px 0 3px 8px;
+}
+ .sec-item1 .table-contact{
+	table-layout: fixed;
+	 width: 100%;
+}
+ table.table-contact tr>td,
+ table.table-contact tr>th{
+	border:1px dotted #ddd;
+	border-width: 1px 0;
+	padding: 20px 0;
+}
+table.table-contact>tbody>tr>td{
+	padding:14px 20px;
+	width: 30%;
+}
+ table.table-contact>tbody>tr>th{
+	text-align: right;
+	padding-right: 20px;
+	background: #f6f6f6;
+	width: 20%;
+}
+table.table-contact>tbody>tr>td .layui-input-block{
+	min-height: auto;
+}
+table.table-contact>tbody>tr>td input[type="text"]{
+	height: 30px;
+}
+table.table-contact>tbody>tr>td .layui-form-item{
+	margin-bottom: 0;
+}
+table.table-contact>tbody>tr>td .area-code{
+	width: 80px;
+}
+table.table-contact>tbody>tr>td .phone{
+	width: 120px;
+}
+.form-contact .layui-input-block{
+	margin-left: 0;
+	text-align: center;
+}
+
+.service-items li{
+	width: 33.3%;
+	float: left;
+
+}
+.selector.facility-list {
+padding: 0  0 15px;
+}
+.selector.facility-list .layui-form-item .layui-input-block.checkbox-input{
+	margin-left: 0;
+}
+.selector.facility-list .layui-form-item .layui-input-block.checkbox-input  .layui-form-checkbox[lay-skin=primary]{
+	width: 18%;
+}
+.selector.facility-list .layui-form-item .layui-input-block.checkbox-input .layui-form-checkbox[lay-skin=primary] span{
+	float: left;
+	margin-left: 20px;
+}
+.selector.facility-list .layui-form-item .layui-input-block.checkbox-input .layui-form-checkbox[lay-skin=primary] i{
+	left: 0;
+	position: absolute;
+}
+/*房型信息开始*/
+.roomTypeLists {
+
+}
+.roomTypeLists .room-box{
+	margin-bottom: 20px;
+}
+.roomTypeLists .room-box .pic-info{
+	position: relative;
+	height: 240px;
+}
+.roomTypeLists.hotel-pic .room-box .pic-info{
+	height: 160px;
+}
+.roomTypeLists .room-box .pic-info>img{
+	width: 100%;
+}
+.roomTypeLists .room-box .pic-info .pic-text{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	color: #fff;
+	height: 40px;
+	background: rgba(0,0,0,.6);
+	padding: 5px 15px;
+}
+.roomTypeLists .room-box .pic-info .pic-text a{
+	line-height: 25px;
+	display: inline-block;
+}
+   
+.roomTypeLists .room-box> .img-name{
+	text-align: center;
+	line-height: 30px;
+	/*border: 1px solid #ddd;*/
+}
+.roomTypeLists .room-box .pic-info .pic-text .detail-btn{
+	float: right;
+	/*border: 1px solid #00C1DE;*/
+	/*color: #00C1DE;*/
+	background: #00C1DE;
+	padding: 0 8px;
+}
+.roomTypeLists .room-box .text-info{
+	background: #eff3f6;
+	border: 1px solid #e1e4e6;
+	box-shadow: 1px 0px 30px #D9D8D8;
+	padding: 10px 20px;
+}
+.roomTypeLists .room-box .text-info p{
+	color: #333;
+	line-height: 25px;
+	margin-bottom: 0;
+}
+.selector.room-detail-lists {
+	padding: 0;
+}
+.list-info-section  .back-parent {
+	border-left: 5px solid #00c1de;
+	padding-left: 10px;
+}
+.selector.room-detail-lists .layui-form-label {
+	width: 200px;
+	display: block;
+	line-height: 55px;
+	padding: 0 20px 0 0;
+	background: #f6f8fa;
+	margin-bottom: 0;
+}
+.sec-item1 fieldset{
+	padding: 15px 10px;
+}
+.sec-item1 fieldset .room-facilitys{
+
+}
+.list-info-section.top-operate-btns{
+
+}
+.list-info-section.top-operate-btns .right-btns{
+	float: right;
+}
+.sec-item3 .table-roomtype-edit {
+	width: 100%;
+}
+.sec-item3 .table-roomtype-edit tr{
+	border-bottom: 1px solid #ddd;
+}
+.sec-item3 .table-roomtype-edit th{
+	width: 20%;
+	background: #f6f8fa;
+	text-align: right;
+	padding-right: 20px;
+	vertical-align: top;
+	padding: 20px 20px 20px 0;
+}
+.sec-item3 .table-roomtype-edit .long-input {
+	padding-left: 30px;
+}
+.sec-item3 .table-roomtype-edit .long-input>input{
+	width: 350px;
+}
+.sec-item3 .table-roomtype-edit .mid-input {
+	padding-left: 30px;
+}
+.sec-item3 .table-roomtype-edit .mid-input>input{
+	width: 200px;
+	float: left;
+}
+.sec-item3 .table-roomtype-edit .mid-input .units{
+	float: left;
+	margin-left: 15px;
+	font-weight: normal;
+	padding-top: 10px;
+}
+.room-facility-edit.selector {
+	margin: 0;
+	padding: 0;
+}
+.room-facility-edit.selector .layui-form-label {
+	width: 120px;
+}
+.room-facility-edit.selector .auto-inline{
+	width: auto;
+}
+.room-facility-edit.selector .layui-inline {
+	width: 50%;
+	float: left;
+	margin: 0;
+}
+.room-detail-lists .sec-item3 .table-roomtype-edit .range-inline .layui-input-inline{
+	margin: 0;
+}
+.room-detail-lists .sec-item3 .table-roomtype-edit .layui-form-item{
+	border-bottom: none;
+}
+.room-detail-lists .sec-item3 .table-roomtype-edit .range-inline .layui-form-mid{
+	margin: 0 10px;
+}
+.sec-item1 fieldset .room-facilitys>li{
+    float: left;
+    width: auto;
+    list-style: none;
+    margin-right: 20px;
+}
+.sec-item1 .selector.room-detail-lists .layui-input-inline input{
+	border:none;
+	box-shadow: none;
+}
+.sec-item1 .selector.room-detail-lists .layui-input-inline span {
+	display: inline-block;
+	line-height: 25px;
+	margin-top: 5px;
+}
+.selector.room-detail-lists .layui-input-inline{
+	margin: 8px 0 0px 20px;
+	width: 350px;
+}
+.selector.room-detail-lists .layui-input-inline.mini-inline {
+	width: 200px;
+}
+.selector.room-detail-lists .layui-input-inline.auto-inline{
+	width: auto;
+}
+.selector.room-detail-lists .layui-inline:before{
+	display: table;
+	content: '';
+}
+.selector.room-detail-lists .layui-inline:after{
+	display: table;
+	content: '';
+	clear: both;
+}
+
+.selector.room-detail-lists .range-inline .layui-input-inline {
+	margin: 8px 20px 0;
+	width: 100px;
+}
+.selector.room-detail-lists .range-inline .layui-form-mid {
+	margin-top: 8px;
+}
+/*房型信息结束*/
+
+/*酒店活动开始*/
+.activity-ms{
+
+}
+.item-special-two{
+
+}
+.item-special-two .item-box{
+	/*width: 50%;*/
+	float: left;
+	/*display: inline-block;*/
+}
+.item-special-two .item-box .layui-inline{
+	display: block;
+}
+.item-special-two .item-box .layui-inline.long-text{
+
+}
+.item-special-two .item-box .layui-inline.long-text  .layui-input-block{
+	width: 250px;
+}
+.layer-activity-hotel{
+
+}
+/*酒店活动结束*/
+/*---HMS酒店政策结束----*/
+
+/*---CMS模板列表开始----*/
+.template-lists {
+
+}
+.template-lists .template-item .layui-form-radio{
+	display: block;
+	text-align:center ;
+	margin:  auto;
+	padding: 10px;
+}
+.template-lists .template-item .box-item {
+	padding: 20px;
+}
+.template-lists .template-item .pic-info {
+	padding: 15px;
+}
+
+/*--CMS模板列表结束----*/
+
+/*CMS配置页面-----*/
+
+.lg-modal{
+	width: 800px;
+}
+.nav-config-dialog{
+	/*width: 750px;*/
+}
+.pic-box{margin-bottom:15px;}
+.pic-info img{width:100%;height:100%;}
+.pic-upload{font-size:14px}
+.pic-upload-rule{display:none;padding-top: 25px}
+.pic-body{margin-left:30px;margin-right:20px;padding-top:20px;margin-bottom:20px;height:260px;width:220px;}
+.pic-body #decimg{text-align:center;}
+#phoneimg{height:100%;width:100%;}
+.pic-body table{width:100%;}
+.pic-all{height:90px;width:97%;overflow-x:scroll;}
+.pic-all img{width:60px ;height:60px;margin-left:10px;}
+.pic-left{float:left;width:70%;border-right:1px solid #9B9EA0;padding-top:6px;}
+.pic-right{float:right;width:30%;margin-top:30px;height:auto;background:#eee}
+.clear{clear:both;}
+.pic-right p{text-align:center;font-size:15px;margin-top:10px;}
+/*CMS配置页面-----*/
+
+/*---CCMS 预订管理---*/
+.common-iframe {
+	position: absolute;
+	top:60px;
+	bottom: 20px;
+	left: 20px;
+	right:20px;
+	margin: 0;
+	padding: 0;
+	/*overflow: auto;*/
+}
+.iframe-box{
+	position: absolute;
+	top:44px;
+	bottom: 0;
+	left: 0px;
+	right: 0px;
+	margin: 20px;
+}
+.iframe-box .iframe-item{
+	width: 100%;
+}
+.iframe-box iframe{
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+.iframe-box iframe.active{
+	display: block;
+}
+.modal-avg-price .table thead th{
+	background: #00c1de;
+	color: #fff;
+}
+.modal-avg-price .table tbody td{
+
+}
+.modal-avg-price .table tbody td>a{
+	text-align: center;
+	display: block;
+}
+.modal-avg-price .table tbody td .date{
+
+}
+.modal-avg-price .table tbody td .price{
+	color: #f67317;
+}
+/*---yy---*/
+.hotel_mes{
+	font-size: 15px;
+	margin-left: 20px;
+}
+.hotel_name{
+	margin-left: 0;
+}
+.hotel_mes span{
+	font-weight: normal;
+}
+.hotel_mes_box{
+	margin: 10px 0;
+}
+.hotel_notice_title{
+	width: auto;
+	display: inline-block;
+	float: left;
+	margin-right: 20px;
+	font-weight: 900;
+}
+.hotel_notice_con_box{
+	width: auto;
+	display: inline-block;
+}
+.hotel_notice_con_box p{
+	color: red;
+}
+.room_order_btn{
+	width:75px;
+	display: block;
+	padding: 3px 5px;
+	background:#00c1de ;
+	color:#fff;
+	text-align: center;
+	border: none;
+	margin: auto;
+}
+.input_box{
+	height: 30px!important;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 30px!important;
+	color: #9B9EA0;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #D7D8D9;
+	border-radius: 4px;
+	display: block;
+	width: 55px!important;
+	position: relative;
+	vertical-align: top;
+	text-align: center;
+	float: left;
+	margin: 2px 3px;
+}
+.hotel_part{
+	display: none;
+}
+.passger_box{
+	box-shadow:  0 1px 1px rgba(0,0,0,.075);
+	padding-bottom: 10px;
+}
+.add_user{
+	text-align: center;
+	padding-right: 10px;
+	font-size: 14px;
+	line-height: 40px;
+	color: #000;
+	cursor: pointer;
+}
+.order_mes_part{
+	width: 240px;
+	height: auto;
+	padding: 3px 5px;
+	display: inline-block;
+}
+.order_mes_title{
+	width: 78px;
+	text-align: right;
+	display: inline-block;
+}
+.order_mes_con{
+	margin-left: 20px;
+}
+/*长包房end*/
+
+
+/*普通预定*/
+.common-ms .list-info-section .sec-item1 {
+	display: block;
+	margin: 0px;
+	min-width: auto;
+}
+.common-ms .common_left .list-info-section .sec-item1 .selector{
+	padding: 0;
+	/*margin: 0 auto;*/
+	/*text-align: center;*/
+	/*min-width: 430px;*/
+}
+.common-ms{
+	box-sizing: border-box;
+}
+.common_left,.common_right{
+	display: inline-block;
+	box-sizing: border-box;
+	float: left;
+	box-shadow:  1px 0 1px rgba(0,0,0,.075);
+}
+.common_left{
+	display: block;
+	width: 35%;
+	padding-right: 30px;
+	box-sizing: border-box;
+	webkit-transition: all ease .15s;
+	-o-transition: all ease .15s;
+	transition: all ease .15s;
+
+}
+
+.common_right{
+	width: 65%;
+	padding-left: 30px;
+	box-sizing: border-box;
+	webkit-transition: all ease .1s;
+	-o-transition: all ease .1s;
+	transition: all ease .1s;
+}
+.clearfloat{
+	clear:both
+}
+
+.common_left .list-info-section,.common_right .list-info-section{
+	box-shadow: 0  1px 1px rgba(0,0,0,.075);
+}
+/*.common_left .selector .layui-form-label {*/
+	/*width: 50px;*/
+/*}*/
+.common_left .selector .layui-input-block {
+	min-height: 34px;
+	margin-left: 55px;
+	width: 100px;
+}
+.common_left .selector .layui-input-block input{
+	height: 34px;
+	padding: 0 0 0 0px;
+}
+.common_left .selector .layui-input-block.option-box{
+
+	width: 212px;
+}
+.common_left .selector .btn-list{
+	min-height: 36px;
+	/*margin-left:50px;*/
+	/*width: 100px;*/
+}
+.common-ms .selector .recipient-info li {
+	float: left;
+	list-style: none;
+	margin: 0 10px ;
+}
+
+.common_left .selector .layui-word{
+	width: auto;
+	margin: 0 20px;
+}
+.common-ms .common_left .width-limit{
+	/*overflow-x: auto;*/
+	/*min-width: 450px;*/
+}
+.common_left .list-info-section{
+	overflow-x: auto;
+}
+.common-ms .common_left .list-info-section .sec-item1{
+	/*overflow-x: auto;*/
+	/*overflow-y: visible;*/
+	overflow: initial;
+}
+/*.common-ms .selector .member_info .layui-form-label{*/
+	/*width: 50px;*/
+/*}*/
+/*.common-ms .selector .member_info .layui-input-block {*/
+	/*min-height: 34px;*/
+	/*margin-left: 10px;*/
+	/*width:130px;*/
+	/*float: left;*/
+/*}*/
+/*.common-ms .selector .member_info .layui-input-block input{*/
+	/*height: 34px;*/
+	/*padding: 6px 5px 6px 10px;*/
+/*}*/
+.common-ms .selector .member_info .btn-list  {
+	float: left;
+	/*margin-left: 5px;*/
+}
+.common-ms .selector .member_info .btn-list  .layui-btn{
+	width: 70px;
+	padding: 0 5px;
+	margin-left: 25px;
+}
+.common-ms .selector .special1{
+
+}
+.common-ms .selector .special1 .small1.layui-inline {
+	margin-right: 10px;
+}
+/*.common-ms .selector .special1 .small1  .layui-form-label{*/
+	/*width: 30px;*/
+/*}*/
+.common-ms .selector .special1 .small1  .layui-input-block{
+	width: 40px;
+	margin-left: 10px;
+}
+/*.common-ms .selector .special1 .small2  .layui-form-label{*/
+	/*width: 30px;*/
+/*}*/
+.common-ms .selector .special1 .small2  .layui-input-block{
+	width: 60px;
+	margin-left: 10px;
+}
+.common_left .hotel-search-sec {
+
+ }
+.common_left .hotel-search-sec .btn-list{
+
+}
+/*.common_left .hotel-search-sec .selector .layui-input-block{*/
+	/*float: left;*/
+	/*margin-left: 10px;*/
+/*}*/
+.common_left .hotel-search-sec .selector .layui-input-block.option-box{
+	width: 340px;
+}
+/*.common_left .hotel-search-sec .selector .layui-input-block input{*/
+	/*padding: 6px 5px 6px 5px;*/
+	/*height: 34px;*/
+/*}*/
+.common-ms .common_left .address-query .sec-title{
+	margin-bottom: 10px;
+}
+.common-ms .common_left .address-query >p.tips{
+	font-size: 12px;
+	background: #92cddc;
+	line-height: 20px;
+}
+.common-ms .common_left .address-query >p.tips>span{
+	color: red;
+}
+.common-ms .common_left .address-query .selector{
+	padding: 0;
+}
+.common-ms .common_left .address-query .selector .query-range .layui-inline{
+	margin-bottom: 0;
+}
+.common-ms .common_left .address-query .selector .query-range .layui-inline .layui-form-label{
+	margin-bottom: 0;
+}
+.common-ms .common_left .hotel-query-date .layui-inline{
+	margin-right: 10px;
+}
+/*.common-ms .common_left .hotel-query-date .small2 .layui-input-block{*/
+		/*width:80px;*/
+/*}*/
+.common-ms .common_left .hotel-query-date .small1.layui-inline{
+	margin-right: 20px;
+}
+.common-ms .common_left .hotel-query-date .small1 .layui-input-block{
+	width: 35px;
+}
+.selector .hotel_search .layui-form-label{
+	/*width: 50px;*/
+}
+.selector .hotel_search .layui-input-block {
+	min-height: 34px;
+	width:130px;
+}
+.posi_info{
+	text-align: center;
+}
+.posi_list .room_order_btn {
+	width: 45px;
+	display: inline-block;
+	padding: 3px 5px;
+	background: #00c1de;
+	color: #fff;
+	text-align: center;
+	border: none;
+}
+.mes_order_btn{
+	width:90px;
+	display: block;
+	padding: 3px 5px;
+	background:#00c1de ;
+	color:#fff;
+	text-align: center;
+	float: right;
+	border: none;
+}
+
+.choose_border{
+	width: auto;
+}
+.choose_title{
+	float: left;
+	width: 94px;
+	text-align: right;
+	padding: 3px 5px;
+}
+.choose_con{
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 75px;
+	text-align: center;
+	padding: 3px 5px;
+	/*background:#fff;*/
+	border: 1px solid #00c1de;
+	color:#00c1de ;
+	cursor: pointer;
+}
+.input_choose{
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 75px!important;
+	text-align: center;
+	padding: 3px 5px!important;
+	/*background:#fff;*/
+	border: 1px solid #00c1de;
+	color:#00c1de ;
+	cursor: pointer;
+}
+.input_choose input{
+	height: auto!important;
+	padding: 2px 0!important;
+	border: none!important;
+	line-height: 0!important;
+	text-align: center;
+}
+.input-lj{
+	margin: 0;
+	border: none;
+}
+.common_right .common_passger .layui-form-label {
+	width: 80px;
+}
+.common_right .common_passger .layui-input-block {
+	min-height: 36px;
+	margin-left: 90px;
+	width: 150px;
+}
+.common_right .common_passger .btn-list{
+	min-height: 36px;
+	margin-left:50px;
+	width: 100px;
+}
+.common_passger .layui-form-label {
+	float: left;
+	display: block;
+	padding: 9px 0;
+	width: 80px;
+	font-weight: 400;
+	text-align: right;
+}
+.common_right .common_passger  .add_common_user{
+	min-height: 36px;
+	margin-left: 20px;
+	width: 150px;
+}
+.common_request{
+	padding: 2px 3px;
+	font-size: 14px;
+	color: #00c1de;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #00c1de;
+	border-radius: 4px;
+	display: block;
+	vertical-align: top;
+	float: left;
+	margin: 0 10px;
+	cursor: pointer;
+
+}
+.requeat_input{
+	width: 80%!important;
+	margin-top: 20px!important;
+	float: left;
+}
+.coupon_input{
+	width: 80%!important;
+	float: left;
+}
+.money_common{
+	float: left;
+	display: block;
+	padding: 9px 15px;
+	width: 80px;
+	font-weight: 400;
+	text-align: right;
+}
+.money_info{
+	/*width:210px;*/
+	float: left;
+	margin-right: 30px;
+}
+.money_title{
+	width: 50px;
+	text-align: right;
+	float: left;
+	line-height: 40px;
+	margin-right: 10px;
+}
+.money_input{
+	width: 150px!important;
+	float: left;
+}
+.money_end{
+	width: auto;
+	text-align: left;
+	float: left;
+	line-height: 40px;
+	margin-left: 10px;
+}
+.money_user{
+	width: 70px!important;
+	float: left;
+}
+.send_mes{
+	line-height: 30px;
+	float: left;
+}
+.send_user{
+	width: 150px!important;
+	float: left;
+}
+.common_right .common_passger .button_list{
+	width: auto;
+}
+.order_sure_part{
+	width: auto;
+	display: block;
+	font-size: 13px;
+}
+.order_sure_part .order_mes_part{
+	padding: 0;
+}
+.order_sure_part .order_mes_title{
+	font-weight: bold;
+}
+.mes_end {
+	width: auto;
+	text-align: left;
+	margin-left: 3px;
+	margin-top: 11px;
+	float: left;
+	display: inline-block;
+}
+.order_common_sure{
+	display: none;
+}
+.choose_btn{
+	margin: 0 auto;
+	text-align: center;
+	display: block;
+}
+.common_float{
+	width: 20px;
+	height: 150px;
+	background: #ddd;
+	position: fixed;
+	/*left: 0;*/
+	right: 65.3%;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 1000;
+	border: 1px solid #f5f5f6;
+	border-radius: 20px 0 0 20px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+	cursor: pointer;
+	webkit-transition: all ease .1s;
+	-o-transition: all ease .1s;
+	transition: all ease .1s;
+
+}
+.common-ms-active .common_left{
+	display: none;
+}
+.common-ms-active .common_right{
+	width:95%;
+}
+.common-ms-active .common_float{
+	top:0;
+	left:0;
+	right:100%;
+	bottom:0;
+}
+.float_img{
+	width: 15px;
+	height: 15px;
+	margin-top: 65px;
+	text-align: center;
+}
+.float_img i{
+	color: #00c1de;
+	font-weight: bold;
+	font-size: 24px;
+}
+.float_img img{
+	width: 100%;
+	height: 100%;
+}
+.order_count{
+	width:20px;
+	display: block;
+	float: left;
+	height: 20px;
+	border: 1px solid #C9C5C5;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 16px;
+	margin-top: 7px;
+	cursor: pointer;
+}
+.table_buttons{
+	border-top:none!important;
+}
+.modal-order-mes-nav{
+	width:837px!important;
+}
+.common_request_active{
+	color:#fff;
+	background:#00c1de;
+}
+.passger_box_sure{
+	display: none;
+}
+.order_sure_part .radio-input{
+	float: left;
+	margin-left: 20px;
+}
+/*普通预定end*/
+/*---yy---*/
+/*---CCMS 预订管理---*/
+/*---CCMS 会员管理---*/
+
+.modal .table .layui-btn {
+	padding:3px 8px;
+	height: auto;
+	line-height: normal;
+}
+.modal-refund-operate{
+	display: none;
+}
+.modal-table  .table tr>th,
+.modal-table  .table tr>td{
+	white-space: nowrap;
+}
+.modal-table {
+	max-height: 500px;
+}
+.modal-table .table tr>td.table-comments{
+	white-space: normal;
+}
+/*---CCMS 会员管理---*/
+
+/*---CRS ---*/
+
+/*!-----订单查询开始-----*/
+.order-query-body {
+	position: relative;
+	padding: 20px;
+}
+.ota-form {
+	padding-top: 10px;
+	/*margin-bottom: 15px;*/
+	font-size: 15px;
+}
+.ota-form .layui-form-item {
+	margin-bottom: 0px;
+}
+.ota-form .layui-form-item input[type="text"]{
+
+}
+.ota-form .layui-input-block{
+	/*margin-left: 140px;*/
+}
+.form-case .form-group{
+	float: left;
+	margin-right: 20px;
+	width: 280px;
+}
+.form-case .form-control{
+
+}
+.list-table{
+}
+.list-table .table-con tr:hover{
+	background: #f8f8f8;
+}
+.list-table .table-con tr.em{
+	background: #eaedf1;
+}
+/*!-----订单查询结束-----*/
+
+/*!-----订单处理列表开始-----*/
+.order-todo-body{
+
+}
+.order-todo-body .order-todo-list{
+	border:1px solid #D7D8D9;
+	margin-right: 20px;
+}
+.order-todo-body  h4.title{
+	background: #fff;
+	border-bottom: 1px solid #D7D8D9;
+
+}
+
+.order-todo-body .order-todo-list .order-todo-list-content{
+	max-height: 535px;
+	overflow: hidden;
+	overflow-y: auto;
+	width: 100%;
+}
+.order-todo-body .order-todo-list .order-todo-list-content .list-box{
+	margin:10px 0px;
+	padding: 5px 0;
+	color: #666;
+	cursor: pointer;
+	font-size: 13px;
+}
+.order-todo-body .order-todo-list .order-todo-list-content .list-box.active,
+.order-todo-body .order-todo-list .order-todo-list-content .list-box:hover{
+	background: #f5f5f6;
+}
+.order-todo-body .order-todo-list .order-todo-list-content .list-box .list-item{
+	padding: 2px 20px;
+	margin: 0;
+}
+.order-todo-body .order-todo-list .order-todo-list-content .list-box .list-item .list-left{
+	float: left;
+}
+.order-todo-body  .tags{
+	display: inline-block;
+	padding: 0 5px;
+}
+.order-todo-body .order-todo-list .order-todo-list-content .list-box .list-item .list-right{
+	float: right;
+	color: #999;
+}
+.order-todo-body .order-todo-content{
+	border:1px solid #D7D8D9;
+}
+.order-todo-body .order-todo-content .title{
+	padding: 0;
+}
+.order-todo-body .order-todo-content .order-tit{
+	float: left;
+	margin-top: -1px;
+}
+.order-todo-body .order-todo-content .order-tit .tags{
+	padding: 0 10px;
+}
+.order-todo-body .order-todo-content .order-tit span{
+	display: inline-block;
+	margin-right: 15px;
+}
+.order-todo-body .order-todo-content .order-tit span:nth-child(2){
+	font-weight: bold;
+}
+.order-todo-body .order-todo-content .order-tit span:nth-child(3){
+	font-size: 16px;
+	font-weight: bold;
+}
+.order-todo-body .order-todo-content .order-tit span:nth-child(4){
+	font-size: 12px;
+	/*font-weight: bold;*/
+	padding: 0 5px;
+	line-height: 20px;
+}
+.order-todo-body .order-todo-content .order-time{
+	float: right;
+	color: #333;
+	margin-right: 30px;
+}
+.order-todo-body .order-todo-content .order-time .operate-btns{
+	display: inline-block;
+}
+.order-todo-body .order-todo-content .order-time .operate-btns .operate-btn{
+	/*background: #00C1DE;*/
+	color: #00C1DE;
+	border: 1px solid #00C1DE;
+	margin-left: 10px;
+	display: inline-block;
+	font-size: 14px;
+	padding: 0 8px;
+	line-height: 28px;
+}
+.order-todo-body .order-todo-content .order-todo-detail{
+	min-height: 500px;
+}
+.order-todo-body .order-todo-content .order-todo-detail .list-detail{
+	margin:20px;
+}
+.order-todo-body .order-todo-content .order-todo-detail .list-detail li{
+	margin:0 0 15px 0;
+}
+.order-todo-body .order-todo-content .order-todo-detail .list-detail li .label{
+	color: #666;
+	text-align: left;
+	font-size: 14px;
+}
+.order-todo-body .order-todo-content .order-todo-detail .list-detail li .info-detail .price-box{
+	width: 100px;
+	text-align: center;
+	border:1px solid #ddd;
+	float: left;
+}
+.order-todo-body .order-todo-content .order-todo-detail .list-detail li .info-detail .price-box  span{
+	display: block;
+	padding: 6px 0;
+}
+.order-todo-body .order-todo-content .order-todo-detail .list-detail li .info-detail .price-box span.date{
+	background: #f1f1f1;
+}
+.order-todo-body .order-todo-content .order-todo-detail .layui-form-item .layui-input-block .layui-btn:nth-child(2){
+	background: #fff;
+	border:1px solid #ccc;
+	color: #666;
+}
+/*!-----订单处理列表结束-----*/
+/*---CRS订单情况页结束----*/
+
+/*---CRS房价维护开始----*/
+.room-price{
+
+}
+.room-price .price-query-body{
+
+}
+.room-price .price-query-body .price-list{
+	margin-top: 20px;
+}
+.room-price .price-query-body .price-list .room-guide{
+	margin-bottom: 20px;
+}
+.room-price .price-query-body .price-list .room-guide li{
+	float: left;
+	line-height: 30px;
+	margin-right: 30px;
+}
+.room-price .price-query-body .price-list .room-guide li.right-btns{
+	float: right;
+}
+.room-price .price-query-body .price-list .room-guide li.right-btns .room-num-date-chosse{
+	/*width: 100px;*/
+	/*float: left;*/
+	margin-right: 10px;
+}
+.room-price .price-query-body .price-list .room-guide li.right-btns .room-num-date-chosse .layui-form-label{
+	width: 100px;
+}
+.room-price .price-query-body .price-list .room-guide li.right-btns .room-num-date-chosse .layui-input-block{
+	width: 100px;
+	margin-left: 100px;
+}
+.room-price .price-query-body .price-list .room-guide li.batch-modify-btn{
+	position: absolute;
+	right: 0;
+	background: #00C1DE;
+	color:#fff;
+	line-height: 30px;
+	padding: 0 12px;
+	cursor: pointer;
+}
+.room-price .price-query-body .price-list .room-guide li i{
+	margin-right: 10px;
+}
+.room-price .price-query-body .price-list .row{
+	margin: 0;
+}
+.room-price .price-query-body .price-list .price-box{
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+	/*max-width: 1000px;*/
+	margin: 0 auto;
+}
+.room-price .price-query-body .price-list .price-box .room-type{
+	margin-bottom: 20px;
+}
+.room-price .price-query-body .price-list .price-box .room-type .open-btn{
+	position: absolute;
+	right: 40px;
+	/*color: ;*/
+	font-size: 14px;
+	font-weight: normal;
+	cursor: pointer;
+}
+.room-price .price-query-body .price-list .price-box .date-price{
+	padding: 5px 8px;
+	border:1px solid #fff;
+}
+.room-price .price-query-body .price-list .price-box .date-price .box-list {
+margin: 0;
+}
+.table-room-price-td.active{
+	/*border: 1px solid #00C1DE;*/
+}
+.room-price .price-query-body .price-list .price-box .date-price .box-list li{
+	width: 100%;
+	height: 25px;
+}
+.room-price .price-query-body .price-list .price-box .date-price .box-list li span{
+	display: inline-block;
+	font-weight: normal;
+}
+.room-price .price-query-body .price-list .price-box .date-price .box-list li span:nth-child(1){
+	float: left;
+}
+.room-price .price-query-body .price-list .price-box .date-price .box-list li span:nth-child(2){
+	float: right;
+}
+.room-price .price-query-body .price-list .price-box .layui-table tbody tr:hover, .layui-table-hover {
+	background-color: #fff!important;
+}
+.room-price .price-query-body .price-list .price-box .layui-table tbody tr td{
+	cursor: pointer;
+	padding: 0;
+}
+.room-price-change-layer{
+	margin:10px 10px 0 0;
+}
+.room-price .price-query-body .price-list .price-box .room_status_date th{
+
+}
+.room-price .price-query-body .price-list .price-box .room_status_date th span{
+	display: block;
+	text-align: center;
+}
+.room-price .price-query-body .price-list  .price-box .room_num_box .date-price {
+	border: 1px solid #fff;
+}
+.room-price .price-query-body  .room_num_box .date-price .box-list li{
+
+}
+.room-price .price-query-body .price-list .price-box .room_num_box .date-price .box-list li span:nth-child(1){
+	float: none;
+}
+/*---CRS房价维护结束----*/
+
+/*---CRS订单管理新----*/
+.selector .special-inline {
+
+}
+
+.sec-filter .selector .high-query{
+	text-align: center;
+	display: inline-block;
+	/*border-bottom: 1px solid #ddd;*/
+	margin-left: 10px;
+}
+.sec-filter .selector .high-query.active .more-query-btn i{
+	transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+}
+.sec-filter .selector  .more-query-btn {
+	padding:0 5px ;
+	/*display: inline-block;*/
+	/*margin: 0 auto 10px;*/
+	/*text-align: center;*/
+	/*border: 1px solid #999;*/
+	cursor: pointer;
+	/*color: #666;*/
+
+}
+.sec-filter .selector  .more-query-btn i{
+	color: inherit;
+}
+.sec-filter .selector .more-query-lists {
+	display: none;
+}
+.layer-code-query .selector .top-query{
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #ddd;
+}
+.layer-code-query .selector .top-query .layui-input-block{
+	width: 50%;
+	float: left;
+	margin-left: 20px;
+}
+.layer-code-query .selector .top-query  .layui-btn{
+	float: left;
+	margin: 4px 0 0 20px ;
+}
+#order-more-info .layui-form-item {
+    border-bottom: none;
+    margin: 0;
+}
+#order-more-info .layui-form-radio{
+    margin: 0;
+}
+#order-more-info .layui-form-text .layui-form-label{
+    width: 70px;
+}
+#order-more-info .layui-form-text{
+    margin-bottom: 20px;
+}
+#order-more-info .layui-form-text .layui-input-block{
+    margin-left: 75px;
+    width: 370px;
+}
+.selector.mid-input .mini-inline {
+
+}
+.selector.mid-input .mini-inline .layui-input-inline{
+    margin: 0 ;
+    width: 75px;
+}
+.selector.mid-input .mini-inline .layui-input-inline:nth-of-type(1){
+	margin-left: 5px;
+}
+.selector.mid-input .mini-inline .layui-form-mid{
+    margin: 0 ;
+	padding: 5px 0 !important;
+}
+.selector.mid-input .mini-inline .layui-input-inline .layui-input{
+    height: 30px;
+	padding: 0 3px;
+	line-height: 30px;
+}
+.selector.mid-input .row-address-phpne{
+
+}
+.selector.mid-input .row-inline .layui-input-inline {
+	width: 100px;
+	margin: 0 0 0 5px;
+}
+.selector.mid-input .row-inline .long-input-inline{
+	width: 200px;
+}
+.selector.mid-input .row-inline .layui-form-mid{
+	margin: 0 1px 0 5px;
+}
+.selector.mid-input .row-inline .layui-input-inline .layui-input{
+	height: 30px;
+}
+/*---CRS订单管理结束----*/
+
+/*---CRS档案管理开始----*/
+.address-lists {
+	margin-bottom: 0;
+}
+.add-file-btn{
+	display: inline-block;
+	/*vertical-align: super;*/
+	padding: 3px 8px;
+	cursor: pointer;
+	/*border: 1px solid #ddd;*/
+}
+.add-file-btn i{
+	color: #999;
+}
+/*---CRS档案管理结束----*/
+
+/*CRS房态维护*/
+.room_status_date{
+	margin: 0;
+}
+.room_status_date th,.room_status_date td{
+	width: 6%;
+}
+.room-price .price-query-body .price-list .price-box .room_status_date .room-type{
+	background-color: #d4e9f9;
+	text-align: left;
+	width: 16%;
+	padding: 9px 15px;
+}
+.room_status_date .room-type{
+
+}
+.room-maintain-nameBar {
+	border-top: 1px solid #c1daec;
+	border-bottom: 1px solid #c1daec;
+	background-color: #d4e9f9;
+	width: 100%;
+	text-align: left;
+	font-size: 14px ;
+	line-height: 25px;
+	font-weight: normal;
+	padding: 9px 15px;
+}
+.room_status_date>thead>tr>.room-type{
+	/*text-align: left;*/
+}
+.room_status_date>tbody>tr>td:first-child{
+	background: #eee;
+}
+/*CRS房态维护*/
+/*-----CRS-----*/
+
+/*wx*/
+
+.hotel-pic .pic-info .pic-text a,.pic-infochoose .pic-text a{
+           float:left;width:33.3%;text-align:center;border-right:1px solid #fff;
+}
+.hotel-pic .pic-info .pic-text a:last-child{
+    border-right: none;
+}
+/*.hotel-pic .pic-info .pic-text .pic-setFirst{border-right:1px solid #fff;}*/
+.hotel-pic .pic-info .first-pic{display:none;position:absolute;width:40px;height:30px;line-height:30px;top:0px;right:0px;background:#00c1de;color:#fff;text-align:center;}
+.hotel-pic .active .first-pic{display:inline;}
+.hotel-pic .active .pic-text .pic-setFirst{display:none !important;}
+.pic-box .pic-info .pic-text a {
+    width: 100%;
+}
+.articlePic .active .pic-text a {
+    width: 50%;
+}
+
+.pic-info .layui-upload-drag{width:100%;}
+.pic-info .layui-upload-drag .layui-icon{color:#00c1de;}
+.layui-upload-choose,.pic-choose{display:none}
+.pic-infochoose .pic-text .pic-setFirst{border-right:1px solid #fff;}
+.pic-infochoose ,.pic-infochoose img{width:100%;height:100%;}
+.pic-infochoose .pic-text{position: absolute;bottom: 0;width: 100%;color: #fff;height: 40px;background: rgba(0,0,0,.6);padding: 5px 15px;}
+.pic-infochoose{position:relative;}
+.upload-img .room-pic-upload{display:none; max-width: 400px}
+.lg-input-radio{width:257px !important;}
+.product-details-left{float:left;width:400px;border:1px solid #00c1de;padding:10px;}
+.product-details-right{float:left;width:450px;margin-left:40px;border:1px solid #00c1de;height:300px;margin-bottom:15px;}
+.product-details-left .layui-form-label{width:70px;}
+#product-header .layui-form-item{margin-top:0px;}
+.product-details-left .btn-list{margin-top:10px;}
+.product-savebtn{text-align:center;}
+/*<!-- .product-details-right .detail-table{width:200px!important;height:350px;}  -->*/
+.product-details-right .detail-table table{width:100%;}
+.inline-text{margin-bottom:10px;}
+.inline-text [type="text"]{width:180px;display:inline-block;margin-right:10px;}
+.inline-text .layui-form-radio{margin-right:0px !important;}
+.inline-text .layui-form-select{display:inline-block;width:65px;line-height: 28px;}
+.inline-text .layui-form-select [type="text"]{width:65px !important;}
+.remind-config-span span{width:112px;}
+ .inline-text{margin-bottom:10px;}
+.inline-text [type="text"]{width:180px;display:inline-block;margin-right:10px;}
+.inline-text .layui-form-radio{margin-right:0px !important;}
+.inline-text .layui-form-select{display:inline-block;width:85px;line-height: 28px;}
+.inline-text .layui-form-select [type="text"]{width:85px !important;}
+.remind-config-span span{width:112px;}
+.inline-text dl{width:85px;}
+.inline-text .layui-form-selectup dl{bottom:inherit;}
+/*wx*/
+
+/*CMS内容管理*/
+.content-page-ms {
+	width: 100%;
+}
+.content-page-ms .page-tree-lists{
+	border: 1px solid #D7D8D9;
+}
+.content-page-ms .page-tree-content{
+	border: 1px solid #D7D8D9;
+}
+/*CMS内容管理*/
+.content-ms-tree{height:100%;position: absolute;top:0;}
+.content-ms-tree .row{height:100%}
+.content-ms-tree .col-md-3,.content-ms-tree .col-md-9{height:100%}
+.content-ms-tree .page-tree-lists{height:90%;overflow:auto;}
+.content-ms-tree .page-tree-content{height:90%;padding:0px 8px;}
+.content-ms-tree .list-info-section{height:95%;overflow:auto;}
+.more-content-edit{width:100%;height:90%;}
+.layui-layer-content .layer-add-content,.layui-layer-content .layer-add-content .modal-body{height:100%}
+.layui-layer-content .layer-add-content .more-content-edit{height:90%;}
+.page-tree-lists a:link{text-decoration:none;}
+.ztree li a:hover{text-decoration:none !important;}
+.content-ms-choose .layui-unselect {float:left;width:60px;}
+/*房价代码*/
+.ratecode-mini-checkbox .layui-inline .layui-input-block{width:60px;margin-left:41px;}
+.ratecode-mini-checkbox .layui-inline .layui-form-label{width:38px;}
+.ratecode-mini-checkbox .layui-form-checkbox span{padding:0 4px;}
+.mid-input .layui-form-item .layui-form-checkbox[lay-skin=primary]{margin-top:7px;}
+.rateCode-mini .layui-inline .layui-form-label{width:60px;}
+.rateCode-mini .layui-inline .layui-input-block{width:110px;margin-left:65px;}
+.layui-table-cell{
+	height: auto;
+}
+.modal-iframe {
+	position: absolute;
+	width:100%;
+	height: 100%;
+}
+.modal-iframe .common-iframe{
+	top:0;
+}
+.modal-iframe .common-iframe .iframe-box{
+
+}
+.paddingZero {
+	padding: 0;
+}
+.operate-btns .layui-btn{
+	color: #fff;
+	border: 1px solid #00c1de;
+	background: #00c1de;
+	margin-left: 20px;
+	display: inline-block;
+	font-size: 14px;
+	padding: 0px 8px;
+	height: auto;
+	line-height: normal;
+}
+.operate-btns .layui-btn-danger {
+	background-color: #FF5722;
+}
+.operate-btns .layui-btn-normal {
+	background-color: #1E9FFF;
+}
+.operate-btns .layui-btn-warm {
+	background-color: #FFB800;
+}
+button[disabled], html input[disabled] {
+	background: #eee;
+	cursor: default;
+	color: #777;
+}
+@media only screen  and (min-width:1000px) {
+	.common_left .selector .layui-form-label {
+		width: 50px;
+		line-height: 34px;
+		padding: 0;
+		margin-bottom: 0;
+	}
+	.common_left .selector .layui-input-block{
+		min-height: 34px;
+		margin-left: 55px;
+		width: 93px;
+	}
+	.common-ms .selector  .btn-list{
+		min-height: 34px;
+		margin-left: 5px;
+		text-align: center;
+	}
+	.common-ms .selector  .btn-list .layui-btn{
+		line-height: 34px;
+	}
+	.common-ms .selector .member_info .btn-list .layui-btn{
+		width: 60px;
+		/*padding: 0 5px;*/
+		margin-left: 5px;
+
+	}
+	.common-ms .selector .special1 .small1 .layui-input-block {
+		float: left;
+		width: 93px;
+		margin-left: 5px;
+	}
+	.common-ms .selector .special1 .small2 .layui-input-block {
+		float: left;
+		width: 93px;
+		margin-left: 5px;
+	}
+	.common-ms .common_left .hotel-query-date .small2 .layui-input-block{
+		/*width: 80px;*/
+	}
+	.common_left .hotel-search-sec .selector .layui-input-block.option-box {
+		width: 260px;
+	}
+}
+@media only screen  and (min-width:1320px){
+	.common_left .selector .layui-form-label {
+		width: 70px;
+		line-height: 34px;
+		padding: 0;
+		margin-bottom: 0;
+	}
+	.common_left .selector .layui-input-block{
+		min-height: 34px;
+		margin-left: 75px;
+		width: 140px;
+	}
+
+	.common-ms .selector  .btn-list{
+		min-height: 34px;
+		margin-left: 15px;
+		text-align: center;
+	}
+	.common-ms .selector  .btn-list .layui-btn{
+		line-height: 34px;
+	}
+	.common-ms .selector .member_info .btn-list .layui-btn{
+		width: 80px;
+		/*padding: 0 5px;*/
+		margin-left:15px;
+
+	}
+	.common_left .selector  .member_info .small1 .layui-form-label {
+		width: 30px;
+	}
+	.common-ms .selector .special1 .small1 .layui-input-block {
+		float: left;
+		width: 45px;
+		margin-left: 5px;
+	}
+	.common-ms .selector .special1 .small2 .layui-input-block {
+		float: left;
+		width: 45px;
+		margin-left: 5px;
+	}
+	.common-ms .common_left .hotel-query-date .small2 .layui-input-block{
+		width: 78px;
+	}
+	.common-ms .common_left .hotel-query-date .small1.layui-inline{
+		margin-right: 0;
+	}
+	.common_left .hotel-search-sec .selector .layui-input-block.option-box {
+		width: 368px;
+	}
+}
+@media only screen  and (min-width:1620px){
+	.common_left .selector .layui-form-label {
+		width: 90px;
+		line-height: 36px;
+		padding: 0;
+		margin-bottom: 0;
+	}
+	.common_left .selector .small1 .layui-form-label{
+		width: 50px;
+	}
+	.common_left .selector .small2 .layui-form-label{
+		width: 50px;
+	}
+	.common_left .selector .layui-input-block{
+		min-height: 36px;
+		margin-left: 95px;
+		width: 150px;
+	}
+	.common_left .selector .layui-input-block input{
+		height: 36px;
+	}
+	.common-ms .selector  .btn-list{
+		min-height: 36px;
+		margin-left: 15px;
+		text-align: center;
+	}
+	.common-ms .selector  .btn-list .layui-btn{
+		line-height: 36px;
+	}
+	.common-ms .selector .member_info .btn-list .layui-btn{
+		width: 100px;
+		/*padding: 0 5px;*/
+		margin-left:15px;
+
+	}
+	.common-ms .selector .special1 .small1 .layui-input-block {
+		float: left;
+		width: 60px;
+		margin-left: 5px;
+	}
+	.common-ms .selector .special1 .small2 .layui-input-block {
+		float: left;
+		width: 60px;
+		margin-left: 5px;
+	}
+	.common-ms .common_left .hotel-query-date .small2 .layui-form-label{
+		width: 90px;
+	}
+	.common-ms .common_left .hotel-query-date .small2 .layui-input-block{
+		width: 78px;
+	}
+	.common-ms .common_left .hotel-query-date .small1.layui-inline{
+		margin-right: 0;
+	}
+	.common_left .hotel-search-sec .selector .layui-input-block.option-box {
+		width: 410px;
+	}
+}

@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+    <aside class="sidebar active">
+    </aside>
+    <div class="main-body">
+        <!-- <iframe src="de.html" width="100%" height="100%"></iframe>	 -->
+        <div class="route">
+            <h3 class="">房态维护</h3>
+            <span>当前位置：<a href="">CRS>房态维护</a></span>
+        </div>
+        <div class="content-body room-price">
+            <div class="list-info-section ">
+                <div class="sec-filter border-blue">
+                    <form class="layui-form selector ">
+                        <div class="layui-form-item">
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">OTA渠道</label>
+                                <div class="layui-input-block">
+                                    <select name="otaFrom" lay-filter="">
+                                        <option value=""></option>
+                                        <option value="0">携程</option>
+                                        <option value="1" selected="">百度</option>
+                                        <option value="2">美团</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">全部房型</label>
+                                <div class="layui-input-block">
+                                    <select name="quiz1">
+                                        <option value="">请选择房型</option>
+                                        <option value="全部房型" selected="">全部房型</option>
+                                        <option value="经典客房Ⅰ" >经典客房Ⅰ</option>
+                                        <option value="大床A">大床A</option>
+                                        <option value="大床B">大床B</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">日期  年</label>
+                                <div class="layui-input-block">
+                                    <select name="date1">
+                                        <option value="">请选择日期-年</option>
+                                        <option value="2017"  selected="" >2017</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2015">2015</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">日期  月</label>
+                                <div class="layui-input-block">
+                                    <select name="date2">
+                                        <option value="">请选择日期-月</option>
+                                        <option value="10" selected="">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-input-block btn-list">
+                                <button type="submit" class="layui-btn ">查询</button>
+                                <input type="reset" class="layui-btn " value="重置">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="switch-div">
+                    <a  class=" search-switch">收起查询 <i class="fa fa-angle-up"></i></a>
+                </div>
+
+            </div>
+            <div class="list-info-section price-query-body">
+                <div class="price-list">
+                    <ul class="room-guide">
+                        <li><i class="fa fa-square enough_room"></i>有房</li>
+                        <li><i class="fa fa-square full_room"></i>满房</li>
+                        <li><i class="fa fa-square limit_room"></i>限量售卖</li>
+
+                        <li class="right-btns">
+                            <div class="layui-inline room-num-date-chosse">
+                                <label class="layui-form-label">选择日期</label>
+                                <div class="layui-input-block ">
+                                    <input type="text" class="layui-input" placeholder="" id="date1" lay-key="2">
+                                </div>
+                            </div>
+
+                            <button class="layui-btn batch-modify-num-btn">批量修改</button><button class="layui-btn">双周</button><button class="layui-btn">月份</button>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
+
+                    <div class="price-box ">
+                        <!--<div class="room-type ">-->
+                            <!--<a class="">-->
+                                <!--&lt;!&ndash;经典客房Ⅰ&ndash;&gt;-->
+                                <!--&lt;!&ndash;<span class="yu-tag">预</span>  &ndash;&gt;-->
+                                <!--<span>2017年11月</span>-->
+                            <!--</a>-->
+                            <!--<a class="open-btn active">收起 <i class="fa fa-caret-down"></i></a>-->
+
+                        <!--</div>-->
+                        <table class="layui-table room_status_date" >
+                            <thead>
+                            <tr>
+                                <th class="room-type">经典客房Ⅰ</th>
+                                <th><span>周日</span><span>1</span></th>
+                                <th><span>周一</span> <span>2</span></th>
+                                <th><span>周二</span> <span>3</span></th>
+                                <th><span>周三</span> <span>4</span></th>
+                                <th><span>周四</span> <span>5</span></th>
+                                <th><span>周五</span> <span>6</span></th>
+                                <th><span>周六</span> <span>7</span></th>
+                                <th><span>周日</span><span>8</span></th>
+                                <th><span>周一</span> <span>9</span></th>
+                                <th><span>周二</span> <span>10</span></th>
+                                <th><span>周三</span> <span>11</span></th>
+                                <th><span>周四</span> <span>12</span></th>
+                                <th><span>周五</span> <span>13</span></th>
+                                <th><span>周六</span> <span>14</span></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                           <tr>
+                                <td class="room-type">全日餐饮双人</td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box full_room_block">
+                                    <div class="date-price">
+                                        <ul class="box-list">
+                                            <li>
+                                                <span class="full_num">0</span>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box limit_room_block">
+                                    <div class="date-price">
+                                        <ul class="box-list">
+                                            <li>
+                                                <span class="limit_num">13</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box full_room_block">
+                                    <div class="date-price">
+                                        <ul class="box-list">
+                                            <li>
+                                                <span class="full_num">0</span>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box limit_room_block">
+                                    <div class="date-price">
+                                        <ul class="box-list">
+                                            <li>
+                                                <span class="limit_num">13</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                           <tr>
+                               <td class="room-type">全日餐饮双人</td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box full_room_block">
+                                   <div class="date-price">
+                                       <ul class="box-list">
+                                           <li>
+                                               <span class="full_num">0</span>
+                                           </li>
+
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box limit_room_block">
+                                   <div class="date-price">
+                                       <ul class="box-list">
+                                           <li>
+                                               <span class="limit_num">13</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box full_room_block">
+                                   <div class="date-price">
+                                       <ul class="box-list">
+                                           <li>
+                                               <span class="full_num">0</span>
+                                           </li>
+
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box limit_room_block">
+                                   <div class="date-price">
+                                       <ul class="box-list">
+                                           <li>
+                                               <span class="limit_num">13</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                           </tr>
+                           <tr>
+                               <td class="room-type">全日餐饮双人</td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box full_room_block">
+                                   <div class="date-price">
+                                       <ul class="box-list">
+                                           <li>
+                                               <span class="full_num">0</span>
+                                           </li>
+
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box limit_room_block">
+                                   <div class="date-price">
+                                       <ul class="box-list">
+                                           <li>
+                                               <span class="limit_num">13</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box full_room_block">
+                                   <div class="date-price">
+                                       <ul class="box-list">
+                                           <li>
+                                               <span class="full_num">0</span>
+                                           </li>
+
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box limit_room_block">
+                                   <div class="date-price">
+                                       <ul class="box-list">
+                                           <li>
+                                               <span class="limit_num">13</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                               <td class="room_num_box enough_room_block">
+                                   <div class="date-price ">
+                                       <ul class="box-list ">
+                                           <li>
+                                               <span class=" enough_room">4</span>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </td>
+                           </tr>
+
+                            </tbody>
+                        </table>
+                        <div class="room-maintain-nameBar">
+                            <div class="cont" >精选客房Ⅰ</div>
+                        </div>
+                        <table class="layui-table room_status_date" >
+                            <tbody>
+                            <tr>
+                                <td class="room-type">全日餐饮双人</td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box full_room_block">
+                                    <div class="date-price">
+                                        <ul class="box-list">
+                                            <li>
+                                                <span class="full_num">0</span>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box limit_room_block">
+                                    <div class="date-price">
+                                        <ul class="box-list">
+                                            <li>
+                                                <span class="limit_num">13</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box full_room_block">
+                                    <div class="date-price">
+                                        <ul class="box-list">
+                                            <li>
+                                                <span class="full_num">0</span>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box limit_room_block">
+                                    <div class="date-price">
+                                        <ul class="box-list">
+                                            <li>
+                                                <span class="limit_num">13</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="room-type">全日餐饮双人</td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box full_room_block">
+                                    <div class="date-price">
+                                        <ul class="box-list">
+                                            <li>
+                                                <span class="full_num">0</span>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box limit_room_block">
+                                    <div class="date-price">
+                                        <ul class="box-list">
+                                            <li>
+                                                <span class="limit_num">13</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box full_room_block">
+                                    <div class="date-price">
+                                        <ul class="box-list">
+                                            <li>
+                                                <span class="full_num">0</span>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box limit_room_block">
+                                    <div class="date-price">
+                                        <ul class="box-list">
+                                            <li>
+                                                <span class="limit_num">13</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="room-type">全日餐饮双人</td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box full_room_block">
+                                    <div class="date-price">
+                                        <ul class="box-list">
+                                            <li>
+                                                <span class="full_num">0</span>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box limit_room_block">
+                                    <div class="date-price">
+                                        <ul class="box-list">
+                                            <li>
+                                                <span class="limit_num">13</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box full_room_block">
+                                    <div class="date-price">
+                                        <ul class="box-list">
+                                            <li>
+                                                <span class="full_num">0</span>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box limit_room_block">
+                                    <div class="date-price">
+                                        <ul class="box-list">
+                                            <li>
+                                                <span class="limit_num">13</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="room_num_box enough_room_block">
+                                    <div class="date-price ">
+                                        <ul class="box-list ">
+                                            <li>
+                                                <span class=" enough_room">4</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--<div class="price-box ">-->
+                        <!--<div class="room-type ">-->
+                            <!--经典客房Ⅰ(全日餐饮双人)-->
+                            <!--<span class="xian-tag">现</span>-->
+                            <!--<span>     2017年10月</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--修改房态弹框-->
+<div class="layer-common layer-room-status-edit">
+    <div class="modal-body">
+        <form class="room-price-change-layer layui-form selector">
+            <div class="layui-form-item ">
+                <label class="layui-form-label">房态状态</label>
+                <div class="layui-input-block">
+                    <input type="radio" name="orderType" value="" title="不做修改" checked="">
+                    <input type="radio" name="orderType" value="" title="房间开放">
+                    <input type="radio" name="orderType" value="" title="房间关闭">
+                </div>
+            </div>
+            <div class="breakfast layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label"><em class="xing">*</em>设置数量</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" placeholder="请输入" value="">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">限量售卖</label>
+                    <div class="layui-input-block checkbox-input">
+                        <input type="radio" name="orderType" value="" title="否" checked="">
+                        <input type="radio" name="orderType" value="" title="是">
+
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+</div>
+<!--批量修改房态弹框-->
+<div class="layer-common layer-batch-statusModify">
+    <form class=" layui-form selector">
+        <div class=" layui-form-item">
+            <div class="layui-inline ">
+                <label class="layui-form-label">酒店名称</label>
+                <div class="layui-input-block option-box">
+                    <select name="modules" lay-verify="required" lay-search="">
+                        <option value="">直接选择</option>
+                        <option value="1">layer</option>
+                        <option value="2">form</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline ">
+                <label class="layui-form-label">ota渠道</label>
+                <div class="layui-input-block option-box">
+                    <select name="modules" lay-verify="required" >
+                        <option value="">直接选择</option>
+                        <option value="1">layer</option>
+                        <option value="2">form</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline ">
+                <label class="layui-form-label">房型</label>
+                <div class="layui-input-block option-box">
+                    <select name="modules" lay-verify="required" >
+                        <option value="">直接选择</option>
+                        <option value="1">经典大床1</option>
+                        <option value="2">form</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">开始日期</label>
+                <div class="layui-input-block">
+                    <input type="text" class="layui-input" id="date2">
+                </div>
+
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">截至日期</label>
+                <div class="layui-input-block">
+                    <input type="text" class="layui-input" id="date3">
+                </div>
+
+            </div>
+
+        </div>
+        <div class="layui-form-item ">
+            <label class="layui-form-label">房态状态</label>
+            <div class="layui-input-block">
+                <input type="radio" name="orderType" value="" title="不做修改" checked="">
+                <input type="radio" name="orderType" value="" title="房间开放">
+                <input type="radio" name="orderType" value="" title="房间关闭">
+            </div>
+        </div>
+        <div class="layui-form-item ">
+            <div class="layui-inline">
+                <label class="layui-form-label"><em class="xing">*</em>设置数量</label>
+                <div class="layui-input-block">
+                    <input type="text" class="layui-input" placeholder="请输入" value="">
+                </div>
+            </div>
+
+                <div class="layui-inline">
+                    <label class="layui-form-label">限量售卖</label>
+                    <div class="layui-input-block checkbox-input">
+                        <input type="radio" name="orderType" value="" title="否" checked="">
+                        <input type="radio" name="orderType" value="" title="是">
+
+                    </div>
+                </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+
+            <label class="layui-form-label">本次改变描述</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入内容" class="layui-textarea" name=""></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block btn-list ">
+                <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+<script src="layui/layui_my.js"></script>
+<script>
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        laydate.render({
+            elem: '#date1'
+        });
+    });
+    $('.batch-modify-num-btn').on('click',function () {
+        layerShow('批量修改房态','.layer-batch-statusModify',700,450);
+    });
+    $(".price-box  table .date-price").on('click',function(){
+        layer.open({
+            type:1,
+            title:' 房价修改',
+            area:['720px','330px'],
+            shade:0.3,
+            id:"roomPricelayer",
+            btn:['提交','取消'],
+            moveType:0,
+            content:$('.layer-room-status-edit'),
+            // content:'layui.js',
+        });
+    });
+</script>
+</html>

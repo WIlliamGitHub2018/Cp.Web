@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+    <aside class="sidebar active">
+    </aside>
+    <div class="main-body">
+        <div class="route">
+            <h3 class="">会员管理</h3>
+            <span>当前位置：<a href="">ccms>会员管理</a></span>
+        </div>
+        <div class="content-body">
+            <div class="list-info-section border-blue">
+                <div class="sec-item1">
+                    <form action="" class="layui-form selector">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">会员姓名</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="" placeholder="请输入会员姓名" class="layui-input">
+                                    </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">会员手机</label>
+                                <div class="layui-input-block">
+                                    <input type="phone" name=""  placeholder="请输入手机号" class="layui-input" maxlength="11">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">证件号码</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="" placeholder="请输入证件号码" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">邮箱</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="email" lay-verify="email" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">会员代码</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="" placeholder="请输入会员代码" class="layui-input">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block btn-list">
+                                <button type="submit" class="layui-btn ">查询</button>
+                                <input type="reset" class="layui-btn " value="重置">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="list-info-section ">
+                <h4 class="sec-title">
+                    <b>查询结果</b>
+                    <div class="operate-btns">
+                        <a href="javascript:;" class="operate-btn insert-btn ">新建</a>
+                        <a href="javascript:;" class="operate-btn edit-btn">编辑</a>
+                        <a href="javascript:;" class="operate-btn delete-btn">删除</a>
+                        <a href="javascript:;" class="operate-btn ">挂失</a>
+                        <a href="javascript:;" class="operate-btn ">冻结</a>
+                        <a href="javascript:;" class="operate-btn ">注销</a>
+                        <a href="javascript:;" class="operate-btn log-btn">操作日志</a>
+                        <a href="javascript:;" class="operate-btn ">升级</a>
+                        <a href="javascript:;" class="operate-btn ">恢复密码</a>
+                    </div>
+                </h4>
+                <div class="sec-item1">
+                    <table class="table table-hover table-bordered ">
+                        <thead>
+                        <tr>
+                            <th><input type="checkbox" name="" class="all-checkbox"/></th>
+
+                            <th class="table-sort-btn">会员代码
+                                <a href="javascript:;" class="" >
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                            </th>
+                            <th>会员姓名</th>
+                            <th>性别</th>
+                            <th>会员手机</th>
+                            <th>证件类型</th>
+                            <th>证件号码</th>
+                            <th>邮箱</th>
+                            <th>会员状态</th>
+                            <th class="table-sort-btn">会员级别
+                                <a href="javascript:;" class="" >
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                            </th>
+                            <th>积分余额</th>
+                            <th>储值余额</th>
+                            <th>优惠券数量</th>
+                            <!--<th>操作</th>-->
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><input type="checkbox" name="" class="list-checkbox"/></td>
+                            <td>001</td>
+                            <td>张三</td>
+                            <td>男</td>
+                            <td>15222222222</td>
+                            <td>二代身份证</td>
+                            <td>16541346154615154</td>
+                            <td>15222222222@163.com</td>
+                            <td>是</td>
+                            <td>金卡</td>
+                            <td><a href="#" class="yellow-style points-btn">1654</a></td>
+                            <td><a href="#" class="yellow-style stored-btn">1654</a></td>
+                            <td><a href="#" class="yellow-style coupon-btn">13</a></td>
+                            <!--<td></td>-->
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="" class="list-checkbox"/></td>
+                            <td>001</td>
+                            <td>张三</td>
+                            <td>男</td>
+                            <td>15222222222</td>
+                            <td>二代身份证</td>
+                            <td>16541346154615154</td>
+                            <td>15222222222@163.com</td>
+                            <td>是</td>
+                            <td>金卡</td>
+                            <td><a href="#" class="yellow-style points-btn">1654</a></td>
+                            <td><a href="#" class="yellow-style stored-btn">1654</a></td>
+                            <td><a href="#" class="yellow-style coupon-btn">13</a></td>
+                            <!--<td></td>-->
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--积分余额弹框-->
+                <div class="layer-common  modal-points-detail">
+
+                    <div class="modal-body">
+                        <ul class="nav nav-pills nav-list border-blue">
+                            <li role="presentation" class="active"><a href="#points_detail" data-toggle="tab">积分明细</a></li>
+                            <li role="presentation"><a href="#points_adjustment" data-toggle="tab">积分调整</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <section id="points_detail" class="tab-pane fade active in">
+                                <div class="modal-table">
+                                    <table class="table table-hover ">
+                                        <thead>
+                                        <tr>
+                                            <th>状态</th>
+                                            <th>类型</th>
+                                            <th>详情</th>
+                                            <th>产生日期</th>
+                                            <th>积分值</th>
+                                            <th>是否使用</th>
+                                            <th>有效期</th>
+                                            <th>备注</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>消费</td>
+                                            <td>张三</td>
+                                            <td>男</td>
+                                            <td>2017-8-9</td>
+                                            <td>500</td>
+                                            <td>否</td>
+                                            <td>2017-12-8</td>
+                                            <td class="table-comments" colspan="200px">恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                                        </tr>
+                                        <tr>
+                                            <td>增加</td>
+                                            <td>张三</td>
+                                            <td>男</td>
+                                            <td>2017-8-9</td>
+                                            <td>500</td>
+                                            <td>否</td>
+                                            <td>2017-12-8</td>
+                                            <td class="table-comments">恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                                        </tr>
+                                        <tr>
+                                            <td>未使用</td>
+                                            <td>张三</td>
+                                            <td>男</td>
+                                            <td>2017-8-9</td>
+                                            <td>500</td>
+                                            <td>否</td>
+                                            <td>2017-12-8</td>
+                                            <td class="table-comments">恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                                        </tr>
+                                        <tr>
+                                            <td>未使用</td>
+                                            <td>张三</td>
+                                            <td>男</td>
+                                            <td>2017-8-9</td>
+                                            <td>500</td>
+                                            <td>否</td>
+                                            <td>2017-12-8</td>
+                                            <td class="table-comments">恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                                        </tr>
+                                        <tr>
+                                            <td>未使用</td>
+                                            <td>张三</td>
+                                            <td>男</td>
+                                            <td>2017-8-9</td>
+                                            <td>500</td>
+                                            <td>否</td>
+                                            <td>2017-12-8</td>
+                                            <td class="table-comments">恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                                        </tr>
+                                        <tr>
+                                            <td>未使用</td>
+                                            <td>张三</td>
+                                            <td>男</td>
+                                            <td>2017-8-9</td>
+                                            <td>500</td>
+                                            <td>否</td>
+                                            <td>2017-12-8</td>
+                                            <td class="table-comments">恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                                        </tr>
+                                        <tr>
+                                            <td>未使用</td>
+                                            <td>张三</td>
+                                            <td>男</td>
+                                            <td>2017-8-9</td>
+                                            <td>500</td>
+                                            <td>否</td>
+                                            <td>2017-12-8</td>
+                                            <td class="table-comments">恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </section>
+                            <section id="points_adjustment" class="tab-pane fade ">
+                                <form action="" class="layui-form selector">
+                                    <div class="layui-form-item">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">调整类型</label>
+                                            <div class="layui-input-block">
+                                                <select name="" lay-filter="">
+                                                    <option value=""></option>
+                                                    <option value="0">增加</option>
+                                                    <option value="1">减少</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">积分调整为</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" name="" placeholder="请输入" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">调整原因</label>
+                                            <div class="layui-input-block checkbox-input">
+                                                <input type="checkbox" name="pointsAdjustReason" lay-skin="primary" title="升级" >
+                                                <input type="checkbox" name="pointsAdjustReason" lay-skin="primary" title="扣分">
+                                                <input type="checkbox" name="pointsAdjustReason" lay-skin="primary" title="其他" >
+                                            </div>
+                                        </div>
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">备注</label>
+                                            <div class="layui-input-block">
+                                                <textarea placeholder="请输入内容" class="layui-textarea" name=""></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <!--储值余额弹框-->
+                <div class=" layer-common layer-stored-detail">
+                    <div class="modal-body">
+                        <ul class="nav nav-pills nav-list border-blue">
+                            <li role="presentation" class="active"><a href="#stored_detail" data-toggle="tab">储值明细</a></li>
+                            <li role="presentation"><a href="#stored_adjustment" data-toggle="tab">储值调整</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <section id="stored_detail" class="tab-pane fade active in">
+                                <div class="modal-table">
+                                <table class="table table-hover ">
+                                    <thead>
+                                    <tr>
+                                        <th>状态</th>
+                                        <th>类型</th>
+                                        <th>详情</th>
+                                        <th>产生日期</th>
+                                        <th>储值金额</th>
+                                        <th>是否使用</th>
+                                        <th>有效期</th>
+                                        <th>备注</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>未使用</td>
+                                        <td>张三</td>
+                                        <td>男</td>
+                                        <td>2017-8-9</td>
+                                        <td>500</td>
+                                        <td>否</td>
+                                        <td>2017-12-8</td>
+                                        <td class="table-comments" >恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                                    </tr>
+                                    <tr>
+                                        <td>未使用</td>
+                                        <td>张三</td>
+                                        <td>男</td>
+                                        <td>2017-8-9</td>
+                                        <td>500</td>
+                                        <td>否</td>
+                                        <td>2017-12-8</td>
+                                        <td class="table-comments" >恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                                    </tr>
+                                    <tr>
+                                        <td>未使用</td>
+                                        <td>张三</td>
+                                        <td>男</td>
+                                        <td>2017-8-9</td>
+                                        <td>500</td>
+                                        <td>否</td>
+                                        <td>2017-12-8</td>
+                                        <td class="table-comments" >恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                                </div>
+                            </section>
+                            <section id="stored_adjustment" class="tab-pane fade ">
+                                <form action="" class="layui-form selector">
+                                    <div class="layui-form-item">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">调整类型</label>
+                                            <div class="layui-input-block">
+                                                <select name="" lay-filter="">
+                                                    <option value=""></option>
+                                                    <option value="0">增加</option>
+                                                    <option value="1">减少</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">储值调整为</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" name="" placeholder="请输入" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">调整原因</label>
+                                            <div class="layui-input-block checkbox-input">
+                                                <input type="checkbox" name="pointsAdjustReason" lay-skin="primary" title="升级" >
+                                                <input type="checkbox" name="pointsAdjustReason" lay-skin="primary" title="扣分">
+                                                <input type="checkbox" name="pointsAdjustReason" lay-skin="primary" title="其他" >
+                                            </div>
+                                        </div>
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">备注</label>
+                                            <div class="layui-input-block">
+                                                <textarea placeholder="请输入内容" class="layui-textarea" name=""></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <!--优惠券弹框-->
+                <div class="layer-common layer-coupon-detail">
+                    <div class="modal-body">
+                        <ul class="nav nav-pills nav-list border-blue">
+                            <li role="presentation" class="active"><a href="#coupon_detail" data-toggle="tab">优惠券明细</a></li>
+                            <li role="presentation"><a href="#coupon_hand" data-toggle="tab">优惠券发放</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <section id="coupon_detail" class="tab-pane fade active in">
+                                <div class="modal-table">
+                                    <table class="table table-hover ">
+                                        <thead>
+                                        <tr>
+                                            <th>名称</th>
+                                            <th>金额</th>
+                                            <th>券号</th>
+                                            <th>来源渠道</th>
+                                            <th>获取日期</th>
+                                            <th>有效期</th>
+                                            <th>可使用渠道</th>
+                                            <th>使用状态</th>
+                                            <th>使用明细</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>优惠券1</td>
+                                            <td>500</td>
+                                            <td>46416944615</td>
+                                            <td>美团</td>
+                                            <td>2017-12-8</td>
+                                            <td>2017-12-8</td>
+                                            <td>全部</td>
+                                            <td>未使用</td>
+                                            <td class="table-comments">不可与其他优惠券同时使用</td>
+                                        </tr>
+                                        <tr>
+                                            <td>优惠券1</td>
+                                            <td>500</td>
+                                            <td>46416944615</td>
+                                            <td>美团</td>
+                                            <td>2017-12-8</td>
+                                            <td>2017-12-8</td>
+                                            <td>全部</td>
+                                            <td>未使用</td>
+                                            <td class="table-comments">不可与其他优惠券同时使用</td>
+                                        </tr>
+                                        <tr>
+                                            <td>优惠券1</td>
+                                            <td>500</td>
+                                            <td>46416944615</td>
+                                            <td>美团</td>
+                                            <td>2017-12-8</td>
+                                            <td>2017-12-8</td>
+                                            <td>全部</td>
+                                            <td>未使用</td>
+                                            <td class="table-comments">不可与其他优惠券同时使用</td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </section>
+                            <section id="coupon_hand" class="tab-pane fade ">
+                                <form action="" class="layui-form selector">
+                                    <div class="layui-form-item">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">优惠券名称</label>
+                                            <div class="layui-input-block">
+                                                <select name="" lay-filter="">
+                                                    <option value=""></option>
+                                                    <option value="0">十周年纪念</option>
+                                                    <option value="1">元旦活动</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <table class="table table-hover ">
+                                    <thead>
+                                    <tr>
+                                        <th>优惠券名称</th>
+                                        <th>金额</th>
+                                        <th>可使用渠道</th>
+                                        <th>有效截止日期</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>优惠券1</td>
+                                        <td>800</td>
+                                        <td>美团</td>
+                                        <td>2017-12-8</td>
+                                        <td>
+                                            <!--<button type="button" class="layui-btn">使用规则</button>-->
+                                            <button type="button" class="layui-btn">发放</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>优惠券1</td>
+                                        <td>500</td>
+                                        <td>美团</td>
+                                        <td>2017-12-8</td>
+                                        <td>
+                                            <!--<button type="button" class="layui-btn">使用规则</button>-->
+                                            <button type="button" class="layui-btn">发放</button>
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div>
+                    </div>
+
+                </div>
+                <!--新增编辑弹框-->
+                <div class=" layer-common layer-edit ">
+                    <div class="modal-body">
+                        <form action="" class="layui-form selector">
+                            <div class="layui-form-item" pane="">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label"><em class="xing">*</em>会员姓名</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="" placeholder="请输入姓名" class="layui-input" lay-verify="required">
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label"><em class="xing">*</em>会员手机</label>
+                                    <div class="layui-input-block">
+                                        <input type="phone" name="" lay-verify="required" placeholder="请输入手机号" class="layui-input" maxlength="11">
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">会员邮箱</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="email" lay-verify="email" autocomplete="off" class="layui-input" placeholder="请输入会员邮箱">
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label"><em class="xing">*</em>证件类型</label>
+                                    <div class="layui-input-block">
+                                        <select name="" lay-filter="" lay-verify="required">
+                                            <option value=""></option>
+                                            <option value="0">二代身份证</option>
+                                            <option value="1">护照</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label"><em class="xing">*</em>证件号码</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="" placeholder="请输入证件号码" class="layui-input" lay-verify="required">
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">会员级别</label>
+                                    <div class="layui-input-block">
+                                        <select name="" lay-filter="">
+                                            <option value=""></option>
+                                            <option value="0">银卡</option>
+                                            <option value="1">金卡</option>
+                                            <option value="2">vip</option>
+                                            <option value="3">vvip</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block btn-list ">
+                                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--操作日志弹框-->
+                <div class="layer-common layer-log-operate">
+                    <div class="modal-body">
+                                <div class="modal-table">
+                                    <table class="table table-hover ">
+                                        <thead>
+                                        <tr>
+                                            <th>状态</th>
+                                            <th>类型</th>
+                                            <th>详情</th>
+                                            <th>产生日期</th>
+                                            <th>积分值</th>
+                                            <th>是否使用</th>
+                                            <th>有效期</th>
+                                            <th>备注</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>未使用</td>
+                                            <td>张三</td>
+                                            <td>男</td>
+                                            <td>2017-8-9</td>
+                                            <td>500</td>
+                                            <td>否</td>
+                                            <td>2017-12-8</td>
+                                            <td class="table"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>未使用</td>
+                                            <td>张三</td>
+                                            <td>男</td>
+                                            <td>2017-8-9</td>
+                                            <td>500</td>
+                                            <td>否</td>
+                                            <td>2017-12-8</td>
+                                            <td class="table"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>未使用</td>
+                                            <td>张三</td>
+                                            <td>男</td>
+                                            <td>2017-8-9</td>
+                                            <td>500</td>
+                                            <td>否</td>
+                                            <td>2017-12-8</td>
+                                            <td class="table"></td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script src="layui/layui_my.js"></script>
+<script>
+
+</script>
+<script>
+    $('.insert-btn').on('click',function () {
+        addLayer('新建会员','.layer-edit',720,300 );
+    });
+    $('.edit-btn').on('click',function () {
+        editLayer('编辑会员','.layer-edit',700,300 );
+    });
+    $('.log-btn').on('click',function () {
+        if(isDataSelected()){
+            //获取当前数据内容赋值;
+
+            layerShow(' ','.layer-log-operate',500,500 );
+        }
+    });//查看操作日志
+    $('.points-btn').on('click',function () {
+        layerShow(' ','.modal-points-detail',700,500 );
+    });//积分明细
+    $('.stored-btn').on('click',function () {
+        layerShow(' ','.layer-stored-detail',700,500 );
+    });//储值明细
+    $('.coupon-btn').on('click',function () {
+        layerShow(' ','.layer-coupon-detail',700,500 );
+    });//查看优惠券明细
+</script>
+</html>

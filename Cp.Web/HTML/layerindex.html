@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+</head>
+<body>
+<button class="layer1">弹出</button>
+<!--批量充值-->
+<div class=" layer-common layer-edit ">
+    <div class="modal-body">
+        <form action="" class="layui-form selector">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员类型</label>
+                    <div class="layui-input-block option-box">
+                        <select name="modules" lay-verify="required" lay-search="">
+                            <option value="">YGK</option>
+                            <option value="MEM">MEM-会员卡</option>
+                        </select>
+                    </div>
+                </div>
+               <div class="layui-inline ">
+                    <label class="layui-form-label">会员级别</label>
+                    <div class="layui-input-block">
+                        <select name="otaFrom" lay-filter="">
+                            <option value="">VIPA</option>
+                            <option value="MEM1">MEM1-银卡</option>
+                            <option value="MEM2">MEM2-金卡</option>
+                            <option value="MEM3">MEM3-钻石卡</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">充值金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="rechargeMoney"  placeholder="请输入金额" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn layer3" type="submit" >充值并确认</a>
+                    <a href="javascript:void(0);" class="layui-btn layer2" type="submit" name="tanchu" >弹出11</a>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+</div>
+
+<div class=" layer-common layer-edit1 ">
+    <div class="modal-body">
+        <form action="" class="layui-form selector">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员类型</label>
+                    <div class="layui-input-block option-box">
+                        <select name="modules" lay-verify="required" lay-search="">
+                            <option value="">YGK</option>
+                            <option value="MEM">MEM-会员卡</option>
+                        </select>
+                    </div>
+                </div>
+               <div class="layui-inline ">
+                    <label class="layui-form-label">会员级别</label>
+                    <div class="layui-input-block">
+                        <select name="otaFrom" lay-filter="">
+                            <option value="">VIPA</option>
+                            <option value="MEM1">MEM1-银卡</option>
+                            <option value="MEM2">MEM2-金卡</option>
+                            <option value="MEM3">MEM3-钻石卡</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">充值金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="rechargeMoney"  placeholder="请输入金额" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn layer3" type="submit" >充值并确认</a>
+                    <a href="javascript:void(0);" class="layui-btn layer2" type="submit" name="tanchu" >弹出11</a>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+</div>
+
+</body>
+<script src="layui/layui_my.js"></script>
+<script>
+layui.use('layer', function(){
+<!-- var a1 = layer.open({ -->
+  <!-- type: 1, -->
+  <!-- title: false, -->
+  <!-- closeBtn: 0, -->
+  <!-- shadeClose: true, -->
+  <!-- skin: 'yourclass', -->
+  <!-- content: '自定义HTMLuuu内容' -->
+<!-- }); -->
+<!-- var a2 = layer.open({ -->
+  <!-- type: 1, -->
+  <!-- title: false, -->
+  <!-- closeBtn: 0, -->
+  <!-- shadeClose: true, -->
+  <!-- skin: 'yourclass', -->
+  <!-- content: '自定义HTML内容' -->
+<!-- }); -->
+<!-- layer.close(a1); -->
+});
+
+    $('.layer1').on('click',function () {
+        layui.use('layer', function(){
+         var   layer = layui.layer;
+         var index =   layer.open({
+                type: 1
+                ,title: 'gfggg' //不显示标题栏
+                // ,closeBtn: 1
+                ,area: ['500'+'px', '600' +'px']
+                ,shade: 0.6
+                ,moveType: 1 //拖拽模式，0或者1
+                ,resize:true //
+                ,maxmin: true
+                ,moveOut: true //是否允许拖拽到窗口外
+                ,content:$('.layer-edit')
+                ,success: function(layero, index){//layer.close(index)
+                   $('[name="tanchu"]').attr('index',index)
+                }
+            });
+        });
+    });
+    $('.layer2').on('click',function () {
+        var index = $(this).attr('index');alert(index) 
+        layer.close(index)
+        
+    });
+    $('.layer3').on('click',function () {
+        layui.use('layer', function(){
+         var   layer = layui.layer;
+         var index =   layer.open({
+                type: 1
+                ,title: 'gfggg' //不显示标题栏
+                // ,closeBtn: 1
+                ,area: ['500'+'px', '600' +'px']
+                ,shade: 0.6
+                ,moveType: 1 //拖拽模式，0或者1
+                ,resize:true //
+                ,maxmin: true
+                ,moveOut: true //是否允许拖拽到窗口外
+                ,content:$('.layer-edit1')
+                ,success: function(layero, index){//layer.close(index)
+                   $('[name="tanchu"]').attr('index',index)
+                }
+            });
+        });
+        
+    });
+    
+    //分页
+    layui.use('laypage', function(){
+        var laypage = layui.laypage;
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'pages' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: 50 //数据总数，从服务端得到
+            ,limit:20  //每页显示的条数
+            //prev	自定义“上一页”的内容，支持传入普通文本和HTML
+            //next	自定义“下一页”的内容，同上,
+            //first	自定义“首页”的内容，同上
+            //last	自定义“尾页”的内容，同上
+        });
+    });
+</script>
+</html>

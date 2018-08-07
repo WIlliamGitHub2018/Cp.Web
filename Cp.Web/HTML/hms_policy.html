@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.all.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+    <aside class="sidebar active">
+    </aside>
+		<div class="main-body">
+			<!-- <iframe src="de.html" width="100%" height="100%"></iframe>	 -->
+			<div class="route">
+				<h3 class="">酒店政策</h3>
+				<span>当前位置：<a href="">酒店信息后台管理 >酒店政策</a></span>
+			</div>
+				
+			<div class="content-body">
+                <div class="main-content">
+                    <div class="list-info-section">
+                        <h4 class="sec-title">
+                            <b>入离时间</b>
+                            <div class="operate-btns">
+                                <a href="javascript:;" class="operate-btn sec-edit-btn">编辑</a>
+                            </div>
+                        </h4>
+                        <div class="sec-item1">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>最早入住</th>
+                                        <th>最晚入住</th>
+                                        <th>最早离店</th>
+                                        <th>最晚离店</th>
+                                    </tr>
+                                </thead>
+                                <tbody>                                    
+                                    <tr>
+                                        <td>
+                                            <label class="time">14:00</label>
+                                        </td>
+                                        <td>
+                                            <label class="time" >不限</label>
+                                        </td>
+                                        <td>
+                                            <label class="time" >不限</label>
+                                        </td>
+                                        <td>
+                                            <label class="time" >12:00</label>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <form class="sec-item2 layui-form select-margin selector">
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">最早入住</label>
+                                    <div class="layui-input-block">
+                                      <select name="earlyArrive" lay-filter="">
+                                        <option value="2017">2017</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2015" selected="">2015</option>
+                                      </select>
+                                      <div class="layui-unselect layui-form-select">
+                                        <div class="layui-select-title">
+                                            <input type="text" placeholder="请选择" value="" readonly="" class="layui-input layui-unselect">
+                                            <i class="layui-edge"></i>
+                                        </div>
+                                        <dl class="layui-anim layui-anim-upbit" style="">
+                                            <dd lay-value="2017" >2017</dd>
+                                            <dd lay-value="2016" class="">2016</dd>
+                                            <dd lay-value="2015" class="layui-this">2015</dd>
+                                        </dl>
+                                      </div>                                                          
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">最晚入住</label>
+                                    <div class="layui-input-block">
+                                      <select name="lastArrive" lay-filter="">
+                                        <option value="12">12</option>
+                                        <option value="11">11</option>
+                                        <option value="10" selected="">10</option>
+                                      </select>
+                                      <div class="layui-unselect layui-form-select">
+                                        <div class="layui-select-title">
+                                            <input type="text" placeholder="请选择" value="" readonly="" class="layui-input layui-unselect">
+                                            <i class="layui-edge"></i>
+                                        </div>
+                                        <dl class="layui-anim layui-anim-upbit" style="">
+                                            <dd lay-value="12" >12</dd>
+                                            <dd lay-value="11" class="">11</dd>
+                                            <dd lay-value="10" class="layui-this">10</dd>
+                                        </dl>
+                                      </div>                                                          
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">最早离店</label>
+                                    <div class="layui-input-block">
+                                      <select name="earlyLeave" lay-filter="">
+                                        <option value="2017">2017</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2015" selected="">2015</option>
+                                      </select>
+                                      <div class="layui-unselect layui-form-select">
+                                        <div class="layui-select-title">
+                                            <input type="text" placeholder="请选择" value="" readonly="" class="layui-input layui-unselect">
+                                            <i class="layui-edge"></i>
+                                        </div>
+                                        <dl class="layui-anim layui-anim-upbit" style="">
+                                            <dd lay-value="2017" >2017</dd>
+                                            <dd lay-value="2016" class="">2016</dd>
+                                            <dd lay-value="2015" class="layui-this">2015</dd>
+                                        </dl>
+                                      </div>                                                          
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">最晚离店</label>
+                                    <div class="layui-input-block">
+                                      <select name="lastLeave" lay-filter="">
+                                        <option value="12">12</option>
+                                        <option value="11">11</option>
+                                        <option value="10" selected="">10</option>
+                                      </select>
+                                      <div class="layui-unselect layui-form-select">
+                                        <div class="layui-select-title">
+                                            <input type="text" placeholder="请选择" value="" readonly="" class="layui-input layui-unselect">
+                                            <i class="layui-edge"></i>
+                                        </div>
+                                        <dl class="layui-anim layui-anim-upbit" style="">
+                                            <dd lay-value="12" >12</dd>
+                                            <dd lay-value="11" class="">11</dd>
+                                            <dd lay-value="10" class="layui-this">10</dd>
+                                        </dl>
+                                      </div>                                                          
+                                    </div>
+                                </div>
+                            </div> 
+                            
+                            <div class="layui-form-item">
+                                <div class="layui-input-block btn-list ">
+                                    <a href="javascript:void(0);" class="layui-btn " id="" type="submit">保存</a>
+                                    <a href="javascript:void(0);" class="layui-btn cancel-common" id="" type="button">取消</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="list-info-section">
+                        <h4 class="sec-title">
+                            <b>儿童政策</b>
+                            <!--<div class="operate-btns">-->
+                                <!--<a href="javascript:;" class="operate-btn sec-edit-btn">编辑</a>-->
+                            <!--</div>-->
+                        </h4>
+                        <div class="sec-item1">
+                            <ul class="child-list">
+                                <li>不接受18岁以下客人单独入住</li>
+                                <li>不接受18岁以下客人单独入住。
+身高1.4米以上儿童或成人入住同一间房间需收取第三人入住/附加宾客费350元/位；身高1.2-1.4米儿童可享180元/位优惠；身高1.2以下儿童免费（每间房仅限携带一位，同享成人礼遇）;</li>
+                            </ul>
+                        </div>
+                        <form class="sec-item2 layui-form">
+
+                            <div class="layui-form-item">
+                                <div class="layui-input-block btn-list ">
+                                    <a href="javascript:void(0);" class="layui-btn " id="" type="submit">保存</a>
+                                    <a href="javascript:void(0);" class="layui-btn cancel-common" id="" type="button">取消</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="list-info-section">
+
+                        <h4 class="sec-title">
+                            <b>膳食安排</b>
+                            <div class="operate-btns">
+                                <a href="javascript:;" class="operate-btn sec-edit-btn">编辑</a>
+                            </div>
+                        </h4>
+                        <div class="sec-item1">
+                            <ul class="meal-plans">
+                                <li> 自助早餐 RMB   1</li>
+                            </ul>
+                        </div>
+                        <form class="sec-item2 layui-form">
+                            <div class="layui-form-item">
+                                <div class="layui-input-block isNoBreakfast">
+                                    <input type="radio" name="breakfast" value="提供早餐" title="提供早餐">
+                                    <input type="radio" name="breakfast" value="不提供早餐" title="不提供早餐" checked="">
+                                </div>
+                            </div>
+                            <div class="breakfast-cate">
+                                <div class="layui-form-item" pane="">
+                                    <div class="layui-inline">
+                                        <div class="layui-input-block">
+                                            <input type="checkbox" name="breakfastCate[west]" lay-skin="primary" title="西式早餐 RMB" checked="">
+                                          <div class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary" id="">
+                                            <span>西式早餐 RMB</span><i class="layui-icon"></i>
+                                          </div>
+                                          <input type="checkbox" name="breakfastCate[china]" lay-skin="primary" title="中式早餐 RMB" >
+                                          <div class="layui-unselect layui-form-checkbox " lay-skin="primary">
+                                            <span>中式早餐 RMB</span><i class="layui-icon"></i>
+                                          </div>
+                                          <input type="checkbox" name="breakfastCate[Japan]" lay-skin="primary" title="日式早餐 RMB">
+                                          <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                            <span>日式早餐 RMB</span><i class="layui-icon"></i>
+                                          </div>
+                                          <input type="checkbox" name="breakfastCate[local]" lay-skin="primary" title="当地早餐 RMB" >
+                                          <div class="layui-unselect layui-form-checkbox  " lay-skin="primary">
+                                            <span>当地早餐 RMB</span><i class="layui-icon"></i>
+                                          </div>
+                                          <input type="checkbox" name="breakfastCate[self]" lay-skin="primary" title="自助早餐 RMB">
+                                          <div class="layui-unselect layui-form-checkbox " lay-skin="primary">
+                                            <span>自助早餐 RMB</span><i class="layui-icon"></i>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block btn-list ">
+                                    <a href="javascript:void(0);" class="layui-btn " id="" type="submit">保存</a>
+                                    <a href="javascript:void(0);" class="layui-btn cancel-common" id="" type="button">取消</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--<div class="list-info-section">-->
+                        <!--<h4 class="sec-title">-->
+                            <!--<b>宠物政策</b>-->
+                            <!--<div class="operate-btns">-->
+                                <!--<a href="javascript:;" class="operate-btn sec-edit-btn">编辑</a>-->
+                            <!--</div>-->
+                        <!--</h4>-->
+                        <!--<div class="sec-item1">-->
+                            <!--<ul class="petPolicy">-->
+                                <!--<li>可携带宠物</li>-->
+
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <!--<form class="sec-item2 layui-form">-->
+                            <!--<div class="layui-form-item">-->
+                                <!--<div class="layui-input-block isNoBreakfast">-->
+                                    <!--<input type="radio" name="petPolicy" value="不可携带宠物" title="不可携带宠物">-->
+                                    <!--<div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><span>不可携带宠物</span></div>-->
+                                    <!--<input type="radio" name="petPolicy" value="允许携带宠物，不收取额外费用" title="允许携带宠物，不收取额外费用" checked="">-->
+                                    <!--<div class="layui-unselect layui-form-radio layui-form-radioed"><i class="layui-anim layui-icon"></i><span>允许携带宠物，不收取额外费用</span></div>-->
+                                    <!--<input type="radio" name="petPolicy" value="允许携带宠物，会收取额外费用" title="允许携带宠物，会收取额外费用">-->
+                                    <!--<div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><span>允许携带宠物，会收取额外费用</span></div>-->
+                                    <!--<input type="radio" name="petPolicy" value="可携带宠物" title="可携带宠物">-->
+                                    <!--<div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><span>可携带宠物</span></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="layui-form-item">-->
+                                <!--<div class="layui-input-block btn-list ">-->
+                                    <!--<a href="javascript:void(0);" class="layui-btn " id="" type="submit">保存</a>-->
+                                    <!--<a href="javascript:void(0);" class="layui-btn cancel-common" id="" type="button">取消</a>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</form>-->
+                    <!--</div>-->
+                    <div class="list-info-section">
+                        <h4 class="sec-title">
+                            <b>信用卡</b>
+                            <div class="operate-btns">
+                                <a href="javascript:;" class="operate-btn sec-edit-btn">编辑</a>
+                            </div>
+                        </h4>
+                        <div class="sec-item1">
+                            <ul class="creditCard">
+                                <li>中国银联(China UnionPay)</li>
+                            </ul>
+                        </div>
+                        <form class="sec-item2 layui-form">
+                            <div class="layui-form-item">
+                                <div class="layui-input-block isNoBreakfast">
+                                    <input type="radio" name="isNoCredit" value="不可刷卡" title="不可刷卡">
+                                    <div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><span>不可刷卡</span></div>
+                                    <input type="radio" name="isNoCredit" value="可刷卡" title="可刷卡" checked="">
+                                    <div class="layui-unselect layui-form-radio layui-form-radioed"><i class="layui-anim layui-icon"></i><span>可刷卡</span></div>
+                                </div>
+                            </div>
+                            <div class="breakfast-cate">
+                                <div class="layui-form-item" pane="">
+                                    <div class="layui-inline">
+                                        <div class="layui-input-block">
+                                            <input type="checkbox" name="creditCard" lay-skin="primary" title="Master" checked="" value="Master">
+                                          <div class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary" id="">
+                                            <span>Master</span><i class="layui-icon"></i>
+                                          </div>
+                                          <input type="checkbox" name="creditCard" lay-skin="primary" title="Visa" value="Visa" >
+                                          <div class="layui-unselect layui-form-checkbox " lay-skin="primary">
+                                            <span>Visa</span><i class="layui-icon"></i>
+                                          </div>
+                                          <input type="checkbox" name="creditCard" lay-skin="primary" title="Amex" value="Amex">
+                                          <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                            <span>Amex</span><i class="layui-icon"></i>
+                                          </div>
+                                          <input type="checkbox" name="creditCard" lay-skin="primary" title="Jcb" value="Jcb">
+                                          <div class="layui-unselect layui-form-checkbox  " lay-skin="primary">
+                                            <span>Jcb</span><i class="layui-icon"></i>
+                                          </div>
+                                          <input type="checkbox" name="creditCard" lay-skin="primary" title="大来(Diners Club)" value="大来(Diners Club)">
+                                          <div class="layui-unselect layui-form-checkbox " lay-skin="primary">
+                                            <span>大来(Diners Club)</span><i class="layui-icon"></i>
+                                          </div>
+                                          <input type="checkbox" name="creditCard" lay-skin="primary" title="中国银联(China UnionPay)" value="中国银联(China UnionPay)">
+                                          <div class="layui-unselect layui-form-checkbox  " lay-skin="primary">
+                                            <span>中国银联(China UnionPay)</span><i class="layui-icon"></i>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block btn-list ">
+                                    <a href="javascript:void(0);" class="layui-btn " id="" type="submit">保存</a>
+                                    <a href="javascript:void(0);" class="layui-btn cancel-common" id="" type="button">取消</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script src="js/custom.js"></script>
+<script src="layui/layui_my.js"></script>
+</html>

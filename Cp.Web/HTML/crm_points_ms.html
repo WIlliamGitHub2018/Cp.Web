@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+    <aside class="sidebar active">
+    </aside>
+    <div class="main-body">
+        <div class="route">
+            <h3 class="">积分查询</h3>
+            <span>当前位置：<a href="">CRM>积分查询</a></span>
+        </div>
+        <div class="content-body">
+            <div class="list-info-section border-blue">
+                <div class="sec-filter">
+                    <form class="layui-form selector " >
+                        <div class="layui-form-item">
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">所属酒店</label>
+                                <div class="layui-input-block ">
+                                    <select name="modules" lay-verify="required" lay-search="">
+                                        <option value="">直接选择</option>
+                                        <option value="1">layer</option>
+                                        <option value="2">form</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">会员号码</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="customerNo"  placeholder="请输入会员号码" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">酒店号码</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="hotelNo"  placeholder="请输入酒店号码" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">操作员</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="operator"  placeholder="请输入操作员" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block btn-list">
+                                <button type="submit" class="layui-btn ">查询</button>
+                                <input type="reset" class="layui-btn " value="重置">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- <div id="layerDemo"><button data-method="confirmTrans" class="layui-btn">配置一个透明的询问框</button></div> -->
+
+
+            </div>
+            <div class="list-info-section ">
+                <h4 class="sec-title">
+                    <b>积分列表</b>
+                    <div class="operate-btns">
+                        <!--<a href="javascript:;" class="operate-btn memLogModify-btn" >修改</a>-->
+                    </div>
+                </h4>
+                <div class="sec-item1">
+                    <table class="layui-table" id="crm_table_memberscope" lay-filter="crm_table_memberscope"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="layui/layui_my.js"></script>
+<script src="js/crm_table.js"></script>
+<script>
+
+
+</script>
+</html>

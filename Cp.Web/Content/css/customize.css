@@ -1,0 +1,66 @@
+﻿.nav-list>li.RefreshButton {
+    float:right;padding-top:5px; right:10px;
+}
+.avgPrice-btn,.balance-btn { cursor:pointer;
+}
+.yellow-style-active {
+    color: #f67317;
+    border: 1px solid #f67317;
+}
+.mark {background-color:#5bc0de !important;
+}
+.table>tbody>tr:hover>td {
+    background-color: #00c1de;
+}
+#info-hover  .table > tbody > tr:hover > td{
+    background-color: #fff;
+}
+.list-info-section .sec-title {
+    margin-bottom: 0;
+}
+#gp_grid.table>tbody>tr:hover>td {
+    background-color: rgb(238, 238, 238);
+}
+.table>tbody>tr.active>td {
+    background-color: #00c1de;
+}
+.table>tbody>tr.active:hover>td {
+    background-color: #00c1de;
+}
+.modal-body-gp{
+    overflow: auto;
+    max-height: 500px;
+}
+input[type="text"], input[type="number"], input[type="password"], input[type="phone"] {
+   color:#000;
+}
+input.input_box_gp {
+    width:80px!important;
+}
+label.label_gp {
+    width:100px!important;
+}
+label.text_left_gp {
+    text-align:left; padding-left:0;
+}
+span.oredr_Disc {
+    display:inline-block;margin-top:8px;
+}
+dl {
+margin-bottom:0;
+}
+input.input_check {
+width:85%; display:inline-block; margin-right:5px;
+}
+.dialog_gp {
+    margin-top:15%;
+}
+.common-ms .selector .col-2 .layui-inline:nth-child(2).gp_float {
+    float:left;margin-left:5px;
+}
+#gp_clear_margin_padding,.gp_clear_margin_padding {
+    margin:0;padding:0;
+}
+.layer-common_gp {
+display:none;
+}

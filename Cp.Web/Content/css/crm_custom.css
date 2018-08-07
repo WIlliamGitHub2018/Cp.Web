@@ -1,0 +1,85 @@
+.more_active_btn{
+    width: 130px;
+    height: 45px;
+}
+.result_textarea{
+    width: 550px;
+    min-height: 60px;
+    resize: none;
+}
+.mid-input .result_from_item{
+    border: none;
+    margin-bottom: 10px;
+    display: block;
+}
+.mid-input .result_from_item .layui-form-label {
+    width: 70px;
+    padding: 5px 0;
+    margin: 0;
+}
+.mid-input .result_from_item .layui-input-block {
+    margin-left: 75px;
+    width: 145px;
+    min-height: 30px;
+}
+.selector.mid-input .mini-inline .layui-mini-input_yy {
+    width: 70px;
+}
+.layer_btn_lists{
+    margin-left: 33%;
+}
+.layer_btn_list{
+    margin-left: 42%;
+}
+.second_menu{
+    margin-bottom: 10px;
+}
+.border-blue .mid_selector{
+    padding: 5px 0;
+}
+.mid-input .find_layui-form-item{
+    border: none;
+}
+.mid-input .layui-form-item:last-child{
+    margin-top: 3px;
+}
+.points_method{
+    display: none;
+}
+.points_method1{
+    display: block;
+}
+.mid-input .points_method1 {
+    border-bottom: none;
+    margin-top: 5px;
+}
+.mid-input .layui-inline .points_strategy{
+    width: auto;
+}
+.mid-input .layui-inline .points_strategy input{
+    width:50px;
+    display: inline-block;
+}
+.points_strategy_contact{
+    width: 10px;
+    height: 30px;
+    font-size: 12px;
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+}
+.mid-input .layui-form-item .strategy_checkbox{
+    width:auto;
+}
+.mid-input .layui-form-item .strategy_checkbox .layui-input-block{
+    width:auto;
+}
+.layui-form-label-points{
+    line-height: 28px;
+}
+.selector.mid-input .mini-inline .layui-mini-select{
+    width:80px;
+}
+.selector.mid-input .mini-inline .layui-mini-input{
+    width:47px;
+}

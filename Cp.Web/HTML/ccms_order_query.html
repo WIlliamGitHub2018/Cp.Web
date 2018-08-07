@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+</head>
+<body>
+
+            <div class="list-info-section border-blue">
+                <div class="sec-filter">
+                    <form action="" class="layui-form selector">
+                        <div class="layui-form-item">
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">酒店名称</label>
+                                <div class="layui-input-block option-box">
+                                    <select name="modules" lay-verify="required" lay-search="">
+                                        <option value="">直接选择</option>
+                                        <option value="1">layer</option>
+                                        <option value="2">form</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="layui-inline">
+                                <label class="layui-form-label">联系人手机</label>
+                                <div class="layui-input-block">
+                                    <input type="phone" name="" lay-verify="required" placeholder="请输入手机号" class="layui-input" maxlength="11">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">入住日期</label>
+                                <div class="layui-input-block">
+                                    <input type="text" class="layui-input" id="test1">
+                                </div>
+
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">入住天数</label>
+                                <div class="layui-input-block">
+                                    <input type="number" name=""  placeholder="1" class="layui-input" >
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">房间数</label>
+                                <div class="layui-input-block">
+                                    <input type="number" name=""  placeholder="1" class="layui-input" >
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">联系人</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入名称" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">订单号</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入名称" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">会员手机</label>
+                                <div class="layui-input-block">
+                                    <input type="phone" name="" placeholder="请输入手机号" class="layui-input" maxlength="11">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">预定渠道</label>
+                                <div class="layui-input-block">
+                                    <select name="" lay-filter="">
+                                        <option value=""></option>
+                                        <option value="0">官网</option>
+                                        <option value="1">h5</option>
+                                        <option value="1">app</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">预定状态</label>
+                                <div class="layui-input-block">
+                                    <select name="" lay-filter="">
+                                        <option value=""></option>
+                                        <option value="0">预定</option>
+                                        <option value="1">预抵</option>
+                                        <option value="1">入住</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">预定类型</label>
+                                <div class="layui-input-block">
+                                    <select name="" lay-filter="">
+                                        <option value=""></option>
+                                        <option value="0">001</option>
+                                        <option value="1">002</option>
+                                        <option value="1">003</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block btn-list">
+                                <button type="submit" class="layui-btn ">查询</button>
+                                <input type="reset" class="layui-btn " value="重置">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="list-info-section ">
+                <h4 class="sec-title">
+                    <b>订单管理列表</b>
+                    <div class="operate-btns">
+                        <a href="javascript:;" class="operate-btn cancel-btn ">取消</a>
+                        <a href="javascript:;" class="operate-btn message-btn ">发送短信</a>
+                        <a href="javascript:;" class="operate-btn refund-btn ">退款</a>
+                        <a href="javascript:;" class="operate-btn -btn ">储值支付</a>
+                        <a href="javascript:;" class="operate-btn export-btn ">导出</a>
+                        <a href="javascript:;" class="operate-btn log-btn ">操作日志</a>
+
+
+                    </div>
+                </h4>
+                <div class="sec-item1">
+                    <table class="table table-hover table-bordered ">
+                        <thead>
+                        <tr>
+                            <th><input type="checkbox" name="" class="all-checkbox" /></th>
+                            <th class="table-sort-btn">订单号
+                                <a href="javascript:;" class="" >
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                            </th>
+                            <th>预定状态</th>
+                            <th>酒店名称</th>
+                            <!--<th>来电号码</th>-->
+                            <th>入住人</th>
+                            <th>联系手机</th>
+                            <th>会员姓名</th>
+                            <th class="table-sort-btn">会员级别
+                                <a href="javascript:;" class="" >
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                            </th>
+                            <th>预定房型</th>
+                            <th>房间数</th>
+                            <th>均价</th>
+                            <th>总价</th>
+                            <th class="table-sort-btn">入住日期
+                                <a href="javascript:;" class="" >
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                            </th>
+                            <th class="table-sort-btn">离店日期
+                                <a href="javascript:;" class="" >
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                            </th>
+                            <th>入住天数</th>
+                            <th>预定类型</th>
+                            <th>预订人</th>
+                            <th>账户余额</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><input type="checkbox" name="" class="list-checkbox"/></td>
+                            <td>001</td>
+                            <td>预定</td>
+                            <td>99旅馆</td>
+                            <!--<td>15222222222</td>-->
+                            <td>张三</td>
+                            <td>15222222222</td>
+                            <td>张三</td>
+                            <td>金卡</td>
+                            <td>豪华大床</td>
+                            <td>2</td>
+                            <td >
+                                <a href="#" class="yellow-style avgPrice-btn">1654</a></td>
+                            <td>1500</td>
+                            <td>2017-11-27</td>
+                            <td>2017-11-28</td>
+                            <td>1</td>
+                            <td></td>
+                            <td>张三</td>
+                            <td >
+                                <a href="#" class="yellow-style balance-btn">1654</a></td>
+
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="" class="list-checkbox"/></td>
+                            <td>0012</td>
+                            <td>预定</td>
+                            <td>文凡</td>
+                            <!--<td>13222222222</td>-->
+                            <td>陈中</td>
+                            <td>13222222222</td>
+                            <td>陈中</td>
+                            <td>银卡</td>
+                            <td>双床</td>
+                            <td>2</td>
+                            <td >
+                                <a href="#" class="yellow-style avgPrice-btn">1654</a></td>
+                            <td>1500</td>
+                            <td>2017-11-27</td>
+                            <td>2017-11-28</td>
+                            <td>1</td>
+                            <td></td>
+                            <td>张三</td>
+                            <td >
+                                <a href="#" class="yellow-style balance-btn">1654</a></td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--每日均价弹框-->
+                <div class="layer-common modal-avg-price">
+                    <div class="modal-body">
+                                <table class=" table table-hover table-bordered ">
+                                    <thead>
+                                    <tr>
+                                        <th>周日</th>
+                                        <th>周一</th>
+                                        <th>周二</th>
+                                        <th>周三</th>
+                                        <th>周四</th>
+                                        <th>周五</th>
+                                        <th>周六</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <a class="date">8-12</a>
+                                            <a class="price">￥358</a>
+                                        </td>
+                                        <td>
+                                            <a class="date">8-12</a>
+                                            <a class="price">￥358</a>
+                                        </td>
+                                        <td>
+                                            <a class="date">8-12</a>
+                                            <a class="price">￥358</a>
+                                        </td>
+                                        <td>
+                                            <a class="date">8-12</a>
+                                            <a class="price">￥358</a>
+                                        </td>
+                                        <td>
+                                            <a class="date">8-12</a>
+                                            <a class="price">￥358</a>
+                                        </td>
+                                        <td>
+                                            <a class="date">8-12</a>
+                                            <a class="price">￥358</a>
+                                        </td>
+                                        <td>
+                                            <a class="date">8-12</a>
+                                            <a class="price">￥358</a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                </div>
+                <!--账户余额弹框-->
+                <div class="layer-common modal-balance-account">
+                    <div class="modal-body">
+                                <div class="modal-table">
+                                    <table class="table table-hover ">
+                                        <thead>
+                                        <tr>
+                                            <th>状态</th>
+                                            <th>类型</th>
+                                            <th>详情</th>
+                                            <th>产生日期</th>
+                                            <th>积分值</th>
+                                            <th>是否使用</th>
+                                            <th>有效期</th>
+                                            <th>备注</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>未使用</td>
+                                            <td>张三</td>
+                                            <td>男</td>
+                                            <td>2017-8-9</td>
+                                            <td>500</td>
+                                            <td>否</td>
+                                            <td>2017-12-8</td>
+                                            <td class="table-comments"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>未使用</td>
+                                            <td>张三</td>
+                                            <td>男</td>
+                                            <td>2017-8-9</td>
+                                            <td>500</td>
+                                            <td>否</td>
+                                            <td>2017-12-8</td>
+                                            <td class="table-comments"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>未使用</td>
+                                            <td>张三</td>
+                                            <td>男</td>
+                                            <td>2017-8-9</td>
+                                            <td>500</td>
+                                            <td>否</td>
+                                            <td>2017-12-8</td>
+                                            <td class="table-comments"></td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                </div>
+                <!--操作日志弹框-->
+                <div class="layer-common modal-log-operate">
+                    <div class="modal-body">
+                                <div class="modal-table">
+                                    <table class="table table-hover ">
+                                        <thead>
+                                        <tr>
+                                            <th>状态</th>
+                                            <th>类型</th>
+                                            <th>详情</th>
+                                            <th>产生日期</th>
+                                            <th>积分值</th>
+                                            <th>是否使用</th>
+                                            <th>有效期</th>
+                                            <th>备注</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>未使用</td>
+                                            <td>张三</td>
+                                            <td>男</td>
+                                            <td>2017-8-9</td>
+                                            <td>500</td>
+                                            <td>否</td>
+                                            <td>2017-12-8</td>
+                                            <td class="table-comments"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>未使用</td>
+                                            <td>张三</td>
+                                            <td>男</td>
+                                            <td>2017-8-9</td>
+                                            <td>500</td>
+                                            <td>否</td>
+                                            <td>2017-12-8</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>未使用</td>
+                                            <td>张三</td>
+                                            <td>男</td>
+                                            <td>2017-8-9</td>
+                                            <td>500</td>
+                                            <td>否</td>
+                                            <td>2017-12-8</td>
+                                            <td class="table-comments"></td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                </div>
+                <!--退款弹框-->
+                <div class="layer-common modal-refund-operate ">
+                    <div class="modal-body">
+                                <form action="" class="layui-form selector">
+                                    <div class="layui-form-item" pane="">
+                                        <label class="layui-form-label">可退款金额:</label>
+                                    </div>
+                                    <div class="layui-form-item" pane="">
+
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">在线支付</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" name=""  placeholder="请输入在线支付可退款金额" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">储值</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" name=""  placeholder="请输入储值可退款金额" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">积分</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" name=""  placeholder="请输入积分可退款金额" class="layui-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item" pane="">
+                                        <label class="layui-form-label">可退款操作</label>
+                                        <div class="layui-input-block clear-input">
+                                            <input type="checkbox" name="" lay-skin="primary" title="在线支付" checked="">
+                                            <input type="checkbox" name="" lay-skin="primary" title="储值">
+                                            <input type="checkbox" name="" lay-skin="primary" title="积分">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item" pane="">
+                                        <label class="layui-form-label">退款原因</label>
+                                        <div class="layui-input-block clear-input">
+                                            <input type="checkbox" name="" lay-skin="primary" title="不办会员卡" checked="">
+                                            <input type="checkbox" name="" lay-skin="primary" title="储值">
+                                            <input type="checkbox" name="" lay-skin="primary" title="其他">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-input-block btn-list ">
+                                            <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                                            <a href="javascript:void(0);" class="layui-btn cancel-common"  type="button" data-dismiss="modal" aria-label="Close">取消</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                </div>
+            </div>
+<script src="js/custom.js"></script>
+<script>
+    $('.avgPrice-btn').on('click',function () {
+        addLayer('均价','.modal-avg-price',700,300 );
+    });
+    $('.balance-btn').on('click',function () {
+        addLayer('退款','.modal-balance-account',700,300 );
+    });
+    $(".refund-btn").on('click',function () {
+      //  var modalRefund = $('.modal-refund-operate') ;
+        if(isDataSelected()){
+            //获取当前数据内容（ajax调后台）赋值;
+            addLayer('退款','.modal-refund-operate',800,389 );
+        }
+    });
+    $('.log-btn').on('click',function () {
+        if(isDataSelected()){
+            //获取当前数据内容赋值;
+            layerShow(' ','.modal-log-operate',700,300 );
+        }
+    });//查看操作日志
+</script>
+<script src="layui/layui_my.js"></script>
+<script>
+    //日期选择器
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#test1' //指定元素
+        });
+    });
+</script>
+</body>
+</html>

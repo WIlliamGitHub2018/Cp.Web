@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+</head>
+<body>
+<!--新建编辑框-->
+<div class=" layer-edit " >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input">
+            <ul class="nav nav-pills nav-list border-blue">
+                <li role="presentation" class="active"><a href="#order-base-info" data-toggle="tab">基本信息</a></li>
+                <!--<li role="presentation"><a href="#order-room-info" data-toggle="tab">房间信息</a></li>-->
+                <li role="presentation"><a href="#order-more-info" data-toggle="tab">更多内容</a></li>
+            </ul>
+            <div class="tab-content">
+                <section id="order-base-info" class="tab-pane fade active in">
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline ">
+                            <label class="layui-form-label"><em class="xing">*</em>酒店名称</label>
+                            <div class="layui-input-block option-box">
+                                <select name="modules" lay-verify="required" lay-search="">
+                                    <option value="">直接选择</option>
+                                    <option value="1">layer</option>
+                                    <option value="2">form</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">OTA渠道</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">携程</option>
+                                    <option value="1" selected="">百度</option>
+                                    <option value="2">美团</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">客人姓</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入姓" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn file-edit-btn">档案</label>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">客人名</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入名" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">中文姓名</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入中文姓名" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">会员类型</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">携程</option>
+                                    <option value="1" selected="">百度</option>
+                                    <option value="2">美团</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">会员号码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入会员号码" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">会员等级</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">携程</option>
+                                    <option value="1" selected="">百度</option>
+                                    <option value="2">美团</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">vip级别</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">携程</option>
+                                    <option value="1" selected="">百度</option>
+                                    <option value="2">美团</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">电话号码</label>
+                            <div class="layui-input-block">
+                                <input type="phone" name=""  placeholder="请输入手机号" class="layui-input" maxlength="11">
+                            </div>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">公司</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入姓" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn file-edit-btn">档案</label>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">旅行社</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入姓" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn file-edit-btn">档案</label>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label file-edit-btn">来源代码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn file-edit-btn">档案</label>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">团队</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入姓" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn file-edit-btn">档案</label>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">联系人</label>
+                            <div class="layui-input-block">
+                                <input type="phone" name=""  placeholder="请输入手机号" class="layui-input" maxlength="11">
+                            </div>
+                            <label class="label-layer-btn file-edit-btn">档案</label>
+                        </div>
+
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">语言</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">称谓</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">国家</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">省</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline ">
+                            <label class="layui-form-label"><em class="xing">*</em>PMS No</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">到店日期</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" id="date5" >
+                            </div>
+                        </div>
+                        <div class="layui-inline mini-inline">
+                            <label class="layui-form-label">晚数/房间数</label>
+                            <div class="layui-input-inline" >
+                                <input type="number" name=""  placeholder="1" class="layui-input" lay-verify="required" value="1">
+                            </div>
+                            <div class="layui-form-mid">-</div>
+                            <div class="layui-input-inline">
+                                <input type="number" name=""  placeholder="1" class="layui-input" lay-verify="required" value="1">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">预离日期</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" id="date6" >
+                            </div>
+                        </div>
+                        <div class="layui-inline mini-inline">
+                            <label class="layui-form-label">成人/小孩</label>
+                            <div class="layui-input-inline" >
+                                <input type="number" name=""  placeholder="1" class="layui-input" lay-verify="required" value="1">
+                            </div>
+                            <div class="layui-form-mid">-</div>
+                            <div class="layui-input-inline">
+                                <input type="number" name=""  placeholder="1" class="layui-input" lay-verify="required" value="1">
+                            </div>
+                        </div>
+                        <!--<div class="layui-inline">-->
+                            <!--<label class="layui-form-label"><em class="xing">*</em>成人</label>-->
+                            <!--<div class="layui-input-block">-->
+                                <!--<input type="number" name=""  placeholder="1" class="layui-input" lay-verify="required" value="1">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="layui-inline">-->
+                            <!--<label class="layui-form-label"><em class="xing">*</em>小孩</label>-->
+                            <!--<div class="layui-input-block">-->
+                                <!--<input type="number" name=""  placeholder="1" class="layui-input" lay-verify="required" value="1">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">房型</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">携程</option>
+                                    <option value="1" selected="">百度</option>
+                                    <option value="2">美团</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">价格代码</label>
+                            <div class="layui-input-block">
+                                <input type="phone" name=""  placeholder="请输入" class="layui-input" >
+                            </div>
+                            <label class="label-layer-btn price-query-btn">选择</label>
+                        </div>
+                        <div class="layui-inline  special-inline">
+                            <label class="layui-form-label">单价</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入名" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn price-per-btn">选择</label>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">预定类型</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn layer-code-btn">选择</label>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">市场代码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn layer-code-btn" >选择</label>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">来源代码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn layer-code-btn">选择</label>
+                        </div>
+
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">渠道代码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn layer-code-btn">选择</label>
+                        </div>
+
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">付款方式</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn layer-code-btn">选择</label>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">特殊要求</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn layer-code-btn">选择</label>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">房间特性</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn layer-code-btn">选择</label>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">包价</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn ">选择</label>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">折扣￥</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">理由</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">携程</option>
+                                    <option value="1" selected="">百度</option>
+                                    <option value="2">美团</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">订房人</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">订房会员</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">订房人电话</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">备注</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">订房人电话</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">销售人员</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">携程</option>
+                                    <option value="1" selected="">百度</option>
+                                    <option value="2">美团</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">销售人员</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn ">选择</label>
+                        </div>
+
+                    </div>
+                </section>
+                <section id="order-more-info" class="tab-pane fade ">
+                    <div class="airport-transfer">
+                        <div class="layui-form-item">
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">是否接机</label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="airport" value="" title="是" >
+                                    <input type="radio" name="airport" value="" title="否" checked="">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">接机车型</label>
+                                <div class="layui-input-block ">
+                                    <select name="modules" lay-verify="required" lay-search="">
+                                        <option value="">直接选择</option>
+                                        <option value="1">layer</option>
+                                        <option value="2">form</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">接机车牌号</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">接机航站楼</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">接机航班号</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">到站时间</label>
+                                <div class="layui-input-block">
+                                    <input type="text" class="layui-input" id="date1" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+
+                                <label class="layui-form-label">备注</label>
+                                <div class="layui-input-block">
+                                    <textarea placeholder="请输入内容" class="layui-textarea" name=""></textarea>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="drop-off">
+                        <div class="layui-form-item">
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">是否送机</label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="drop-off" value="" title="是" >
+                                    <input type="radio" name="drop-off" value="" title="否" checked="">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">送机车型</label>
+                                <div class="layui-input-block ">
+                                    <select name="modules" lay-verify="required" lay-search="">
+                                        <option value="">直接选择</option>
+                                        <option value="1">layer</option>
+                                        <option value="2">form</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">送机车牌号</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">送机航站楼</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">送机航班号</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">起飞时间</label>
+                                <div class="layui-input-block">
+                                    <input type="text" class="layui-input" id="date2" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+
+                            <label class="layui-form-label">备注</label>
+                            <div class="layui-input-block">
+                                <textarea placeholder="请输入内容" class="layui-textarea" name=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="layui-form-item">
+                    <div class="layui-input-block btn-list ">
+                        <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script src="layui/layui_my.js"></script>
+<script>
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //执行一个laydate实例
+
+        laydate.render({
+            elem: '#date5'
+        });
+        laydate.render({
+            elem: '#date6'
+        });
+        laydate.render({
+            elem: '#date7'
+        });
+        laydate.render({
+            elem: '#date8'
+        });
+
+    });
+</script>
+</html>

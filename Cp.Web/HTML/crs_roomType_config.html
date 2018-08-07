@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+    <aside class="sidebar active">
+    </aside>
+    <div class="main-body">
+        <!-- <iframe src="de.html" width="100%" height="100%"></iframe>	 -->
+        <div class="route">
+            <h3 class="">房型配置</h3>
+            <span>当前位置：<a href="">CRS>房型配置</a></span>
+        </div>
+
+        <div class="content-body ">
+            <div class="list-info-section ">
+                <div class="sec-filter border-blue">
+                    <form class="layui-form selector " >
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">房型大类</label>
+                                <div class="layui-input-block">
+                                    <select name="" lay-filter="">
+                                        <option value=""></option>
+                                        <option value="0">假房</option>
+                                        <option value="1">普通</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">房价代码</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block btn-list">
+                                <button type="submit" class="layui-btn ">查询</button>
+                                <input type="reset" class="layui-btn " value="重置">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="switch-div">
+                    <a  class=" search-switch">收起查询 <i class="fa fa-angle-up"></i></a>
+                </div>
+            </div>
+            <div class="list-info-section ">
+                <h4 class="sec-title">
+                    <b>房型列表</b>
+                    <div class="operate-btns">
+                        <a href="javascript:;" class="operate-btn insert-op">新增</a>
+                        <a href="javascript:;" class="operate-btn edit-op ">编辑</a>
+                        <a href="javascript:;" class="operate-btn delete-op ">删除</a>
+                        <a href="javascript:;" class="operate-btn -btn ">激活</a>
+                        <a href="javascript:;" class="operate-btn -btn ">禁用</a>
+                        <!-- <a href="javascript:;" class="operate-btn log-btn ">操作日志</a> -->
+                    </div>
+                </h4>
+                <div class="sec-item1">
+                    <table class="layui-table" lay-filter="main-table" id="main-table">  
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--房型新建弹框-->
+<div class="layer-common layer-edit">
+    <div class="modal-body">
+        <form action="" class="layui-form selector">
+           
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label"><em class="xing">*</em>房型代码</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="" placeholder="请输入" class="layui-input" lay-verify="required">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label"><em class="xing">*</em>房间大类</label>
+                    <div class="layui-input-block">
+                        <select name="" lay-filter="" lay-verify="required">
+                            <option value=""></option>
+                            <option value="0">酒店</option>
+                            <option value="1">假房</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">短描述</label>
+                <div class="layui-input-block">
+                    <input type="text" name="" lay-verify="required" placeholder="请输入" class="layui-input" >
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">长描述</label>
+                <div class="layui-input-block">
+                  <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">是否假房</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="service_type" value="" title="是" checked="">
+                        <input type="radio" name="service_type" value="" title="否">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                   <label class="layui-form-label">房间总数</label>
+                    <div class="layui-input-block">
+                        <input type="number" name="" lay-verify="required" placeholder="" class="layui-input" >
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label"><em class="xing">*</em>房间特点</label>
+                    <div class="layui-input-block">
+                        <select name="" lay-filter="" lay-verify="required">
+                            <option value=""></option>
+                            <option value="0">东面 East</option>
+                            <option value="1">西面 West</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label"><em class="xing">*</em>特殊需求</label>
+                    <div class="layui-input-block">
+                        <select name="" lay-filter="" lay-verify="required">
+                            <option value=""></option>
+                            <option value="0">Fruits-Luxurious 特等水果</option>
+                            <option value="1">Fruits-Small 普通水果</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label"><em class="xing">*</em>楼层</label>
+                    <div class="layui-input-block">
+                        <select name="" lay-filter="" lay-verify="required">
+                            <option value=""></option>
+                            <option value="0">24 Floor</option>
+                            <option value="1">22 Floor</option>
+                        </select>
+                    </div>
+                </div>
+                 <div class="layui-inline">
+                   <label class="layui-form-label">排序</label>
+                    <div class="layui-input-block">
+                        <input type="number" name="" lay-verify="required" placeholder="" class="layui-input" >
+                    </div>
+                </div>
+            </div>
+           
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script src="layui/layui_my.js"></script>
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+        table.render({
+            elem: '#main-table'
+           
+            // ,url:'json/table/demo1.json'
+            ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            ,cols: [[
+                {type:'checkbox', fixed: 'left'}
+                ,{field:'room_type', title: '房型', sort: true, fixed: 'left'}
+                ,{field:'room_class', title: '房型大类', sort: true}
+                ,{field:'short_description',title: '详细描述'}
+                ,{field:'room_feature', title: '房间特点', sort: true}
+                ,{field:'number_rooms', title: '房间总数', sort: true}
+                ,{field:'room_need', title: '特殊需求', sort: true}
+                ,{field:'floor', title: '楼层', sort: true}
+                ,{field:'order_by', title: '排序', sort: true}
+                ,{field:'active_yn', title: '激活标记', sort: true}
+            ]]
+            ,data: [{
+                "id": "10001"
+                ,"username": "杜甫"
+                ,"sex": "男"
+                ,"city": "浙江杭州"
+                ,"sign": "人生恰似一场修行"
+                ,"experience": "116"
+                ,"score": "108"
+
+            }, {
+                "id": "10002"
+                ,"username": "李白"
+                ,"email": "xianxin@layui.com"
+                ,"sex": "男"
+                ,"city": "浙江杭州"
+                ,"sign": "人生恰似一场修行"
+                ,"experience": "12"
+                ,"score": "108"
+            }, {
+                "id": "10005"
+                ,"username": "贤心"
+                ,"email": "xianxin@layui.com"
+                ,"sex": "男"
+                ,"city": "浙江杭州"
+                ,"sign": "人生恰似一场修行"
+                ,"experience": "86"
+                ,"score": "108"
+            }, {
+                "id": "10007"
+                ,"username": "贤心"
+                ,"email": "xianxin@layui.com"
+                ,"sex": "男"
+                ,"city": "浙江杭州"
+                ,"sign": "人生恰似一场修行"
+                ,"experience": "16"
+                ,"score": "108"
+            }]
+            ,page: true
+           
+        });
+        
+        //编辑操作
+        $('.edit-op').on('click',function () {
+            var checkStatus = table.checkStatus('main-table'),data = checkStatus.data;
+            //alert(checkStatus.data.length)
+            //layer.alert(JSON.stringify(data));
+            if( checkStatus.data.length !=0 ){
+                layerShow('编辑房型','.layer-edit',750,300 );
+            }else{
+                layer.msg('请选中一条数据！');
+            }
+           
+        });
+        //删除操作
+        $('.delete-op').on('click',function () {
+            var checkStatus = table.checkStatus('main-table'),data = checkStatus.data;
+            if( checkStatus.data.length !=0 ){
+                layer.confirm("确认删除吗？");
+            }else{
+                layer.msg('请选中一条数据！');
+            }
+        });
+    });
+    $('.insert-op').on('click',function () {
+        addLayer('新建房型','.layer-edit',750,300 );
+    });
+    
+  
+  
+  
+</script>
+</html>
