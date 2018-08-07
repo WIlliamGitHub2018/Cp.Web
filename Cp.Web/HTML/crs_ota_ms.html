@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+    <aside class="sidebar active">
+    </aside>
+    <div class="main-body">
+        <div class="route">
+            <h3 class="">渠道查询管理</h3>
+            <span>当前位置：<a href="">CRS>渠道查询管理</a></span>
+        </div>
+        <div class="content-body">
+            <div class="list-info-section border-blue">
+                <div class="sec-filter">
+                    <form class="layui-form selector " >
+                        <div class="layui-form-item">
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">酒店名称</label>
+                                <div class="layui-input-block ">
+                                    <select name="modules" lay-verify="required" lay-search="">
+                                        <option value="">直接选择</option>
+                                        <option value="1">layer</option>
+                                        <option value="2">form</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">渠道代码</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="orderNum"  placeholder="请输入渠道代码" class="layui-input">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block btn-list">
+                                <button type="submit" class="layui-btn ">查询</button>
+                                <input type="reset" class="layui-btn " value="重置">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- <div id="layerDemo"><button data-method="confirmTrans" class="layui-btn">配置一个透明的询问框</button></div> -->
+
+
+            </div>
+            <div class="list-info-section ">
+                <h4 class="sec-title">
+                    <b>渠道列表</b>
+                    <div class="operate-btns">
+                        <a href="javascript:;" class="operate-btn insert-btn">新建</a>
+                        <a href="javascript:;" class="operate-btn edit-btn">编辑</a>
+                        <a href="javascript:;" class="operate-btn delete-btn">删除</a>
+                    </div>
+                </h4>
+                <div class="sec-item1">
+                    <table class="table table-hover table-bordered ">
+                        <thead>
+                        <tr>
+                            <th><input type="checkbox" name="" class="all-checkbox"></th>
+                            <th>渠道代码</th>
+                            <th>描述</th>
+                            <th>联系人</th>
+                            <th>电话</th>
+                            <th>邮箱</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><input type="checkbox" name="" class="list-checkbox"></td>
+                            <td>web</td>
+                            <td>官网</td>
+                            <td>张三</td>
+                            <td>15222222222</td>
+                            <td>123@qq.cpm</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="" class="list-checkbox"></td>
+                            <td>h5</td>
+                            <td>移动官网</td>
+                            <td>李四</td>
+                            <td>13222222222</td>
+                            <td>456@qq.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="" class="list-checkbox"></td>
+                            <td>mt</td>
+                            <td>美团</td>
+                            <td>王五</td>
+                            <td>15444444444</td>
+                            <td>789@qq.com</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="layer-common  layer-add-all ">
+                     <div class="modal-body">
+                                <form action="" class="layui-form selector">
+                                    <div class="layui-form-item" pane="">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label"><em class="xing">*</em>渠道代码</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" name=""  placeholder="请输入渠道代码" class="layui-input" lay-verify="required">
+                                            </div>
+                                        </div>
+
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label"><em class="xing">*</em>渠道密码</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" name=""  placeholder="请输入渠道密码" class="layui-input" lay-verify="required">
+                                            </div>
+                                        </div>
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label"><em class="xing">*</em>联系人</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" name=""  placeholder="请输入联系人" class="layui-input" lay-verify="required">
+                                            </div>
+                                        </div>
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label"><em class="xing">*</em>电话</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" name=""  placeholder="请输入电话" class="layui-input" lay-verify="required">
+                                            </div>
+                                        </div>
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label"><em class="xing">*</em>传真</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" name=""  placeholder="请输入传真" class="layui-input" lay-verify="required">
+                                            </div>
+                                        </div>
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label"><em class="xing">*</em>邮箱</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" name=""  placeholder="请输入邮箱" class="layui-input" lay-verify="required">
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="layui-form-item" pane="">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label"><em class="xing">*</em>渠道描述</label>
+                                            <div class="layui-input-block">
+                                                <textarea placeholder="请输入内容" class="layui-textarea" name="" lay-verify="required"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-input-block btn-list ">
+                                            <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    $('.insert-btn').on('click',function () {
+        addLayer('新建订单','.layer-add-all',800,430 );
+    });
+    $('.edit-btn').on('click',function () {
+        editLayer('编辑订单','.layer-add-all',800,430 );
+    });
+</script>
+<script src="layui/layui_my.js"></script>
+</html>

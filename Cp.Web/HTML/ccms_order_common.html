@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="layui/layui_my.js"></script>
+    <script src="js/yangyan.js"></script>
+</head>
+<body>
+
+    <div class="common-ms">
+        <div class="common_left">
+                    <div class="list-info-section">
+                        <h4 class="sec-title">
+                            <b>来电信息</b>
+                        </h4>
+                        <div class="sec-item1">
+                            <form action="" class="layui-form selector">
+                                <div class="layui-form-item col-2">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">来电号码</label>
+                                        <div class="layui-input-block">
+                                            <input type="phone" name="" lay-verify="required" placeholder="请输入手机号" class="layui-input" maxlength="11">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline ">
+                                        <div class="btn-list">
+                                            <button type="submit" onclick="return false;" class="layui-btn">通话记录查询</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="recipient-info">
+                                    <li><span>上次来电时间</span></li>
+                                    <li><span>2017-11-27 15:39</span></li>
+                                    <li><span>技能组</span></li>
+                                    <li><span>张三</span></li>
+                                    <div class="clearfix"></div>
+
+                                </ul>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="list-info-section">
+                        <h4 class="sec-title">
+                            <b>会员信息</b>
+                        </h4>
+                        <div class="sec-item1">
+                            <form action="" class="layui-form selector">
+                                <div class="layui-form-item col-2">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">会员查询</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name=""  placeholder="身份证/手机号/邮箱/姓名" class="layui-input" disabled value="15212344567">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <div class=" btn-list">
+                                            <button type="submit" onclick="return false;" class="layui-btn">查询</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="layui-form-item member_info col-2" >
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">姓名</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name=""  placeholder="姓名" class="layui-input" disabled value="王晓红">
+                                            <!--<label class="layui-form-label">王晓红</label>-->
+
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">性别</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name=""  placeholder="先生/女士" class="layui-input" disabled value="女士">
+                                            <!--<label class="layui-form-label">女士</label>-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item member_info col-2" >
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">手机号</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name=""  placeholder="会员手机号" class="layui-input" disabled value="15412567845">
+                                            <!--<label class="layui-form-label">15412567845</label>-->
+
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">会员级别</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name=""  placeholder="会员级别" class="layui-input" disabled value="钻石会员">
+                                            <!--<label class="layui-form-label">钻石会员</label>-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item member_info col-2" >
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">积分余额</label>
+                                        <div class="layui-input-block btn-list">
+                                            <button type="submit" onclick="return false;" class="layui-btn points-btn">单击展示明细</button>
+                                        </div>
+
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">储值余额</label>
+                                        <div class="layui-input-block btn-list">
+                                            <button type="submit" onclick="return false;" class="layui-btn stored-btn">单击展示明细</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="list-info-section">
+                        <h4 class="sec-title">
+                            <b>用户行为</b>
+                        </h4>
+                        <div class="sec-item1">
+                            <table class="table table-hover table-bordered table-banner-config">
+                                <thead>
+                                <tr>
+                                    <th>订单状态</th>
+                                    <th>入住日期</th>
+                                    <th>天数</th>
+                                    <th>酒店店名</th>
+                                    <th>房型</th>
+                                    <th>房间数</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>已完成</td>
+                                    <td>1500</td>
+                                    <td>2</td>
+                                    <td>99旅馆</td>
+                                    <td>豪华大床</td>
+                                    <td>1</td>
+                                    <td><a href="javascript:;" class="mes_order_btn ">发送信息</a></td>
+                                </tr>
+                                <tr>
+                                    <td>已完成</td>
+                                    <td>1500</td>
+                                    <td>2</td>
+                                    <td>99旅馆</td>
+                                    <td>豪华大床</td>
+                                    <td>1</td>
+                                    <td><a href="javascript:;" class="mes_order_btn ">发送信息</a></td>
+                                </tr>
+                                <tr>
+                                    <td>已完成</td>
+                                    <td>1500</td>
+                                    <td>2</td>
+                                    <td>99旅馆</td>
+                                    <td>豪华大床</td>
+                                    <td>1</td>
+                                    <td><a href="javascript:;" class="mes_order_btn ">发送信息</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="list-info-section hotel-search-sec">
+                        <h4 class="sec-title">
+                            <b>酒店查询</b>
+                        </h4>
+                        <div class="sec-item1 ">
+                            <form action="" class="layui-form  selector">
+
+                                <div class="layui-form-item hotel_search col-2">
+                                    <div class="layui-inline select-province">
+                                        <label class="layui-form-label">省份</label>
+                                        <div class="layui-input-block">
+                                            <select name="modules" lay-verify="required" lay-search="">
+                                                <option value="">直接选择</option>
+                                                <option value="1">layer</option>
+                                                <option value="2">form</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline select-city">
+                                        <label class="layui-form-label">城市</label>
+                                        <div class="layui-input-block">
+                                            <select name="modules" lay-verify="required" lay-search="">
+                                                <option value=""></option>
+                                                <option value="1">layer</option>
+                                                <option value="2">form</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item hotel_search col-2">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">入住日期</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name=""  placeholder="省份" class="layui-input" id="date">
+                                            <!--<label class="layui-form-label">女士</label>-->
+
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">离店日期</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name=""  placeholder="城市" class="layui-input" id="date1">
+                                            <!--<label class="layui-form-label">王晓红</label>-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item hotel_search col-2">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">入住天数</label>
+                                        <div class="layui-input-block">
+                                            <input type="number" name=""  placeholder="1" class="layui-input" >
+                                            <!--<label class="layui-form-label">女士</label>-->
+
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">地理位置</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name=""  placeholder="省份" class="layui-input">
+                                            <!--<label class="layui-form-label">女士</label>-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item ">
+                                    <div class="layui-inline ">
+                                        <label class="layui-form-label">酒店名称</label>
+                                        <div class="layui-input-block option-box">
+                                            <select name="modules" lay-verify="required" lay-search="">
+                                                <option value="">直接选择</option>
+                                                <option value="1">layer</option>
+                                                <option value="2">form</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block btn-list">
+                                        <button type="submit" class="layui-btn ">查询</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="list-info-section">
+                        <h5 class="sec-title">
+                            <b>地理位置查询列表</b>
+                        </h5>
+                        <div class="sec-item1 posi_list">
+                            <table class="table table-hover table-bordered table-banner-config posi_info">
+
+                                <tbody>
+                                <tr>
+                                    <td><a href="javascript:;" class="room_order_btn ">满房</a></td>
+                                    <td>0.5km</td>
+                                    <td>99旅馆</td>
+
+                                </tr>
+                                <tr>
+                                    <td><p> </p></td>
+                                    <td>0.4km</td>
+                                    <td>99旅馆</td>
+                                </tr>
+                                <tr>
+                                    <td><p></p></td>
+                                    <td>0.65km</td>
+                                    <td>99旅馆</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        <div class="common_float">
+            <div class="float_img"> <i class="fa fa-angle-double-left"></i></div>
+        </div>
+        <div class="common_right">
+                    <div class="list-info-section">
+                        <h4 class="sec-title">
+                            <b>酒店筛选</b>
+                        </h4>
+                        <div class="sec-item1">
+                            <div class="choose_border">
+                                <span class="choose_title"><b>品牌：</b></span>
+                                <p class="choose_con">全部</p>
+                                <p class="choose_con">99旅馆</p>
+                                <p class="choose_con">99优选</p>
+                                <p class="choose_con">99新标</p>
+                                <p class="choose_con">艾陌公寓</p>
+                                <div class="clearfloat"></div>
+                            </div>
+                            <div class="choose_border">
+                                <span class="choose_title"><b>床位：</b></span>
+                                <p class="choose_con">全部</p>
+                                <p class="choose_con">一张床</p>
+                                <p class="choose_con">两张床</p>
+                                <p class="choose_con">三张床</p>
+                                <p class="choose_con">>三张床</p>
+                                <div class="clearfloat"></div>
+                            </div>
+                            <div class="choose_border">
+                                <span class="choose_title"><b>最低价区间：</b></span>
+                                <p class="choose_con">全部</p>
+                                <p class="choose_con input_choose"><input type="text" placeholder="0"></p>
+                                <p class="choose_con input_choose input-lj">——</p>
+                                <p class="choose_con input_choose"><input type="text" placeholder="0"></p>
+                                <div class="clearfloat"></div>
+                            </div>
+                            <div class="choose_border">
+                                <span class="choose_title"><b>窗户情况：</b></span>
+                                <p class="choose_con">外窗</p>
+                                <p class="choose_con">走道窗</p>
+                                <p class="choose_con">无窗</p>
+                                <p class="choose_con">落地窗</p>
+                                <p class="choose_con">天窗</p>
+                                <div class="clearfloat"></div>
+                            </div>
+                            <div class="choose_border">
+                                <button onclick="return false;" class="layui-btn choose_btn"  type="button">筛选</button>
+                            </div>
+                            <div class="clearfloat"></div>
+                        </div>
+                    </div>
+                    <div class="list-info-section">
+                        <div class="sec-item1">
+                            <div class="hotel_bigbox">
+                                <div class="hotel_mes_box">
+                                    <b class="hotel_mes hotel_name">99优选重庆火车北站酒店</b>
+                                    <b class="hotel_mes hotel_score">评分：<span class="hotel_score_con">3.5分</span></b>
+                                    <b class="hotel_mes hotel_tel">电话：<span class="hotel_tel_con">023-63015988</span></b>
+                                    <b class="hotel_mes hotel_add">地址：<span class="hotel_add_con">重庆市渝北区泰山大道东段98号附9号</span></b>
+                                    <button href="javascript:;" class="mes_order_btn">发送信息</button>
+                                </div>
+                                <div class="hotel_notice">
+                                    <p class="hotel_notice_title">酒店公告:</p>
+                                    <div class="hotel_notice_con_box">
+                                        <p class="hotel_notice_con">门店网络故障，开始日期2017-10-14，预计恢复日期2017-10-20</p>
+                                        <p class="hotel_notice_con">更新供水管道 停水，开始日期2017-10-14，预计恢复日期2017-10-20</p>
+                                    </div>
+
+                                </div>
+                                <table class="table table-hover table-bordered table-banner-config">
+                                    <thead>
+                                    <tr>
+                                        <th>房型</th>
+                                        <th>房型描述</th>
+                                        <th>门市价</th>
+                                        <th>银卡</th>
+                                        <th>金卡</th>
+                                        <th>钻石卡</th>
+                                        <th>可订数</th>
+                                        <th>预定间数</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>豪华大床</td>
+                                        <td>外窗，床宽1.35m</td>
+                                        <td>1500</td>
+                                        <td>980</td>
+                                        <td>860</td>
+                                        <td>740</td>
+                                        <td class="order_room_num">8</td>
+                                        <td><div class="order_common_box">
+                                            <span class="order_count count_down">-</span>
+                                            <input type="text" placeholder="0" class="input_box" disabled value="0">
+                                            <span class="order_count count_up">+</span>
+                                            <div class="clearfloat"></div>
+                                        </div></td>
+                                        <!--<td><button onclick="return false;"  class="room_order_btn common_order">预定</button></td>-->
+                                    </tr>
+                                    <tr>
+                                        <td>豪华大床B</td>
+                                        <td>外窗，床宽1.35m</td>
+                                        <td>1500</td>
+                                        <td>980</td>
+                                        <td>860</td>
+                                        <td>740</td>
+                                        <td class="order_room_num">3</td>
+                                        <td><div class="order_common_box">
+                                            <span class="order_count count_down">-</span>
+                                            <input type="text" placeholder="0" class="input_box" disabled value="0">
+                                            <span class="order_count count_up">+</span>
+                                            <div class="clearfloat"></div>
+                                        </div></td>
+                                        <!--<td><button onclick="return false;"  class="room_order_btn common_order">预定</button></td>-->
+                                    </tr>
+                                    <tr>
+                                        <td>双床房</td>
+                                        <td>外窗，床宽1.35m</td>
+                                        <td>1500</td>
+                                        <td>980</td>
+                                        <td>860</td>
+                                        <td>740</td>
+                                        <td class="order_room_num">5</td>
+                                        <td><div class="order_common_box">
+                                            <span class="order_count count_down">-</span>
+                                            <input type="text" placeholder="0" class="input_box" disabled value="0">
+                                            <span class="order_count count_up">+</span>
+                                            <div class="clearfloat"></div>
+                                        </div></td>
+                                        <!--<td><button onclick="return false;" class="room_order_btn common_order">预定</button></td>-->
+                                    </tr>
+                                    </tbody>
+                                    <tbody class="table_buttons"><tr>
+                                        <td colspan="8"><button onclick="return false;"  class="room_order_btn common_order">预定</button></td>
+                                    </tr></tbody>
+                                </table>
+                            </div>
+                            <div class="hotel_bigbox">
+                                <div class="hotel_mes_box">
+                                    <b class="hotel_mes hotel_name">99旅馆天津之眼</b>
+                                    <b class="hotel_mes hotel_score">评分：<span class="hotel_score_con">3.5分</span></b>
+                                    <b class="hotel_mes hotel_tel">电话：<span class="hotel_tel_con">023-63015988</span></b>
+                                    <b class="hotel_mes hotel_add">地址：<span class="hotel_add_con">重庆市渝北区泰山大道东段98号附9号</span></b>
+                                    <button class="mes_order_btn">发送信息</button>
+                                </div>
+                                <div class="hotel_notice">
+                                    <p class="hotel_notice_title">酒店公告:</p>
+                                    <div class="hotel_notice_con_box">
+                                        <p class="hotel_notice_con">门店网络故障，开始日期2017-10-14，预计恢复日期2017-10-20</p>
+                                        <p class="hotel_notice_con">更新供水管道 停水，开始日期2017-10-14，预计恢复日期2017-10-20</p>
+                                    </div>
+
+                                </div>
+                                <table class="table table-hover table-bordered table-banner-config">
+                                    <thead>
+                                    <tr>
+                                        <th>房型</th>
+                                        <th>房型描述</th>
+                                        <th>门市价</th>
+                                        <th>银卡</th>
+                                        <th>金卡</th>
+                                        <th>钻石卡</th>
+                                        <th>可订数</th>
+                                        <th>预定间数</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>豪华大床</td>
+                                        <td>外窗，床宽1.35m</td>
+                                        <td>1500</td>
+                                        <td>980</td>
+                                        <td>860</td>
+                                        <td>740</td>
+                                        <td class="order_room_num">2</td>
+                                        <td><div class="order_common_box">
+                                            <span class="order_count count_down">-</span>
+                                            <input type="text" placeholder="0" class="input_box" disabled value="0">
+                                            <span class="order_count count_up">+</span>
+                                            <div class="clearfloat"></div>
+                                        </div></td>
+                                        <!--<td><button onclick="return false;"  class="room_order_btn common_order">预定</button></td>-->
+                                    </tr>
+                                    <tr>
+                                        <td>豪华大床B</td>
+                                        <td>外窗，床宽1.35m</td>
+                                        <td>1500</td>
+                                        <td>980</td>
+                                        <td>860</td>
+                                        <td>740</td>
+                                        <td class="order_room_num">6</td>
+                                        <td><div class="order_common_box">
+                                            <span class="order_count count_down">-</span>
+                                            <input type="text" placeholder="0" class="input_box" disabled value="0">
+                                            <span class="order_count count_up">+</span>
+                                            <div class="clearfloat"></div>
+                                        </div></td>
+                                        <!--<td><button onclick="return false;"  class="room_order_btn common_order">预定</button></td>-->
+                                    </tr>
+                                    <tr>
+                                        <td>双床房</td>
+                                        <td>外窗，床宽1.35m</td>
+                                        <td>1500</td>
+                                        <td>980</td>
+                                        <td>860</td>
+                                        <td>740</td>
+                                        <td class="order_room_num">1</td>
+                                        <td><div class="order_common_box">
+                                            <span class="order_count count_down">-</span>
+                                            <input type="text" placeholder="0" class="input_box" disabled value="0">
+                                            <span class="order_count count_up">+</span>
+                                            <div class="clearfloat"></div>
+                                        </div></td>
+                                        <!--<td><button onclick="return false;" class="room_order_btn common_order">预定</button></td>-->
+                                    </tr>
+                                    </tbody>
+                                    <tbody class="table_buttons"><tr>
+                                        <td colspan="8"><button onclick="return false;"  class="room_order_btn common_order">预定</button></td>
+                                    </tr></tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <div class="clearfloat"></div>
+    </div>
+    <!--预定订单弹框-->
+    <div class="layer-common  modal-order-mes">
+        <div class="modal-body">
+                    <div class="modal-table modal-table-order">
+                        <div class="common_passger_box">
+                            <div class="list-info-section">
+                            <form action="" class="layui-form selector common_passger">
+                                <div class="common_info_bigbox order_common_mes">
+                                    <h4 class="sec-title">
+                                        <b>填写入住人信息</b>
+                                    </h4>
+                                    <div class="common_passger_info">
+                                        <div class="layui-form-item">
+                                            <div class="user_box">
+                                                <div class="layui-inline">
+                                                    <label class="layui-form-label">入住人全名</label><div class="layui-input-block"><input type="text" name=""  placeholder="请输入姓名" class="layui-input"></div>
+                                                    <!--<button type="submit" onclick="return false;" class="layui-btn">查询</button>-->
+                                                </div>
+                                                <div class="layui-inline">
+                                                    <label class="layui-form-label">联系手机</label>
+                                                    <div class="layui-input-block"><input type="text" name=""  placeholder="请输入手机号" class="layui-input">
+                                                    </div>
+                                                </div>
+                                                <div class="layui-inline">
+                                                    <label class="layui-form-label">邮箱</label>
+                                                    <div class="layui-input-block"><input type="text" name=""  placeholder="请输入邮箱" class="layui-input">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="layui-inline">
+                                                <div class="layui-input-block add_common_user">
+                                                    <p class="layui-input add_user">增加入住人</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="common_info">
+                                            <h4 class="sec-title">
+                                                <b>特殊要求（必须向客户强调“尽量”满足）</b>
+                                            </h4>
+                                            <div class="common_passger_info">
+                                                <div class="layui-form-item">
+                                                    <div class="request_count">
+                                                        <div href="javascript:;" class="common_request">安静</div>
+                                                        <div href="javascript:;" class="common_request">有窗</div>
+                                                        <div href="javascript:;" class="common_request">干净</div>
+                                                        <div href="javascript:;" class="common_request">早到</div>
+                                                        <div href="javascript:;" class="common_request">晚到</div>
+                                                        <div href="javascript:;" class="common_request">靠一起</div>
+                                                        <div href="javascript:;" class="common_request">外窗</div>
+                                                        <div href="javascript:;" class="common_request">高楼层</div>
+                                                        <div href="javascript:;" class="common_request">无烟房</div>
+                                                    </div>
+                                                    <input type="text" placeholder="尽量" class="requeat_input" value="尽量">
+                                                    <div class="clearfloat"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="common_info">
+                                            <h4 class="sec-title">
+                                                <b>优惠券</b>
+                                            </h4>
+                                            <div class="layui-form-item">
+                                                <input type="text" placeholder="请输入优惠券对应的编号/优惠码" class="coupon_input">
+                                                <div class="clearfloat"></div>
+                                            </div>
+                                        </div>
+                                        <div class="common_info">
+                                            <h4 class="sec-title">
+                                                <b>储值支付</b>
+                                            </h4>
+                                            <div class="layui-form-item">
+                                                <div class="layui-form-item">
+                                                    <div class="money_info">
+                                                        <p class="money_title">余额</p>
+                                                        <input type="text" class="money_input">
+                                                        <div class="clearfloat"></div>
+                                                    </div>
+                                                    <div class="money_info">
+                                                        <p class="money_title">本次使用</p>
+                                                        <input type="text" class="money_user">
+                                                        <p class="money_title money_end">元</p>
+                                                        <div class="clearfloat"></div>
+                                                    </div>
+                                                    <div class="money_info">
+                                                        <a href="javascript:;" class="mes_order_btn send_mes">发送信息</a>
+                                                        <p class="money_title money_end">短信验证码</p>
+                                                        <input type="text" class="send_user" placeholder="使用储值必须填写">
+                                                    </div>
+                                                    <div class="clearfloat"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <div class="layui-input-block btn-list button_list">
+                                                <button onclick="return false;" class="layui-btn mes_sure" type="submit">确认</button>
+                                                <button onclick="return false;" class="layui-btn mes_cancel"  type="button" data-dismiss="modal" aria-label="Close">取消</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="common_info_bigbox order_common_sure">
+                                    <h4 class="sec-title">
+                                        <b>订单复述核对</b>
+                                    </h4>
+                                    <div class="common_passger_info">
+                                        <div class="order_mes">
+                                            <div class="order_mes_part order_sure_part"><p class="order_mes_title">酒店公告：</p><span class="order_mes_con">门店网络故障，开始日期2017-10-14，预计恢复日期2017-10-20</span> </div>
+                                            <div class="order_mes_part order_sure_part"><p class="order_mes_title">预定门店：</p><span class="order_mes_con">99优选天津之眼酒店</span> </div>
+                                            <div class="order_mes_part order_sure_part"><div class="order_mes_part"><p class="order_mes_title">入住日期：</p><span class="order_mes_con">2017-12-10</span></div>  <div class="order_mes_part"><p class="order_mes_title">入住天数：</p><span class="order_mes_con">3</span></div> </div>
+                                            <div class="order_mes_part order_sure_part"><div class="order_mes_part"><p class="order_mes_title">预定房型：</p><span class="order_mes_con">大床A</span></div>  <div class="order_mes_part"><p class="order_mes_title">订房数量：</p><span class="order_mes_con">3</span></div> </div>
+                                            <div class="order_mes_part order_sure_part"><div class="order_mes_part"><p class="order_mes_title">平均房价：</p><span class="order_mes_con">1000</span></div>  <div class="order_mes_part"><p class="order_mes_title">合计房费：</p><span class="order_mes_con">3000</span></div><div class="order_mes_part"><p class="order_mes_title">优惠金额：</p><span class="order_mes_con">150</span></div>  <div class="order_mes_part"><p class="order_mes_title">储值支付：</p><span class="order_mes_con">0</span></div>  </div>
+                                            <div class="order_mes_part order_sure_part"><div class="order_mes_part"><p class="order_mes_title">最晚保留至：</p><span class="order_mes_con">2017-12-08 20:00</span></div> </div>
+                                            <div class="order_mes_part order_sure_part"><div class="order_mes_part"><p class="order_mes_title">特殊要求：</p><span class="order_mes_con">尽量安静，有窗</span></div>   </div>
+                                            <div class="order_mes_part order_sure_part"><div class="order_mes_part"><p class="order_mes_title">入住人：</p><span class="order_mes_con">zhangsan</span></div> <div class="order_mes_part"><p class="order_mes_title">联系电话：</p><span class="order_mes_con">13256564545</span></div><div class="order_mes_part"><p class="order_mes_title">邮箱：</p><span class="order_mes_con">123@qq.com</span></div></div>
+                                            <div class="order_mes_part order_sure_part">
+                                                <label class="layui-form-label order_mes_title">将通过：</label>
+                                                <!--<p class="order_mes_title">将通过：</p>-->
+                                                <div class="layui-input-block clear-input radio-input">
+                                                <input type="radio" name="method" lay-skin="primary" title="短信" checked="">
+                                                <input type="radio" name="method" lay-skin="primary" title="邮箱">
+                                                <input type="radio" name="method" lay-skin="primary" title="短信/邮箱" >
+                                                </div>
+                                                <p class="order_mes_title mes_end">通知客户</p> </div>
+                                            <div class="layui-form-item">
+                                                <div class="layui-input-block btn-list button_list">
+                                                    <button class="layui-btn order_sure_button" type="submit">提交</button>
+                                                    <button class="layui-btn return_button"  type="button">返回上一步</button>
+                                                    <button class="layui-btn cancel_button"  type="button" >取消</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+    </div>
+    <!--积分余额弹框-->
+    <div class="layer-common modal-points-detail">
+        <div class="modal-body">
+            <ul class="nav nav-pills nav-list border-blue">
+                <li role="presentation" class="active"><a href="#points_detail" data-toggle="tab">积分明细</a></li>
+                <li role="presentation"><a href="#points_adjustment" data-toggle="tab">积分调整</a></li>
+            </ul>
+            <div class="tab-content">
+                <section id="points_detail" class="tab-pane fade active in">
+                    <div class="modal-table">
+                        <table class="table table-hover ">
+                            <thead>
+                            <tr>
+                                <th>状态</th>
+                                <th>类型</th>
+                                <th>详情</th>
+                                <th>产生日期</th>
+                                <th>积分值</th>
+                                <th>是否使用</th>
+                                <th>有效期</th>
+                                <th>备注</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>消费</td>
+                                <td>张三</td>
+                                <td>男</td>
+                                <td>2017-8-9</td>
+                                <td>500</td>
+                                <td>否</td>
+                                <td>2017-12-8</td>
+                                <td class="table-comments" colspan="200px">恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                            </tr>
+                            <tr>
+                                <td>增加</td>
+                                <td>张三</td>
+                                <td>男</td>
+                                <td>2017-8-9</td>
+                                <td>500</td>
+                                <td>否</td>
+                                <td>2017-12-8</td>
+                                <td class="table-comments">恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                            </tr>
+                            <tr>
+                                <td>未使用</td>
+                                <td>张三</td>
+                                <td>男</td>
+                                <td>2017-8-9</td>
+                                <td>500</td>
+                                <td>否</td>
+                                <td>2017-12-8</td>
+                                <td class="table-comments">恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                            </tr>
+                            <tr>
+                                <td>未使用</td>
+                                <td>张三</td>
+                                <td>男</td>
+                                <td>2017-8-9</td>
+                                <td>500</td>
+                                <td>否</td>
+                                <td>2017-12-8</td>
+                                <td class="table-comments">恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                            </tr>
+                            <tr>
+                                <td>未使用</td>
+                                <td>张三</td>
+                                <td>男</td>
+                                <td>2017-8-9</td>
+                                <td>500</td>
+                                <td>否</td>
+                                <td>2017-12-8</td>
+                                <td class="table-comments">恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                            </tr>
+                            <tr>
+                                <td>未使用</td>
+                                <td>张三</td>
+                                <td>男</td>
+                                <td>2017-8-9</td>
+                                <td>500</td>
+                                <td>否</td>
+                                <td>2017-12-8</td>
+                                <td class="table-comments">恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                            </tr>
+                            <tr>
+                                <td>未使用</td>
+                                <td>张三</td>
+                                <td>男</td>
+                                <td>2017-8-9</td>
+                                <td>500</td>
+                                <td>否</td>
+                                <td>2017-12-8</td>
+                                <td class="table-comments">恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </section>
+                <section id="points_adjustment" class="tab-pane fade ">
+                    <form action="" class="layui-form selector">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">调整类型</label>
+                                <div class="layui-input-block">
+                                    <select name="" lay-filter="">
+                                        <option value=""></option>
+                                        <option value="0">增加</option>
+                                        <option value="1">减少</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">积分调整为</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="" placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">调整原因</label>
+                                <div class="layui-input-block checkbox-input">
+                                    <input type="checkbox" name="pointsAdjustReason" lay-skin="primary" title="升级" >
+                                    <input type="checkbox" name="pointsAdjustReason" lay-skin="primary" title="扣分">
+                                    <input type="checkbox" name="pointsAdjustReason" lay-skin="primary" title="其他" >
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">备注</label>
+                                <div class="layui-input-block">
+                                    <textarea placeholder="请输入内容" class="layui-textarea" name=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!--储值余额弹框-->
+    <div class="layer-common modal-stored-detail">
+        <div class="modal-body">
+            <ul class="nav nav-pills nav-list border-blue">
+                <li role="presentation" class="active"><a href="#stored_detail" data-toggle="tab">储值明细</a></li>
+                <li role="presentation"><a href="#stored_adjustment" data-toggle="tab">储值调整</a></li>
+            </ul>
+            <div class="tab-content">
+                <section id="stored_detail" class="tab-pane fade active in">
+                    <div class="modal-table">
+                        <table class="table table-hover ">
+                            <thead>
+                            <tr>
+                                <th>状态</th>
+                                <th>类型</th>
+                                <th>详情</th>
+                                <th>产生日期</th>
+                                <th>储值金额</th>
+                                <th>是否使用</th>
+                                <th>有效期</th>
+                                <th>备注</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>未使用</td>
+                                <td>张三</td>
+                                <td>男</td>
+                                <td>2017-8-9</td>
+                                <td>500</td>
+                                <td>否</td>
+                                <td>2017-12-8</td>
+                                <td class="table-comments" >恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                            </tr>
+                            <tr>
+                                <td>未使用</td>
+                                <td>张三</td>
+                                <td>男</td>
+                                <td>2017-8-9</td>
+                                <td>500</td>
+                                <td>否</td>
+                                <td>2017-12-8</td>
+                                <td class="table-comments" >恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                            </tr>
+                            <tr>
+                                <td>未使用</td>
+                                <td>张三</td>
+                                <td>男</td>
+                                <td>2017-8-9</td>
+                                <td>500</td>
+                                <td>否</td>
+                                <td>2017-12-8</td>
+                                <td class="table-comments" >恢复好的封号如今让她进入金融调节人体肌肉推荐人</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section id="stored_adjustment" class="tab-pane fade ">
+                    <form action="" class="layui-form selector">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">调整类型</label>
+                                <div class="layui-input-block">
+                                    <select name="" lay-filter="">
+                                        <option value=""></option>
+                                        <option value="0">增加</option>
+                                        <option value="1">减少</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">储值调整为</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="" placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">调整原因</label>
+                                <div class="layui-input-block checkbox-input">
+                                    <input type="checkbox" name="pointsAdjustReason" lay-skin="primary" title="升级" >
+                                    <input type="checkbox" name="pointsAdjustReason" lay-skin="primary" title="扣分">
+                                    <input type="checkbox" name="pointsAdjustReason" lay-skin="primary" title="其他" >
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">备注</label>
+                                <div class="layui-input-block">
+                                    <textarea placeholder="请输入内容" class="layui-textarea" name=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.points-btn').on('click',function () {
+            addLayer('积分余额','.modal-points-detail',600,558 );
+        });
+    </script>
+
+    <script>
+        $('.stored-btn').on('click',function () {
+            addLayer('储值余额','.modal-stored-detail',600,500 );
+        });
+    </script>
+
+</body>
+<script src="layui/layui_my.js"></script>
+<script>
+    $('.common_order').on('click',function () {
+        addLayer('预定信息','.modal-order-mes',837,600 );
+        $(".mes_sure").click(function () {
+            $(this).parents(".order_common_mes").siblings(".order_common_sure").show();
+            $(this).parents(".order_common_mes").hide();
+        })
+        $(".order_sure_button").click(function () {
+
+        })
+        $(".return_button").click(function () {
+            $(this).parents(".order_common_sure").siblings(".order_common_mes").show();
+            $(this).parents(".order_common_sure").hide();
+        })
+        $(".add_user").click(function () {
+            var into='';
+            into +='<div class="passger_sma_box">';
+            into +='<div class="layui-form-item">'
+            into += '<div class="layui-inline"><label class="layui-form-label">入住人全名</label><div class="layui-input-block"><input type="text" name=""  placeholder="请输入姓名" class="layui-input"></div></div>';
+            into +='<div class="layui-inline"><label class="layui-form-label">联系手机</label><div class="layui-input-block"><input type="text" name=""  placeholder="请输入手机号" class="layui-input"></div></div>';
+            into += '<div class="layui-inline"><label class="layui-form-label">邮箱</label><div class="layui-input-block"><input type="text" name=""  placeholder="请输入邮箱" class="layui-input"></div> </div>';
+            into +='</div></div>';
+            $(".user_box").after(into);
+        })
+    });
+</script>
+<script>
+    //日期选择器
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#date' //指定元素
+        });
+        laydate.render({
+            elem: '#date1' //指定元素
+        });
+    });
+</script>
+</html>

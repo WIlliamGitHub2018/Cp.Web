@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/echarts.common.min.js"></script>
+    <style>
+        .index-box-content {
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+    </nav>
+    <div class="body">
+        <aside class="sidebar active"></aside>
+        <div class="main-body">
+            <div class="route">
+                <h3 class="">CMS首页</h3>
+                <span>当前位置：<a href="">首页</a></span>
+            </div>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="box-item">
+                            <h4 class="title">CRS订单</h4>
+                            <div class="box-content index-box-content" id="crsOrder">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="box-item">
+                            <h4 class="title">CRM会员</h4>
+                            <div class="box-content index-box-content" id="crmMember">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="box-item">
+                            <h4 class="title">CRM会员等级分布</h4>
+                            <div class="box-content index-box-content" id="crmmemberLevel">
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-6"> -->
+                    <!-- <div class="box-item"> -->
+                    <!-- <h4 class="title">CMS酒店网站管理</h4> -->
+                    <!-- <div class="box-content"> -->
+                    <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- </div>		 -->
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+<script src="layui/layui_my.js"></script>
+<script>
+    var myChart = echarts.init(document.getElementById('crsOrder'));
+    var myChart1 = echarts.init(document.getElementById('crmMember'));
+    var myChart2 = echarts.init(document.getElementById('crmmemberLevel'));
+    // 显示标题，图例和空的坐标轴
+    myChart.setOption({
+        title: {
+            text: 'CRS订单数量'
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                crossStyle: {
+                    color: '#999'
+                }
+            }
+        },
+        toolbox: {
+            feature: {
+                dataView: { show: true, readOnly: false },
+                magicType: { show: true, type: ['line', 'bar'] },
+                restore: { show: true },
+                saveAsImage: { show: true }
+            }
+        },
+        legend: {
+            data: ['订单数'],
+        },
+        xAxis: {
+            name: '',
+            type: 'category',
+            data: [],
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        yAxis: {
+            type: 'value',
+            name: '订单数',
+            min: 0,
+            max: 300,
+            interval: 50,
+            axisLabel: {
+                formatter: '{value}'
+            }
+        },
+        series: [{
+            name: '订单数',
+            type: 'bar',
+            data: []
+        }]
+    });
+    myChart.showLoading();
+    // 异步加载数据
+    //$.get('data.json').done(function (data) {
+    myChart.hideLoading();
+    // 填入数据
+    myChart.setOption({
+        xAxis: {
+            name: '月份',
+            data: ['1月', '2月', '3月', '4月', '5月', '6月']
+        },
+        series: [{
+            // 根据名字对应到相应的系列
+            name: '订单数',
+            data: [40, 56, 78, 200, 50, 230]
+        }]
+    });
+    //});
+
+    myChart1.setOption({
+        title: {
+            text: 'CRM会员数量'
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                crossStyle: {
+                    color: '#999'
+                }
+            }
+        },
+        toolbox: {
+            feature: {
+                dataView: { show: true, readOnly: false },
+                magicType: { show: true, type: ['line', 'bar'] },
+                restore: { show: true },
+                saveAsImage: { show: true }
+            }
+        },
+        legend: {
+            data: ['会员数'],
+        },
+        xAxis: {
+            name: '',
+            type: 'category',
+            data: [],
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        yAxis: {
+            type: 'value',
+            name: '会员数',
+            min: 0,
+            max: 300,
+            interval: 50,
+            axisLabel: {
+                formatter: '{value}'
+            }
+        },
+        series: [{
+            name: '会员数',
+            type: 'line',
+            data: []
+        }]
+    });
+    myChart1.showLoading();
+    // 异步加载数据
+    //$.get('data.json').done(function (data) {
+    myChart1.hideLoading();
+    // 填入数据
+    myChart1.setOption({
+        xAxis: {
+            name: '月份',
+            data: ['1月', '2月', '3月', '4月', '5月', '6月']
+        },
+        series: [{
+            // 根据名字对应到相应的系列
+            name: '会员数',
+            data: [40, 56, 78, 200, 50, 230]
+        }]
+    });
+    //});
+
+    //饼状图
+    myChart2.setOption({
+        title: {
+            text: 'CRM会员等级分布',
+            x: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        toolbox: {
+            feature: {
+                dataView: { show: true, readOnly: false },
+                restore: { show: true },
+                saveAsImage: { show: true }
+            }
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: ['金卡', '银卡', '钻石卡']
+        },
+
+        series: [{
+            name: '会员数量',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [],
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }]
+    });
+    myChart2.showLoading();
+    // 异步加载数据
+    //$.get('data.json').done(function (data) {
+    myChart2.hideLoading();
+    // 填入数据
+    myChart2.setOption({
+        series: [{
+            // 根据名字对应到相应的系列
+            data: [
+                { value: 335, name: '金卡' },
+                { value: 310, name: '银卡' },
+                { value: 234, name: '钻石卡' },
+            ],
+        }]
+    });
+</script>
+</html>

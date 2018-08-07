@@ -1,0 +1,27 @@
+﻿所有盒子都通过栅格系统控制宽度
+
+通用样式盒子是.box-item
+
+整体布局是   nav     .body
+                        |
+                 aside   .content-body(全屏直接加类)
+                                |
+                                .main-body(1000px 固定)
+
+.xing {
+
+}
+.border-blue{
+//蓝色border
+}
+
+每个页面在content-body后 加一个类名控制将来不同的样式
+modal 同样
+.list-info-section {}//
+.sec-title{}
+.sec-item1 {}
+.maodal{}
+
+form表单 layui-form .selector
+
+order_table 是用layer 的table js直接加数据的

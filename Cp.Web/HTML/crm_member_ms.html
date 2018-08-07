@@ -1,0 +1,2814 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/crm_custom.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+    <aside class="sidebar active">
+    </aside>
+    <div class="main-body">
+        <!-- <iframe src="de.html" width="100%" height="100%"></iframe>  -->
+        <div class="route">
+            <h3 class="">会员管理</h3>
+            <span>当前位置：<a href="">CRM>会员管理</a></span>
+        </div>
+        <div class="content-body ">
+            <div class="list-info-section">
+                <div class="sec-filter border-blue">
+                    <form class="layui-form selector " >
+                        <div class="layui-form-item">
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">所属酒店</label>
+                                <div class="layui-input-block ">
+                                    <select name="modules" lay-verify="required" lay-search="">
+                                        <option value="">直接选择</option>
+                                        <option value="1">layer</option>
+                                        <option value="2">form</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">会员姓</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="customerName"  placeholder="请输入姓" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">会员名</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="customerName"  placeholder="请输入名" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">会员类型</label>
+                                <div class="layui-input-block">
+                                    <select name="otaFrom" lay-filter="">
+                                        <option value=""></option>
+                                        <option value="0">携程</option>
+                                        <option value="1" selected="">百度</option>
+                                        <option value="2">美团</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">会员号码</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="customerName"  placeholder="请输入会员号码" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">身份证</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="customerName"  placeholder="请输入身份证号码" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">会员级别</label>
+                                <div class="layui-input-block">
+                                    <select name="otaFrom" lay-filter="">
+                                        <option value=""></option>
+                                        <option value="0">MEM1</option>
+                                        <option value="1" selected="">MEM2</option>
+                                        <option value="2">MEM3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">会员状态</label>
+                                <div class="layui-input-block">
+                                    <select name="otaFrom" lay-filter="">
+                                        <option value=""></option>
+                                        <option value="0">冻结</option>
+                                        <option value="1">挂失</option>
+                                        <option value="2" selected>正常</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block btn-list">
+                                <!--<button type="submit" class="layui-btn ">会员扫描</button>-->
+                                <button type="submit" class="layui-btn ">身份扫描</button>
+                                <button type="submit" class="layui-btn ">查询</button>
+                                <input type="reset" class="layui-btn " value="重置">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="switch-div">
+                    <a class="search-switch">收起查询 <i class="fa fa-angle-up"></i></a>
+                </div>
+            </div>
+            <div class="list-info-section ">
+                <h4 class="sec-title">
+                    <b>会员列表</b>
+                    <div class="operate-btns">
+                        <a href="javascript:;" class="operate-btn insert-op " >新建</a>
+                        <a href="javascript:;" class="operate-btn edit-op">编辑</a>
+                        <a href="javascript:;" class="operate-btn activate-btn">激活</a>
+                        <a href="javascript:;" class="operate-btn frost-btn">冻结</a>
+                        <a href="javascript:;" class="operate-btn lose-btn">挂失</a>
+                        <a href="javascript:;" class="operate-btn logout-btn">注销</a>
+                        <a href="javascript:;" class="operate-btn editpass-btn">修改密码</a>
+                        <a href="javascript:;" class="operate-btn more-btn">更多操作</a>
+
+                    </div>
+                </h4>
+                <div class="sec-item1">
+                    <table class="layui-table" id="crm_table_member_list" lay-filter="crm_table_member_list"></table>
+                </div>
+                <div id="pagesMember" class="pages">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--新建弹框-->
+<div class="layer-common layer-member " >
+    <div class="modal-body">
+        <ul class="nav nav-pills nav-list border-blue second_menu">
+            <li role="presentation" class="active"><a href="#insert_member_info" data-toggle="tab">会员信息</a></li>
+            <li role="presentation"><a href="#insert_info" data-toggle="tab">个人信息</a></li>
+            <li role="presentation"><a href="#insert_more_info" data-toggle="tab">更多信息</a></li>
+        </ul>
+        <div class="tab-content">
+            <section id="insert_member_info" class="tab-pane fade active in">
+                <form action="" class="layui-form selector">
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">会员姓名</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>手机号码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label"><em class="xing">*</em>会员级别</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">携程</option>
+                                    <option value="1" selected="">百度</option>
+                                    <option value="2">美团</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label"><em class="xing">*</em>证件种类</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">身份证</option>
+                                    <option value="2">护照</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>证件号码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入证件号码" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block btn-list ">
+                            <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section id="insert_info" class="tab-pane fade ">
+                <form action="" class="layui-form selector mid-input">
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">酒店名称</label>
+                            <div class="layui-input-block option-box">
+                                <select name="modules" lay-verify="required" lay-search="">
+                                    <option value="">直接选择</option>
+                                    <option value="1">layer</option>
+                                    <option value="2">form</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">电话号码</label>
+                            <div class="layui-input-block">
+                                <input type="phone" name=""  placeholder="请输入电话号码" class="layui-input" maxlength="11">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">客人尊称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入客人尊称" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">工作职位</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">工作1</option>
+                                    <option value="1" selected="">工作2</option>
+                                    <option value="2">工作3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">性别</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">男</option>
+                                    <option value="1" selected="">女</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">语言</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">称谓</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">民族</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">国籍</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">国家</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">省份</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">城市</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">邮编</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">生日</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" id="in_birth_date" >
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">入境口岸</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入入境口岸" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">签证种类</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">身份证</option>
+                                    <option value="2">护照</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">签证有效期</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" id="in_visa_date" >
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">客源</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入客源" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block btn-list ">
+                            <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section id="insert_more_info" class="tab-pane fade ">
+                <form action="" class="layui-form selector mid-input">
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">客人姓</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入姓" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">客人名</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入名" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">中文姓名</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入中文姓名" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">注册日期</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" id="in_res_date" >
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">会员有效期</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" id="in_member_date" >
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">透支金额</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input" maxlength="11">
+                            </div>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">销售员</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn">选择</label>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">管理员</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">管理员1</option>
+                                    <option value="1" selected="">管理员2</option>
+                                    <option value="2">管理员3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">介绍人</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn">选择</label>
+                        </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">微信</label>
+                            <div class="layui-input-block">
+                                <input type="phone" name=""  placeholder="请输入微信号" class="layui-input" maxlength="11">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block btn-list ">
+                            <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+        </div>
+    </div>
+</div>
+<!--编辑弹框-->
+<div class="layer-common layer-member-edit " >
+    <div class="modal-body">
+        <ul class="nav nav-pills nav-list border-blue second_menu">
+            <li role="presentation" class="active"><a href="#member_info" data-toggle="tab">客户</a></li>
+            <li role="presentation"><a href="#member_preference" data-toggle="tab">会员偏好</a></li>
+            <li role="presentation"><a href="#member_calorific" data-toggle="tab">卡值记录</a></li>
+            <li role="presentation"><a href="#member_store" data-toggle="tab">储值记录</a></li>
+            <li role="presentation"><a href="#member_consume" data-toggle="tab">消费记录</a></li>
+            <li role="presentation"><a href="#member_scope" data-toggle="tab">积分记录</a></li>
+
+        </ul>
+        <div class="tab-content">
+            <section id="member_info" class="tab-pane fade active in">
+                <form action="" class="layui-form selector mid-input">
+                    <div class="layui-form-item">
+                        <div class="layui-inline ">
+                            <label class="layui-form-label"><em class="xing">*</em>会员状态</label>
+                            <div class="layui-input-block option-box">
+                                <select name="modules" lay-verify="required" lay-search="">
+                                    <option value="">直接选择</option>
+                                    <option value="1">正常</option>
+                                    <option value="2">冻结</option>
+                                    <option value="2">挂失</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline ">
+                            <label class="layui-form-label"><em class="xing">*</em>酒店名称</label>
+                            <div class="layui-input-block option-box">
+                                <select name="modules" lay-verify="required" lay-search="">
+                                    <option value="">直接选择</option>
+                                    <option value="1">layer</option>
+                                    <option value="2">form</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">销售员</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn">选择</label>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">管理员</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">管理员1</option>
+                                    <option value="1" selected="">管理员2</option>
+                                    <option value="2">管理员3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">介绍人</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn">选择</label>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">电话号码</label>
+                            <div class="layui-input-block">
+                                <input type="phone" name=""  placeholder="请输入电话号码" class="layui-input" maxlength="11">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">微信</label>
+                            <div class="layui-input-block">
+                                <input type="phone" name=""  placeholder="请输入微信号" class="layui-input" maxlength="11">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">客人姓</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入姓" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">客人名</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入名" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">中文姓名</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入中文姓名" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">客人尊称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入客人尊称" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">工作职位</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">工作1</option>
+                                    <option value="1" selected="">工作2</option>
+                                    <option value="2">工作3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">性别</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">男</option>
+                                    <option value="1" selected="">女</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">语言</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">称谓</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">民族</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">国籍</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">国家</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">省份</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">城市</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">邮编</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">中文</option>
+                                    <option value="2">英文</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">生日</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" id="birth_date" >
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">证件种类</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">身份证</option>
+                                    <option value="2">护照</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">证件号码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入证件号码" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">入境口岸</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入入境口岸" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">签证种类</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="1" selected="">身份证</option>
+                                    <option value="2">护照</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">签证有效期</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" id="visa_date" >
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">客源</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入客源" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">会员卡号</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">会员类型</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">携程</option>
+                                    <option value="1" selected="">百度</option>
+                                    <option value="2">美团</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">手机号码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">会员级别</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">携程</option>
+                                    <option value="1" selected="">百度</option>
+                                    <option value="2">美团</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">发卡方式</label>
+                            <div class="layui-input-block">
+                                <select name="otaFrom" lay-filter="">
+                                    <option value=""></option>
+                                    <option value="0">携程</option>
+                                    <option value="1" selected="">百度</option>
+                                    <option value="2">美团</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">注册日期</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" id="res_date" >
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">会员有效期</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" id="member_date" >
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">透支金额</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input" maxlength="11">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">账户余额</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input" disabled value="0.00">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">净余额</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input" disabled value="0.00">
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">赠送金额</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input" disabled value="0.00">
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">卡级别</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input" disabled value="MEM1">
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">积分</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input" disabled value="0.00">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">净积分</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input" disabled value="0.00">
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">赠送积分</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input" disabled value="0.00">
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">消费总次数</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input" disabled value="0">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">上次充值金</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="customerName"  placeholder="请输入" class="layui-input" disabled value="0">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block btn-list ">
+                            <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section id="member_preference" class="tab-pane fade ">
+
+            </section>
+            <section id="member_calorific" class="tab-pane fade ">
+                <div class="list-info-section border-blue">
+                    <form action="" class="layui-form selector mid-input mid_selector">
+                        <div class="layui-form-item find_layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">会员卡号</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">会员电话</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">证件号码</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入证件号码" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">会员级别</label>
+                                <div class="layui-input-block">
+                                    <select name="otaFrom" lay-filter="">
+                                        <option value=""></option>
+                                        <option value="0">携程</option>
+                                        <option value="1" selected="">百度</option>
+                                        <option value="2">美团</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block btn-list ">
+                                <a href="javascript:void(0);" class="layui-btn " type="submit">查询</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="list-info-section ">
+                    <div class="sec-item1">
+                        <table class="layui-table" id="crm_table_member_calorific" lay-filter="crm_table_member_list"></table>
+
+                    </div>
+                </div>
+                <!--<div class="layui-form-item">-->
+                    <!--<div class="layui-input-block btn-list layer_btn_list">-->
+                        <!--<button type="submit" class="layui-btn " onclick="return false;">确定</button>-->
+                        <!--<button type="submit" class="layui-btn btn_store" onclick="return false;">储值管理</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </section>
+            <section id="member_store" class="tab-pane fade ">
+                <div class="list-info-section border-blue">
+                    <form action="" class="layui-form selector mid-input mid_selector">
+                        <div class="layui-form-item find_layui-form-item">
+                            <div class="layui-inline">
+                                 <label class="layui-form-label">会员卡号</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                 </div>
+                             </div>
+                            <div class="layui-inline">
+                                  <label class="layui-form-label">会员电话</label>
+                                  <div class="layui-input-block">
+                                      <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                    </div>
+                             </div>
+                            <div class="layui-inline">
+                                 <label class="layui-form-label">证件号码</label>
+                                 <div class="layui-input-block">
+                                      <input type="text" name=""  placeholder="请输入证件号码" class="layui-input">
+                                 </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">会员级别</label>
+                                <div class="layui-input-block">
+                                    <select name="otaFrom" lay-filter="">
+                                        <option value=""></option>
+                                        <option value="0">携程</option>
+                                        <option value="1" selected="">百度</option>
+                                        <option value="2">美团</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block btn-list ">
+                                <a href="javascript:void(0);" class="layui-btn " type="submit">查询</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="list-info-section ">
+                    <div class="sec-item1">
+                        <table class="layui-table" id="crm_table_member_store" lay-filter="crm_table_member_store"></table>
+
+                    </div>
+                </div>
+            </section>
+            <section id="member_consume" class="tab-pane fade ">
+                <div class="list-info-section border-blue">
+                    <form action="" class="layui-form selector mid-input mid_selector">
+                        <div class="layui-form-item find_layui-form-item">
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">消费方式</label>
+                                <div class="layui-input-block option-box">
+                                    <select name="modules" lay-verify="required" lay-search="">
+                                        <option value="">直接选择</option>
+                                        <option value="1">客房消费</option>
+                                        <option value="2">餐饮消费</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">会员卡号</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">证件号码</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入证件号码" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">会员级别</label>
+                                <div class="layui-input-block">
+                                    <select name="otaFrom" lay-filter="">
+                                        <option value=""></option>
+                                        <option value="0">携程</option>
+                                        <option value="1" selected="">百度</option>
+                                        <option value="2">美团</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block btn-list ">
+                                <a href="javascript:void(0);" class="layui-btn " type="submit">查询</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="list-info-section ">
+                    <div class="sec-item1">
+                        <table class="layui-table" id="crm_table_member_consume" lay-filter="crm_table_member_consume"></table>
+                    </div>
+                </div>
+            </section>
+            <section id="member_scope" class="tab-pane fade ">
+                <div class="list-info-section border-blue">
+                    <form action="" class="layui-form selector mid-input mid_selector">
+                        <div class="layui-form-item find_layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">会员卡号</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">会员电话</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">证件号码</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入证件号码" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">会员级别</label>
+                                <div class="layui-input-block">
+                                    <select name="otaFrom" lay-filter="">
+                                        <option value=""></option>
+                                        <option value="0">携程</option>
+                                        <option value="1" selected="">百度</option>
+                                        <option value="2">美团</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block btn-list ">
+                                <a href="javascript:void(0);" class="layui-btn " type="submit">查询</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="list-info-section ">
+                    <div class="layui-form-item">
+                        <div class="sec-item1">
+                            <table class="layui-table" id="crm_table_member_scope" lay-filter="crm_table_member_scope"></table>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="layui-form-item">-->
+                    <!--<div class="layui-input-block btn-list layer_btn_list">-->
+                        <!--<button type="submit" class="layui-btn " onclick="return false;">确定</button>-->
+                        <!--<button type="submit" class="layui-btn btn_scope" onclick="return false;">积分调整</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+            </section>
+
+        </div>
+    </div>
+</div>
+<!--激活弹框-->
+<div class="layer-common layer-activate " >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员卡号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入卡号" class="layui-input" value="13545678956" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入姓名" class="layui-input" value="zhangsan" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员级别</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="MEM1" disabled>
+                        <!--<select name="otaFrom" lay-filter="">-->
+                            <!--<option value=""></option>-->
+                            <!--<option value="0">携程</option>-->
+                            <!--<option value="1" selected="">百度</option>-->
+                            <!--<option value="2">美团</option>-->
+                        <!--</select>-->
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">赠送余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">可用余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">冻结押金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">预授权金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员积分</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline">
+                    <label class="layui-form-label">激活原因</label>
+                    <div class="layui-input-block clear-input">
+                        <textarea  name="customerName"  placeholder="请输入" class="layui-textarea result_textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--冻结弹框-->
+<div class="layer-common layer-frost " >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员卡号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入卡号" class="layui-input" value="13545678956" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入姓名" class="layui-input" value="zhangsan" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员级别</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="MEM1" disabled>
+                        <!--<select name="otaFrom" lay-filter="">-->
+                        <!--<option value=""></option>-->
+                        <!--<option value="0">携程</option>-->
+                        <!--<option value="1" selected="">百度</option>-->
+                        <!--<option value="2">美团</option>-->
+                        <!--</select>-->
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">赠送余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">可用余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">冻结押金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">预授权金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员积分</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline">
+                    <label class="layui-form-label">冻结原因</label>
+                    <div class="layui-input-block clear-input">
+                        <textarea  name="customerName"  placeholder="请输入" class="layui-textarea result_textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--挂失弹框-->
+<div class="layer-common layer-lose " >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员卡号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入卡号" class="layui-input" value="13545678956" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入姓名" class="layui-input" value="zhangsan" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员级别</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="MEM1" disabled>
+                        <!--<select name="otaFrom" lay-filter="">-->
+                        <!--<option value=""></option>-->
+                        <!--<option value="0">携程</option>-->
+                        <!--<option value="1" selected="">百度</option>-->
+                        <!--<option value="2">美团</option>-->
+                        <!--</select>-->
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">赠送余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">可用余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">冻结押金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">预授权金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员积分</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline">
+                    <label class="layui-form-label">挂失原因</label>
+                    <div class="layui-input-block clear-input">
+                        <textarea  name="customerName"  placeholder="请输入" class="layui-textarea result_textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--注销弹框-->
+<div class="layer-common layer-delete " >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员卡号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入卡号" class="layui-input" value="13545678956" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入姓名" class="layui-input" value="zhangsan" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员级别</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="MEM1" disabled>
+                        <!--<select name="otaFrom" lay-filter="">-->
+                        <!--<option value=""></option>-->
+                        <!--<option value="0">携程</option>-->
+                        <!--<option value="1" selected="">百度</option>-->
+                        <!--<option value="2">美团</option>-->
+                        <!--</select>-->
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">赠送余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">可用余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">冻结押金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">预授权金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员积分</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline">
+                    <label class="layui-form-label">注销原因</label>
+                    <div class="layui-input-block clear-input">
+                        <textarea  name="customerName"  placeholder="请输入" class="layui-textarea result_textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--修改密码弹框-->
+<div class="layer-common layer-editpass " >
+    <div class="modal-body">
+        <form action="" class="layui-form selector">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员卡号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="15226563565" class="layui-input" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">原始密码</label>
+                    <div class="layui-input-block">
+                        <input type="password" name="customerName"  placeholder="请输入原始密码" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">新密码</label>
+                    <div class="layui-input-block">
+                        <input type="password" name="customerName"  placeholder="请输入新密码" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">验证密码</label>
+                    <div class="layui-input-block">
+                        <input type="password" name="customerName"  placeholder="请再次输入新密码" class="layui-input">
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">重置密码</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--余额调整弹框-->
+<div class="layer-common layer-balancetrim" >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员卡号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入卡号" class="layui-input" value="13545678956" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入姓名" class="layui-input" value="zhangsan" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员级别</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="MEM1" disabled>
+                        <!--<select name="otaFrom" lay-filter="">-->
+                        <!--<option value=""></option>-->
+                        <!--<option value="0">携程</option>-->
+                        <!--<option value="1" selected="">百度</option>-->
+                        <!--<option value="2">美团</option>-->
+                        <!--</select>-->
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">赠送余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">可用余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">冻结押金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">预授权金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员积分</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">调整方式</label>
+                    <div class="layui-input-block option-box">
+                        <select name="modules" lay-verify="required" lay-search="">
+                            <option value="1">增加</option>
+                            <option value="2">减少</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">调整金额</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="result_from_item">
+                    <label class="layui-form-label">调整原因</label>
+                    <div class="layui-input-block clear-input">
+                        <textarea  name="customerName"  placeholder="请输入" class="layui-textarea result_textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--赠送金额调整弹框-->
+<div class="layer-common layer-givebalance" >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员卡号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入卡号" class="layui-input" value="13545678956" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入姓名" class="layui-input" value="zhangsan" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员级别</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="MEM1" disabled>
+                        <!--<select name="otaFrom" lay-filter="">-->
+                        <!--<option value=""></option>-->
+                        <!--<option value="0">携程</option>-->
+                        <!--<option value="1" selected="">百度</option>-->
+                        <!--<option value="2">美团</option>-->
+                        <!--</select>-->
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">赠送余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">可用余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">冻结押金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">预授权金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员积分</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">调整方式</label>
+                    <div class="layui-input-block option-box">
+                        <select name="modules" lay-verify="required" lay-search="">
+                            <option value="1">增加</option>
+                            <option value="2">减少</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">赠送金额</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="result_from_item">
+                    <label class="layui-form-label">调整原因</label>
+                    <div class="layui-input-block clear-input">
+                        <textarea  name="customerName"  placeholder="请输入" class="layui-textarea result_textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--会员退费弹框-->
+<div class="layer-common layer-backamount" >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员卡号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入卡号" class="layui-input" value="13545678956" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入姓名" class="layui-input" value="zhangsan" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员级别</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="MEM1" disabled>
+                        <!--<select name="otaFrom" lay-filter="">-->
+                        <!--<option value=""></option>-->
+                        <!--<option value="0">携程</option>-->
+                        <!--<option value="1" selected="">百度</option>-->
+                        <!--<option value="2">美团</option>-->
+                        <!--</select>-->
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">赠送余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">可用余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">冻结押金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">预授权金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员积分</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline special-inline">
+                    <label class="layui-form-label">充值记录</label>
+                    <div class="layui-input-block">
+                        <input type="text" name=""  placeholder="" class="layui-input" disabled>
+                    </div>
+                    <label class="label-layer-btn recharge_list">选择</label>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">充值金额</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="" class="layui-input" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">欲退金额</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员密码</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="result_from_item">
+                    <label class="layui-form-label">备注</label>
+                    <div class="layui-input-block clear-input">
+                        <textarea  name="customerName"  placeholder="请输入" class="layui-textarea result_textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--设置会员级别弹框-->
+<div class="layer-common layer-setlevel " >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员卡号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入卡号" class="layui-input" value="13545678956" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入姓名" class="layui-input" value="zhangsan" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员级别</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="MEM1" disabled>
+                        <!--<select name="otaFrom" lay-filter="">-->
+                        <!--<option value=""></option>-->
+                        <!--<option value="0">携程</option>-->
+                        <!--<option value="1" selected="">百度</option>-->
+                        <!--<option value="2">美团</option>-->
+                        <!--</select>-->
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">赠送余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">可用余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">冻结押金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">预授权金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员积分</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员级别</label>
+                    <div class="layui-input-block">
+                        <select name="otaFrom" lay-filter="">
+                            <option value=""></option>
+                            <option value="0">MEM1</option>
+                            <option value="1" selected="">MEM2</option>
+                            <option value="2">MEM3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="result_from_item">
+                    <label class="layui-form-label">变更原因</label>
+                    <div class="layui-input-block clear-input">
+                        <textarea  name="customerName"  placeholder="请输入" class="layui-textarea result_textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--设置会员有效期弹框-->
+<div class="layer-common layer-setmemberdate " >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员卡号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入卡号" class="layui-input" value="13545678956" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入姓名" class="layui-input" value="zhangsan" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员级别</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="MEM1" disabled>
+                        <!--<select name="otaFrom" lay-filter="">-->
+                        <!--<option value=""></option>-->
+                        <!--<option value="0">携程</option>-->
+                        <!--<option value="1" selected="">百度</option>-->
+                        <!--<option value="2">美团</option>-->
+                        <!--</select>-->
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">赠送余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">可用余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">冻结押金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">预授权金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员积分</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">日期</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="useful_date" >
+                    </div>
+                </div>
+                <div class="result_from_item">
+                    <label class="layui-form-label">变更</label>
+                    <div class="layui-input-block clear-input">
+                        <textarea  name="customerName"  placeholder="请输入" class="layui-textarea result_textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--赠送礼券弹框-->
+<div class="layer-common layer-givegift " >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员卡号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入卡号" class="layui-input" value="13545678956" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入姓名" class="layui-input" value="zhangsan" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员级别</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="MEM1" disabled>
+                        <!--<select name="otaFrom" lay-filter="">-->
+                        <!--<option value=""></option>-->
+                        <!--<option value="0">携程</option>-->
+                        <!--<option value="1" selected="">百度</option>-->
+                        <!--<option value="2">美团</option>-->
+                        <!--</select>-->
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">赠送余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">可用余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">冻结押金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">预授权金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员积分</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline special-inline">
+                    <label class="layui-form-label">礼品券</label>
+                    <div class="layui-input-block">
+                        <input type="text" name=""  placeholder="" class="layui-input" disabled>
+                    </div>
+                    <label class="label-layer-btn gift_list">选择</label>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">赠送数量</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入名" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">有效期</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="coupon_useful_date" >
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">失效期</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="coupon_unuseful_date" >
+                    </div>
+                </div>
+                <div class="result_from_item">
+                    <label class="layui-form-label">赠送备注</label>
+                    <div class="layui-input-block clear-input">
+                        <textarea  name="customerName"  placeholder="请输入" class="layui-textarea result_textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--赠送礼券包弹框-->
+<div class="layer-common layer-givegiftpackage " >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员卡号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入卡号" class="layui-input" value="13545678956" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入姓名" class="layui-input" value="zhangsan" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员级别</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="MEM1" disabled>
+                        <!--<select name="otaFrom" lay-filter="">-->
+                        <!--<option value=""></option>-->
+                        <!--<option value="0">携程</option>-->
+                        <!--<option value="1" selected="">百度</option>-->
+                        <!--<option value="2">美团</option>-->
+                        <!--</select>-->
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">赠送余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">可用余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">冻结押金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">预授权金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员积分</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline special-inline">
+                    <label class="layui-form-label">礼品券包</label>
+                    <div class="layui-input-block">
+                        <input type="text" name=""  placeholder="" class="layui-input" disabled>
+                    </div>
+                    <label class="label-layer-btn giftpackage_list">选择</label>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">有效期</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="package_useful_date" >
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">失效期</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="package_unuseful_date" >
+                    </div>
+                </div>
+                <div class="result_from_item">
+                    <label class="layui-form-label">赠送备注</label>
+                    <div class="layui-input-block clear-input">
+                        <textarea  name="customerName"  placeholder="请输入" class="layui-textarea result_textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--会员礼券弹框-->
+<div class="layer-common layer-membergift" >
+    <div class="modal-body">
+        <div class="list-info-section ">
+            <div class="sec-item1">
+                <table class="layui-table " id="crm_table_member_membergift" lay-filter="crm_table_member_membergift"></table>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list layer_btn_list">
+                    <button type="submit" class="layui-btn " onclick="return false;">使用</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--储值管理弹框-->
+<div class="layer-common layer-storems " >
+    <div class="modal-body">
+        <form action="" class="layui-form selector  mid-input">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员卡号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="15226563565" class="layui-input" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="zhangsan" class="layui-input" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">赠送金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">验证码</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">单据号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">银行卡</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">操作员</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline special-inline">
+                    <label class="layui-form-label">付款代码</label>
+                    <div class="layui-input-block">
+                        <input type="text" name=""  placeholder="" class="layui-input" disabled>
+                    </div>
+                    <label class="label-layer-btn paycode_list">选择</label>
+                </div>
+                <div class="result_from_item">
+                    <label class="layui-form-label">备注</label>
+                    <div class="layui-input-block clear-input">
+                        <textarea  name="customerName"  placeholder="请输入" class="layui-textarea result_textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--更多操作-->
+<div class="layer-common layer-moreactive " >
+    <div class="modal-body">
+        <div class="layui-form-item">
+            <div class="layui-inline ">
+                <button class="layui-btn more_active_btn btn_balancetrim">余额调整</button>
+            </div>
+            <div class="layui-inline ">
+                <button class="layui-btn more_active_btn btn_givebalance">赠送金额调整</button>
+            </div>
+            <div class="layui-inline ">
+                <button class="layui-btn more_active_btn btn_backamount">会员退费</button>
+            </div>
+            <div class="layui-inline ">
+                <button class="layui-btn more_active_btn btn_givegift">赠送礼券</button>
+            </div>
+            <div class="layui-inline ">
+                <button class="layui-btn more_active_btn btn_givegiftpackage">赠送礼券包</button>
+            </div>
+            <div class="layui-inline ">
+                <button class="layui-btn more_active_btn btn_mygift">会员礼券</button>
+            </div>
+            <div class="layui-inline ">
+                <button class="layui-btn more_active_btn btn_setlevel">设置会员级别</button>
+            </div>
+            <div class="layui-inline ">
+                <button class="layui-btn more_active_btn btn_setmemberdate">会员有效期</button>
+            </div>
+            <div class="layui-inline ">
+                <button class="layui-btn more_active_btn btn_store">储值管理</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--充值记录弹框-->
+<div class="layer-common layer-recharge" >
+    <div class="modal-body">
+        <div class="list-info-section ">
+            <form action="" class="layui-form selector mid-input  border-blue">
+                <div class="layui-form-item " pane="">
+                      <div class="layui-inline ">
+                        <label class="layui-form-label">Code</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="customerName"  placeholder="请输入Code" class="layui-input">
+                        </div>
+                      </div>
+                      <div class="layui-inline">
+                        <div class="layui-input-block btn-list ">
+                            <button class="layui-btn " onclick="return false;">查询</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="list-info-section ">
+            <h4 class="sec-title">
+                <b>充值记录</b>
+            </h4>
+            <div class="sec-item1">
+                <table class="layui-table" id="crm_table_member_recharge" lay-filter="crm_table_member_recharge"></table>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list layer_btn_list">
+                    <button type="submit" class="layui-btn " onclick="return false;">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--礼券弹框-->
+<div class="layer-common layer-gift" >
+    <div class="modal-body">
+        <div class="list-info-section ">
+            <form action="" class="layui-form selector mid-input  border-blue">
+                <div class="layui-form-item " pane="">
+                    <div class="layui-inline ">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="customerName"  placeholder="请输入Code" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <div class="layui-input-block btn-list ">
+                            <button class="layui-btn " onclick="return false;">查询</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="list-info-section ">
+            <h4 class="sec-title">
+                <b>礼券列表</b>
+            </h4>
+            <div class="sec-item1">
+                <table class="layui-table" id="crm_table_member_gift" lay-filter="crm_table_member_gift"></table>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list layer_btn_list">
+                    <button type="submit" class="layui-btn " onclick="return false;">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--礼券包弹框-->
+<div class="layer-common layer-giftpackage" >
+    <div class="modal-body">
+        <div class="list-info-section ">
+            <form action="" class="layui-form selector mid-input  border-blue">
+                <div class="layui-form-item " pane="">
+                    <div class="layui-inline ">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="customerName"  placeholder="请输入Code" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <div class="layui-input-block btn-list ">
+                            <button class="layui-btn " onclick="return false;">查询</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="list-info-section ">
+            <h4 class="sec-title">
+                <b>充值记录</b>
+            </h4>
+            <div class="sec-item1">
+                <table class="layui-table" id="crm_table_member_giftpackage" lay-filter="crm_table_member_giftpackage"></table>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list layer_btn_list">
+                    <button type="submit" class="layui-btn " onclick="return false;">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--付款方式弹框-->
+<div class="layer-common layer-paymethod" >
+    <div class="modal-body">
+        <div class="list-info-section ">
+            <form action="" class="layui-form selector mid-input  border-blue">
+                <div class="layui-form-item " pane="">
+                    <div class="layui-inline ">
+                        <label class="layui-form-label">Code</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="customerName"  placeholder="请输入Code" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <div class="layui-input-block btn-list ">
+                            <button class="layui-btn " onclick="return false;">查询</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="list-info-section ">
+            <h4 class="sec-title">
+                <b>付款方式</b>
+            </h4>
+            <div class="sec-item1">
+                <table class="layui-table" id="crm_table_member_code" lay-filter="crm_table_member_code"></table>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list layer_btn_list">
+                    <button type="submit" class="layui-btn " onclick="return false;">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--积分调整弹框-->
+<div class="layer-common layer-scope" >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员卡号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入卡号" class="layui-input" value="13545678956" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入姓名" class="layui-input" value="zhangsan" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员级别</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="MEM1" disabled>
+                        <!--<select name="otaFrom" lay-filter="">-->
+                        <!--<option value=""></option>-->
+                        <!--<option value="0">携程</option>-->
+                        <!--<option value="1" selected="">百度</option>-->
+                        <!--<option value="2">美团</option>-->
+                        <!--</select>-->
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">赠送余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">可用余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">冻结押金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">预授权金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员积分</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">调整方式</label>
+                    <div class="layui-input-block option-box">
+                        <select name="modules" lay-verify="required" lay-search="">
+                            <option value="1">增加</option>
+                            <option value="2">减少</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">调整积分</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="result_from_item">
+                    <label class="layui-form-label">调整原因</label>
+                    <div class="layui-input-block clear-input">
+                        <textarea  name="customerName"  placeholder="请输入" class="layui-textarea result_textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--客房消费调整弹框-->
+<div class="layer-common layer-room_consume" >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员卡号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入卡号" class="layui-input" value="13545678956" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入姓名" class="layui-input" value="zhangsan" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员级别</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="MEM1" disabled>
+                        <!--<select name="otaFrom" lay-filter="">-->
+                        <!--<option value=""></option>-->
+                        <!--<option value="0">携程</option>-->
+                        <!--<option value="1" selected="">百度</option>-->
+                        <!--<option value="2">美团</option>-->
+                        <!--</select>-->
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">可用余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+
+                <div class="layui-inline">
+                    <label class="layui-form-label">预授权金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">净余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">赠送余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">抵店日期</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="arrive_date" >
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">夜间</label>
+                    <div class="layui-input-block">
+                        <input type="number" class="layui-input"  >
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">离店日期</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="left_date" >
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">房型</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">房间号</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">账单号</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">客房消费</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">餐饮消费</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">其他消费</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">消费地点</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">消费人</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="result_from_item">
+                    <label class="layui-form-label">调整原因</label>
+                    <div class="layui-input-block clear-input">
+                        <textarea  name="customerName"  placeholder="请输入" class="layui-textarea result_textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--餐饮消费调整弹框-->
+<div class="layer-common layer-food_consume" >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input">
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员卡号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入卡号" class="layui-input" value="13545678956" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入姓名" class="layui-input" value="zhangsan" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">会员级别</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="MEM1" disabled>
+                        <!--<select name="otaFrom" lay-filter="">-->
+                        <!--<option value=""></option>-->
+                        <!--<option value="0">携程</option>-->
+                        <!--<option value="1" selected="">百度</option>-->
+                        <!--<option value="2">美团</option>-->
+                        <!--</select>-->
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">可用余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+
+                <div class="layui-inline">
+                    <label class="layui-form-label">预授权金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">净余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">赠送余额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input" value="0.00" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">消费日期</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="consume_date" >
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">桌号</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">人数</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">食品消费</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">酒水消费</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">其他消费</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">用餐种类</label>
+                    <div class="layui-input-block">
+                        <select name="otaFrom" lay-filter="">
+                            <option value=""></option>
+                            <option value="0">早餐</option>
+                            <option value="1" selected="">午餐</option>
+                            <option value="2">晚餐</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">信用卡号</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">账单号</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline ">
+                    <label class="layui-form-label">消费地点</label>
+                    <div class="layui-input-block option-box">
+                        <input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="result_from_item">
+                    <label class="layui-form-label">调整原因</label>
+                    <div class="layui-input-block clear-input">
+                        <textarea  name="customerName"  placeholder="请输入" class="layui-textarea result_textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script src="js/custom.js"></script>
+<script src="js/yangyan.js"></script>
+<script src="layui/layui_my.js"></script>
+<script src="js/crm_table.js"></script>
+
+<script>
+    //日期
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#birth_date' //指定元素
+        });
+        laydate.render({
+            elem: '#visa_date' //指定元素
+        });
+        laydate.render({
+            elem: '#res_date' //指定元素
+        });
+        laydate.render({
+            elem: '#member_date' //指定元素
+        });
+        laydate.render({
+            elem: '#useful_date' //指定元素
+        });
+        laydate.render({
+            elem: '#coupon_useful_date' //指定元素
+        });
+        laydate.render({
+            elem: '#coupon_unuseful_date' //指定元素
+        });
+        laydate.render({
+            elem: '#package_useful_date' //指定元素
+        });
+        laydate.render({
+            elem: '#package_unuseful_date' //指定元素
+        });
+    });
+    //分页
+    layui.use('laypage', function(){
+        var laypage = layui.laypage;
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'pagesMember' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: 50 //数据总数，从服务端得到
+            ,limit:20  //每页显示的条数
+        });
+    });
+</script>
+</html>

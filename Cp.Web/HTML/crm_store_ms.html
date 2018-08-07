@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+    <aside class="sidebar active">
+    </aside>
+    <div class="main-body">
+        <div class="route">
+            <h3 class="">储值管理</h3>
+            <span>当前位置：<a href="">CRM>储值管理</a></span>
+        </div>
+        <div class="content-body common-iframe">
+            <ul class="nav nav-pills nav-list border-blue ">
+                <li class="active"><a href="#" data-href="crm_member_store.html">储值查询</a></li>
+                <li ><a href="#" data-href="crm_member_consume.html" >消费查询</a></li>
+                <li ><a href="#" data-href="crm_member_calorific.html" >卡值记录</a></li>
+            </ul>
+            <div class="iframe-box">
+                <iframe src="crm_member_store.html" class="active" data-href="crm_member_store.html" frameborder="0" ></iframe>
+                <iframe src="" data-href="crm_member_consume.html" frameborder="0" ></iframe>
+                <iframe src="" data-href="crm_member_calorific.html" frameborder="0" ></iframe>
+
+            </div>
+
+        </div>
+        <!--<div class="content-body">-->
+            <!--<div class="list-info-section border-blue">-->
+                <!--<div class="sec-filter">-->
+                    <!--<form class="layui-form selector " >-->
+                        <!--<div class="layui-form-item">-->
+                            <!--<div class="layui-inline">-->
+                                <!--<label class="layui-form-label">姓</label>-->
+                                <!--<div class="layui-input-block">-->
+                                    <!--<input type="text" name="customerName"  placeholder="请输入姓" class="layui-input">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="layui-inline">-->
+                                <!--<label class="layui-form-label">名</label>-->
+                                <!--<div class="layui-input-block">-->
+                                    <!--<input type="text" name="customerName"  placeholder="请输入名" class="layui-input">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="layui-inline">-->
+                                <!--<label class="layui-form-label">身份证</label>-->
+                                <!--<div class="layui-input-block">-->
+                                    <!--<input type="text" name="customerIdCard"  placeholder="请输入身份证号" class="layui-input">-->
+                                <!--</div>-->
+                            <!--</div> -->
+                            <!--<div class="layui-inline">-->
+                                <!--<label class="layui-form-label">电话</label>-->
+                                <!--<div class="layui-input-block">-->
+                                    <!--<input type="text" name="customerTel"  placeholder="请输入电话" class="layui-input">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="layui-inline">-->
+                                <!--<label class="layui-form-label">会员代码</label>-->
+                                <!--<div class="layui-input-block">-->
+                                    <!--<input type="text" name="customerCode"  placeholder="请输入会员代码" class="layui-input">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="layui-inline ">-->
+                                <!--<label class="layui-form-label">会员级别</label>-->
+                                <!--<div class="layui-input-block ">-->
+                                    <!--<select name="modules" lay-verify="required" lay-search="">-->
+                                        <!--<option value="">直接选择</option>-->
+                                        <!--<option value="MEM1">MEM1-银卡</option>-->
+                                        <!--<option value="MEM2">MEM2-金卡</option>-->
+                                        <!--<option value="MEM3">MEM3-钻石卡</option>-->
+                                    <!--</select>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="layui-inline">-->
+                                <!--<label class="layui-form-label">会员号码</label>-->
+                                <!--<div class="layui-input-block">-->
+                                    <!--<input type="text" name="customerNo"  placeholder="请输入会员号码" class="layui-input">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div> -->
+                        <!--<div class="layui-form-item">-->
+                            <!--<div class="layui-input-block btn-list">-->
+                                <!--<button type="submit" class="layui-btn ">查询</button>-->
+                                <!--<input type="reset" class="layui-btn " value="重置">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</form>-->
+                <!--</div>-->
+
+                <!--&lt;!&ndash; <div id="layerDemo"><button data-method="confirmTrans" class="layui-btn">配置一个透明的询问框</button></div> &ndash;&gt;-->
+
+
+            <!--</div>-->
+            <!--<div class="list-info-section ">-->
+                <!--<h4 class="sec-title">-->
+                    <!--<b>储值管理列表</b>-->
+                    <!--<div class="operate-btns">-->
+                        <!--<a href="javascript:;" class="operate-btn batch-btn" >批量充值</a>-->
+                        <!--<a href="javascript:;" class="operate-btn confirm-btn">充值确认</a>-->
+                        <!--<a href="javascript:;" class="operate-btn invoice-btn">记录发票</a>-->
+                        <!--<a href="javascript:;" class="operate-btn bill-btn">账单</a>-->
+                        <!--<a href="javascript:;" class="operate-btn delete-btn">删除</a>-->
+                    <!--</div>-->
+                <!--</h4>-->
+                <!--<div class="sec-item1">-->
+                    <!--<table class="table table-hover table-bordered ">-->
+                        <!--<thead>-->
+                        <!--<tr>-->
+                            <!--<th><input type="checkbox" name="" class="all-checkbox"></th>-->
+                            <!--<th >会员卡 </th>-->
+                            <!--<th>持卡人</th>-->
+                            <!--<th>持卡人姓</th>-->
+                            <!--<th >储值/消费状态</th>-->
+                            <!--<th >充值确认状态</th>-->
+                            <!--<th >充值日期</th>-->
+                            <!--<th >充值金额</th>-->
+                            <!--<th >本次赠送</th>-->
+                            <!--<th >消费单价</th>-->
+                            <!--<th >消费数量</th>-->
+                            <!--<th >消费日期</th>-->
+                            <!--<th >结账状态</th>-->
+                            <!--<th>消费人数</th>-->
+                            <!--<th>付款代码 </th>-->
+                            <!--<th >账单号码</th>-->
+                            <!--<th >操作员</th>-->
+                        <!--</tr>-->
+                        <!--</thead>-->
+                        <!--<tbody>-->
+                        <!--<tr>-->
+                            <!--<td><input type="checkbox" name="" class="list-checkbox"></td>-->
+                            <!--<td>138673123456</td>-->
+                            <!--<td>张三</td>-->
+                            <!--<td>张</td>-->
+                            <!--<td>储值</td>-->
+                            <!--<td>已确认</td>-->
+                            <!--<td>2017-08-09 09:12:23</td>-->
+                            <!--<td>200</td>-->
+                            <!--<td>0</td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td><input type="checkbox" name="" class="list-checkbox"></td>-->
+                            <!--<td>138673123456</td>-->
+                            <!--<td>张三</td>-->
+                            <!--<td>张</td>-->
+                            <!--<td>消费</td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td>6</td>-->
+                            <!--<td>1</td>-->
+                            <!--<td>2017-08-09 09:12:23</td>-->
+                            <!--<td>已结账</td>-->
+                            <!--<td>1</td>-->
+                            <!--<td>1656</td>-->
+                            <!--<td>1656</td>-->
+                            <!--<td>portal</td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td><input type="checkbox" name="" class="list-checkbox"></td>-->
+                            <!--<td>138673123456</td>-->
+                            <!--<td>张三</td>-->
+                            <!--<td>张</td>-->
+                            <!--<td>储值</td>-->
+                            <!--<td>已确认</td>-->
+                            <!--<td>2017-08-09 09:12:23</td>-->
+                            <!--<td>200</td>-->
+                            <!--<td>0</td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td><input type="checkbox" name="" class="list-checkbox"></td>-->
+                            <!--<td>138673123456</td>-->
+                            <!--<td>张三</td>-->
+                            <!--<td>张</td>-->
+                            <!--<td>消费</td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td>6</td>-->
+                            <!--<td>1</td>-->
+                            <!--<td>2017-08-09 09:12:23</td>-->
+                            <!--<td>已结账</td>-->
+                            <!--<td>1</td>-->
+                            <!--<td>1656</td>-->
+                            <!--<td>1656</td>-->
+                            <!--<td>portal</td>-->
+                        <!--</tr>-->
+                        <!--</tbody>-->
+                    <!--</table>-->
+                <!--</div>-->
+                <!--<div id="pages" class="pages">-->
+
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+<!--批量充值-->
+
+</body>
+<script src="layui/layui_my.js"></script>
+<script>
+    $('.batch-btn').on('click',function () {
+        addLayer('批量充值','.layer-store',750,300 );
+    });
+    //分页
+    layui.use('laypage', function(){
+        var laypage = layui.laypage;
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'pages' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: 50 //数据总数，从服务端得到
+            ,limit:20  //每页显示的条数
+            //prev	自定义“上一页”的内容，支持传入普通文本和HTML
+            //next	自定义“下一页”的内容，同上,
+            //first	自定义“首页”的内容，同上
+            //last	自定义“尾页”的内容，同上
+        });
+    });
+</script>
+</html>

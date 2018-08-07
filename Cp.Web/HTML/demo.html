@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+</head>
+
+
+<style>
+    *{padding:0; margin: 0;}
+    #box1{width:555px; height:600px; background: #eee; display:none;}
+</style>
+</head>
+<body>
+<div class="list-info-section">
+    <h4 class="sec-title">
+        <b>基本信息</b>
+    </h4>
+    <div class="sec-item3 ">
+
+        <form class="layui-form selector  room-detail-lists" >
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label"><em class="xing">*</em> 是否有窗</label>
+                    <div class="layui-input-inline auto-inline">
+                        <input type="radio" name="" lay-skin="primary" title=" 有窗" checked>
+                        <input type="radio" name="" lay-skin="primary" title=" 无窗" >
+                        <input type="radio" name="" lay-skin="primary" title=" 部分有窗" >
+                        <input type="radio" name="" lay-skin="primary" title=" 未知" >
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label"><em class="xing">*</em> 能否加床
+                    </label>
+                    <div class="layui-input-inline auto-inline">
+                        <input type="radio" name="" lay-skin="primary" title=" 不可加床" checked>
+                        <input type="radio" name="" lay-skin="primary" title=" 免费加床" >
+                        <input type="radio" name="" lay-skin="primary" title=" 收费加床" >
+                        <input type="radio" name="" lay-skin="primary" title=" 未知" >
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label"><em class="xing">*</em> 床型</label>
+                    <div class="layui-input-inline auto-inline">
+                        <input type="radio" name="" lay-skin="primary" title=" 大床" checked>
+                        <input type="radio" name="" lay-skin="primary" title=" 双床" >
+                        <input type="radio" name="" lay-skin="primary" title=" 单人床" >
+                        <input type="radio" name="" lay-skin="primary" title=" 多张床" >
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label"><em class="xing">*</em> 无烟信息</label>
+                    <div class="layui-input-inline auto-inline">
+                        <input type="checkbox" name="" lay-skin="primary" title=" 可安排无烟楼层" checked>
+                        <input type="checkbox" name="" lay-skin="primary" title=" 该房型有无烟房" >
+                        <input type="checkbox" name="" lay-skin="primary" title=" 该房可无烟处理" >
+                        <input type="checkbox" name="" lay-skin="primary" title=" 无法安排无烟" >
+                        <input type="checkbox" name="" lay-skin="primary" title=" 不可吸烟 " >
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label"><em class="xing">*</em> 宽带</label>
+                    <div class="layui-input-inline auto-inline">
+                        <input type="radio" name="" lay-skin="primary" title=" 有" checked>
+                        <input type="radio" name="" lay-skin="primary" title=" 无" >
+                    </div>
+                </div>
+            </div>
+            <!--<div class="layui-form-item" pane="">-->
+            <!--<div class="layui-inline ">-->
+            <!--<label class="layui-form-label"><em class="xing">*</em> 宽带资费</label>-->
+            <!--<div class="layui-input-inline mini-inline">-->
+            <!--<input type="text" name="" lay-skin="primary"  disabled value="1">-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <div class="layui-form-item" pane="">
+                <div class="layui-inline ">
+                    <label class="layui-form-label"><em class="xing">*</em> 房型描述</label>
+                    <div class="layui-input-inline ">
+                        <textarea placeholder="请输入内容" class="layui-textarea" name=""></textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="layui-btn-group demoTable">
+    <button class="layui-btn" data-type="getCheckData">获取选中行数据</button>
+    <button class="layui-btn" data-type="getCheckLength">获取选中数目</button>
+    <button class="layui-btn" data-type="isAll">验证是否全选</button>
+</div>
+
+<table class="layui-table" lay-data="{width: 892, height:332, url:'/demo/table/user/', page:true, id:'idTest'}" lay-filter="demo">
+    <thead>
+    <tr>
+        <th lay-data="{type:'checkbox', fixed: 'left'}"></th>
+        <th lay-data="{field:'id', width:80, sort: true, fixed: true}">ID</th>
+        <th lay-data="{field:'username', width:80}">用户名</th>
+        <th lay-data="{field:'sex', width:80, sort: true}">性别</th>
+        <th lay-data="{field:'city', width:80}">城市</th>
+        <th lay-data="{field:'sign', width:160}">签名</th>
+        <th lay-data="{field:'experience', width:80, sort: true}">积分</th>
+
+        <th lay-data="{field:'classify', width:80}">职业</th>
+        <th lay-data="{field:'wealth', width:135, sort: true}">财富</th>
+        <th lay-data="{field:'score', width:80, sort: true, fixed: 'right'}">评分</th>
+        <th lay-data="{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}"></th>
+    </tr>
+    </thead>
+</table>
+
+
+
+</body>
+
+<script src="layui/layui.all.js"></script>
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+        //监听表格复选框选择
+        table.on('checkbox(demo)', function(obj){
+            console.log(obj)
+        });
+        //监听工具条
+        table.on('tool(demo)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'detail'){
+                layer.msg('ID：'+ data.id + ' 的查看操作');
+            } else if(obj.event === 'del'){
+                layer.confirm('真的删除行么', function(index){
+                    obj.del();
+                    layer.close(index);
+                });
+            } else if(obj.event === 'edit'){
+                layer.alert('编辑行：<br>'+ JSON.stringify(data))
+            }
+        });
+
+        var $ = layui.$, active = {
+            getCheckData: function(){ //获取选中数据
+                var checkStatus = table.checkStatus('idTest')
+                    ,data = checkStatus.data;
+                layer.alert(JSON.stringify(data));
+            }
+            ,getCheckLength: function(){ //获取选中数目
+                var checkStatus = table.checkStatus('idTest')
+                    ,data = checkStatus.data;
+                layer.msg('选中了：'+ data.length + ' 个');
+            }
+            ,isAll: function(){ //验证是否全选
+                var checkStatus = table.checkStatus('idTest');
+                layer.msg(checkStatus.isAll ? '全选': '未全选')
+            }
+        };
+
+        $('.demoTable .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            console.log(type);
+            active[type] ? active[type].call(this) : '';
+        });
+    });
+</script>
+</html>

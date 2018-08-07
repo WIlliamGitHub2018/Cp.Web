@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+    <aside class="sidebar active">
+    </aside>
+    <div class="main-body">
+        <div class="route">
+            <h3 class="">档案管理</h3>
+            <span>当前位置：<a href="">CRS>档案管理</a></span>
+        </div>
+        <div class="content-body">
+            <div class="list-info-section border-blue">
+                <div class="sec-filter">
+                    <form class="layui-form selector " >
+                        <div class="layui-form-item">
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">酒店名称</label>
+                                <div class="layui-input-block ">
+                                    <select name="modules" lay-verify="required" lay-search="">
+                                        <option value="">直接选择</option>
+                                        <option value="1">layer</option>
+                                        <option value="2">form</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">客人姓</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入姓" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">客人名</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入名" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">证件号码</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">联系方式</label>
+                                <div class="layui-input-block">
+                                    <input type="phone" name=""  placeholder="请输入手机号" class="layui-input" maxlength="11">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">会员类型</label>
+                                <div class="layui-input-block">
+                                    <select name="otaFrom" lay-filter="">
+                                        <option value=""></option>
+                                        <option value="0">携程</option>
+                                        <option value="1" selected="">百度</option>
+                                        <option value="2">美团</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">会员号码</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入会员号码" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">IATA No</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">AR#</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">销售经理</label>
+                                <div class="layui-input-block">
+                                    <select name="otaFrom" lay-filter="">
+                                        <option value=""></option>
+                                        <option value="0">携程</option>
+                                        <option value="1" selected="">百度</option>
+                                        <option value="2">美团</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline ">
+                                <label class="layui-form-label">查询范围</label>
+                                <div class="layui-input-block">
+                                    <select name="otaFrom" lay-filter="">
+                                        <option value=""></option>
+                                        <option value="0">携程</option>
+                                        <option value="1" selected="">百度</option>
+                                        <option value="2">美团</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">客户卡号</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block btn-list">
+                                <button type="submit" class="layui-btn ">查询</button>
+                                <input type="reset" class="layui-btn " value="重置">
+                                <input type="button" class="layui-btn " value="身份扫描">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="list-info-section ">
+                <h4 class="sec-title">
+                    <b>档案列表</b>
+                    <div class="operate-btns">
+                        <a href="javascript:;" class="operate-btn insert-btn " >新建</a>
+                        <a href="javascript:;" class="operate-btn edit-btn">编辑</a>
+                        <a href="javascript:;" class="operate-btn delete-btn">删除</a>
+                        <a href="javascript:;" class="operate-btn -btn">历史操作</a>
+                        <a href="javascript:;" class="operate-btn -btn">合并</a>
+                    </div>
+                </h4>
+                <div class="sec-item1">
+                    <table class="table table-hover table-bordered ">
+                        <thead>
+                        <tr>
+                            <th><input type="checkbox" name="" class="all-checkbox"></th>
+                            <th >客人姓  </th>
+
+                            <th>客人名</th>
+                            <th>查询名</th>
+                            <th >类型
+                            </th>
+                            <th >证件号码
+                            </th>
+                            <th >VIP
+                            </th>
+                            <th >国家
+                            </th>
+                            <th >城市
+                            </th>
+                            <th >地址</th>
+                            <th >价格代码 </th>
+                            <th >性别</th>
+
+                            <th>
+                                电话号码 </th>
+                            <th>证件种类  </th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><input type="checkbox" name="" class="list-checkbox"></td>
+                            <td>1</td>
+                            <td>xx</td>
+                            <td>web</td>
+                            <td>ZHANGSAN</td>
+                            <td>张三</td>
+                            <td>VEK</td>
+                            <td>1</td>
+                            <td>M114</td>
+                            <td>1500</td>
+                            <td>2016-04-20</td>
+                            <td>2016-04-20</td>
+                            <td>RESERVED</td>
+                            <td>微信</td>
+
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="" class="list-checkbox"></td>
+                            <td>1</td>
+                            <td>xx</td>
+                            <td>web</td>
+                            <td>ZHANGSAN</td>
+                            <td>张三</td>
+                            <td>VEK</td>
+                            <td>1</td>
+                            <td>M114</td>
+                            <td>1500</td>
+                            <td>2016-04-20</td>
+                            <td>2016-04-20</td>
+                            <td>RESERVED</td>
+                            <td>微信</td>
+
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="" class="list-checkbox"></td>
+                            <td>1</td>
+                            <td>xx</td>
+                            <td>web</td>
+                            <td>ZHANGSAN</td>
+                            <td>张三</td>
+                            <td>VEK</td>
+                            <td>1</td>
+                            <td>M114</td>
+                            <td>1500</td>
+                            <td>2016-04-20</td>
+                            <td>2016-04-20</td>
+                            <td>RESERVED</td>
+                            <td>微信</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div id="pages" class="pages">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<!--档案类型选择弹框-->
+<div class="layer-common layer-files-type">
+    <form  class="layui-form selector">
+        <div class="layui-form-item more-query-lists">
+            <label class="layui-form-label">档案类型</label>
+            <div class="layui-input-block">
+                <input type="radio" name="filesType" value="individual" title="个人档案" checked="">
+                <input type="radio" name="filesType" value="company" title="协议公司">
+                <input type="radio" name="filesType" value="agent" title="旅行社" >
+                <input type="radio" name="filesType" value="source" title="预定来源">
+                <input type="radio" name="filesType" value="group" title="团队总账" >
+                <input type="radio" name="filesType" value="contacts" title="联系人">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block btn-list">
+                <button type="button" class="layui-btn file-type-btn" >确认</button>
+                <button type="button" class="layui-btn close-layer-btn">取消</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="layui/layui_my.js"></script>
+<script>
+    //日期选择器
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#date1' //
+        });
+        laydate.render({
+            elem: '#date2'
+        });
+
+    });
+
+
+    $('.insert-btn').on('click',function () {
+        var index = (function(){
+            return layerShow('档案选择','.layer-files-type',300,400,false);
+        })();
+        $('.file-type-btn').off().click(function () {
+            layer.close(index);
+            createProfiles();
+        });
+    });
+    $('.edit-btn').on('click',function () {
+        editLayerIframe('编辑档案','crs_file_edit.html',950,600 );
+    });
+
+    //分页
+    layui.use('laypage', function(){
+        var laypage = layui.laypage;
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'pages' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: 50 //数据总数，从服务端得到
+            ,limit:20  //每页显示的条数
+            //prev	自定义“上一页”的内容，支持传入普通文本和HTML
+            //next	自定义“下一页”的内容，同上,
+            //first	自定义“首页”的内容，同上
+            //last	自定义“尾页”的内容，同上
+        });
+    });
+    function createProfiles() {
+        var selecttype = $("input[name=filesType]:checked").val();
+//        console.log(selecttype);
+        switch (selecttype) {
+            case "individual":
+                layerIframeShow('新建个人档案 ','crs_file_person.html',950,600);//
+                break;
+            case "company":
+                layerIframeShow('新建公司档案 ','crs_file_company.html',950,600);
+                break;
+            case "agent":
+                layerIframeShow('新建旅行社档案','crs_file_company.html', 950, 600);
+                break;
+            case "source":
+                layerIframeShow('新建来源档案', 'crs_file_company.html', 950, 600);
+                break;
+            case "group":
+                layerIframeShow('新建团队档案', 'crs_file_company.html', 950, 600);
+                break;
+            case "contacts":
+                layerIframeShow('新建联系人档案', 'crs_file_company.html', 950, 600);
+                break;
+        }
+    }
+</script>
+</html>

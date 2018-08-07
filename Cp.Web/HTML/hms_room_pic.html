@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+    <style>
+        .hotel-pic .pic-info .pic-text a,.pic-infochoose .pic-text a{
+           float:left;width:50%;text-align:center;
+        }
+        .hotel-pic .pic-info .pic-text .pic-setFirst{border-right:1px solid #fff;}
+        .hotel-pic .pic-info .first-pic{display:none;position:absolute;width:40px;height:30px;line-height:30px;right:0px;right:0px;background:#00c1de;color:#fff;text-align:center;}
+        .hotel-pic .active .first-pic{display:inline;}
+        .hotel-pic .active .pic-text .pic-setFirst{display:none !important;}
+        .hotel-pic .active .pic-text a{
+           width:100%;
+        }
+        .pic-info .layui-upload-drag{width:100%;}
+        .pic-info .layui-upload-drag .layui-icon{color:#00c1de;}
+        .layui-upload-choose,.pic-choose{display:none}
+        .pic-infochoose .pic-text .pic-setFirst{border-right:1px solid #fff;}
+        .pic-infochoose ,.pic-infochoose img{width:100%;height:100%;}
+        .pic-infochoose .pic-text{position: absolute;bottom: 0;width: 100%;color: #fff;height: 40px;background: rgba(0,0,0,.6);padding: 5px 15px;}
+        .pic-infochoose{position:relative;}
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+    <aside class="sidebar active">
+    </aside>
+    <div class="main-body">
+        <div class="route">
+            <h3 class="">酒店图片</h3>
+            <span>当前位置：<a href="">酒店图片</a></span>
+        </div>
+
+        <div class="content-body picture-ms">
+            
+            <div class="list-info-section top-operate-btns">
+                <!--<a href="hms_room_lists.html" class="back-parent">返回上一级&gt;&gt;</a>-->
+                <div class="right-btns operate-btns ">
+                    <a  class="layui-btn insert-btn" >上传</a>
+                    <a  class="layui-btn open-btn pic-upload">查看图片展示规则 </a>
+                </div>
+                <div class="pic-upload-rule">
+                    - 图片尺寸：不足550*412px<br>
+                    - 拍摄效果不理想：光线过暗，抖动造成的模糊，拍摄距离过近造成的严重变形<br>
+                    - 后期需有较大修图改动：出现酒店预订电话、网站、链接，无法去除的水印，有明显颗粒感，图片呈不规则形状<br>
+                    - 图片无关酒店形象：酒店内饰物件，人物写真，不涉及酒店的周边景观<br>
+                    - 分类混乱及重复上传：所传图片应为酒店外观、内景/公共区域、健身/娱乐设施、餐饮/会议、房型图片之其中一种。
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="list-info-section ">
+                <ul class="nav nav-pills nav-list border-blue">
+                    <li role="presentation" class="active"><a href="#style1" data-toggle="tab">经典房型</a></li>
+                    <li role="presentation"><a href="#style2" data-toggle="tab">精选房型</a></li>
+				</ul>
+                <div class="tab-content">
+					<section id="style1"  class="tab-pane fade active in">
+                        <div class="list-info-section border-blue">
+                            <div class="sec-filter">
+                                <form action="" class="layui-form selector">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">酒店名称</label>
+                                        <div class="layui-input-inline">
+                                          <select name="quiz3">
+                                            <option value="">请选择</option>
+                                            <option value="0">酒店1</option>
+                                            <option value="1">酒店2</option>
+                                          </select>
+                                        </div>
+                                        <label class="layui-form-label">图片分类</label>
+                                        <div class="layui-input-inline">
+                                          <select name="quiz1">
+                                            <option value="">请选择</option>
+                                            <option value="" >房间</option>
+                                            <option value="0">外观</option>
+                                            <option value="1">内景</option>
+                                          </select>
+                                        </div>
+                                        <!-- <div class="layui-input-inline"> -->
+                                          <!-- <select name="quiz2"> -->
+                                            <!-- <option value="">请选择</option> -->
+                                            <!-- <option value="0">外观</option> -->
+                                            <!-- <option value="1">经典房间</option> -->
+                                          <!-- </select> -->
+                                        <!-- </div> -->
+                                    </div>
+                                     
+                                    <div class="layui-form-item">
+                                        <div class="layui-input-block btn-list">
+                                            <button type="submit" class="layui-btn ">查询</button>
+                                            <input type="reset" class="layui-btn " value="重置">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <h4 class="sec-title">
+                            <b>大床房A</b>
+                        </h4>
+                        <div class="main-content">
+                            <div class="row roomTypeLists hotel-pic">
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info active">
+                                        <img src="images/roompic1.jpg" alt="">
+                                        <span class="first-pic">首图</span>
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">设为首图</a>
+                                            <a class="pic-delete">删除</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info">
+                                        <img src="images/roompic1.jpg" alt="">
+                                        <span class="first-pic">首图</span>
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">设为首图</a>
+                                            <a class="pic-delete">删除</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info">
+                                        <img src="images/roompic1.jpg" alt="">
+                                        <span class="first-pic">首图</span>
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">设为首图</a>
+                                            <a class="pic-delete">删除</a>
+                                        </div>
+                                    </div>
+                                </div>                       
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info">
+                                        <img src="images/roompic1.jpg" alt="">
+                                        <span class="first-pic">首图</span>
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">设为首图</a>
+                                            <a class="pic-delete">删除</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info pic-single-upload">
+                                        <div class="layui-upload-drag " >
+                                          <i class="layui-icon"></i>
+                                          <p>上传图片</p>
+                                        </div>
+                                    </div>
+                                    <div class="pic-infochoose pic-choose">
+                                        <img src="" alt="">
+                                        
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">保存</a>
+                                            <a class="pic-deleteset">删除</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="sec-title">
+                            <b>大床房B</b>
+                        </h4>
+                        <div class="main-content">
+                            <div class="row roomTypeLists hotel-pic">
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info active">
+                                        <img src="images/roompic1.jpg" alt="">
+                                        <span class="first-pic">首图</span>
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">设为首图</a>
+                                            <a class="pic-delete">删除</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info">
+                                        <img src="images/roompic1.jpg" alt="">
+                                        <span class="first-pic">首图</span>
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">设为首图</a>
+                                            <a class="pic-delete">删除</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info">
+                                        <img src="images/roompic1.jpg" alt="">
+                                        <span class="first-pic">首图</span>
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">设为首图</a>
+                                            <a class="pic-delete">删除</a>
+                                        </div>
+                                    </div>
+                                </div>                       
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info">
+                                        <img src="images/roompic1.jpg" alt="">
+                                        <span class="first-pic">首图</span>
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">设为首图</a>
+                                            <a class="pic-delete">删除</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 room-box pic-box">
+                                <div class="pic-info pic-single-upload">
+                                    <div class="layui-upload-drag ">
+                                      <i class="layui-icon"></i>
+                                      <p>上传图片</p>
+                                    </div>
+                                </div>
+                                <div class="pic-infochoose pic-choose">
+                                    <img src="" alt="">
+                                    
+                                    <div class="pic-text">
+                                        <a class="pic-setFirst">保存</a>
+                                        <a class="pic-deleteset">删除</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="style2"  class="tab-pane fade ">
+                        <div class="list-info-section border-blue">
+                            <div class="sec-filter">
+                                <form action="" class="layui-form selector">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">酒店名称</label>
+                                        <div class="layui-input-inline">
+                                          <select name="quiz3">
+                                            <option value="">请选择</option>
+                                            <option value="0">酒店1</option>
+                                            <option value="1">酒店2</option>
+                                          </select>
+                                        </div>
+                                        <label class="layui-form-label">图片分类</label>
+                                        <div class="layui-input-inline">
+                                          <select name="quiz1">
+                                            <option value="">请选择</option>
+                                            <option value="" >房间</option>
+                                            <option value="0">外观</option>
+                                            <option value="1">内景</option>
+                                          </select>
+                                        </div>
+                                        <!-- <div class="layui-input-inline"> -->
+                                          <!-- <select name="quiz2"> -->
+                                            <!-- <option value="">请选择</option> -->
+                                            <!-- <option value="0">外观</option> -->
+                                            <!-- <option value="1">经典房间</option> -->
+                                          <!-- </select> -->
+                                        <!-- </div> -->
+                                    </div>
+                                     
+                                    <div class="layui-form-item">
+                                        <div class="layui-input-block btn-list">
+                                            <button type="submit" class="layui-btn ">查询</button>
+                                            <input type="reset" class="layui-btn " value="重置">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <h4 class="sec-title">
+                            <b>大床房A</b>
+                        </h4>
+                        <div class="main-content">
+                            <div class="row roomTypeLists hotel-pic">
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info active">
+                                        <img src="images/roompic1.jpg" alt="">
+                                        <span class="first-pic">首图</span>
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">设为首图</a>
+                                            <a class="pic-delete">删除</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info">
+                                        <img src="images/roompic1.jpg" alt="">
+                                        <span class="first-pic">首图</span>
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">设为首图</a>
+                                            <a class="pic-delete">删除</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info">
+                                        <img src="images/roompic1.jpg" alt="">
+                                        <span class="first-pic">首图</span>
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">设为首图</a>
+                                            <a class="pic-delete">删除</a>
+                                        </div>
+                                    </div>
+                                </div>                       
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info">
+                                        <img src="images/roompic1.jpg" alt="">
+                                        <span class="first-pic">首图</span>
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">设为首图</a>
+                                            <a class="pic-delete">删除</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info pic-single-upload">
+                                        <div class="layui-upload-drag " >
+                                          <i class="layui-icon"></i>
+                                          <p>上传图片</p>
+                                        </div>
+                                    </div>
+                                    <div class="pic-infochoose pic-choose">
+                                        <img src="" alt="">
+                                        
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">保存</a>
+                                            <a class="pic-deleteset">删除</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="sec-title">
+                            <b>大床房B</b>
+                        </h4>
+                        <div class="main-content">
+                            <div class="row roomTypeLists hotel-pic">
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info active">
+                                        <img src="images/roompic1.jpg" alt="">
+                                        <span class="first-pic">首图</span>
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">设为首图</a>
+                                            <a class="pic-delete">删除</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info">
+                                        <img src="images/roompic1.jpg" alt="">
+                                        <span class="first-pic">首图</span>
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">设为首图</a>
+                                            <a class="pic-delete">删除</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info">
+                                        <img src="images/roompic1.jpg" alt="">
+                                        <span class="first-pic">首图</span>
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">设为首图</a>
+                                            <a class="pic-delete">删除</a>
+                                        </div>
+                                    </div>
+                                </div>                       
+                                <div class="col-md-3 room-box pic-box">
+                                    <div class="pic-info">
+                                        <img src="images/roompic1.jpg" alt="">
+                                        <span class="first-pic">首图</span>
+                                        <div class="pic-text">
+                                            <a class="pic-setFirst">设为首图</a>
+                                            <a class="pic-delete">删除</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 room-box pic-box">
+                                <div class="pic-info pic-single-upload">
+                                    <div class="layui-upload-drag ">
+                                      <i class="layui-icon"></i>
+                                      <p>上传图片</p>
+                                    </div>
+                                </div>
+                                <div class="pic-infochoose pic-choose">
+                                    <img src="" alt="">
+                                    
+                                    <div class="pic-text">
+                                        <a class="pic-setFirst">保存</a>
+                                        <a class="pic-deleteset">删除</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="layer-common layer-add-all  ">
+            <div class="modal-body">
+                <form action="" class="layui-form selector">
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入名称" class="layui-input" lay-verify="required">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>标题</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入标题" class="layui-input" lay-verify="required">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>所属页面</label>
+                            <div class="layui-input-block">
+                                <select name="" lay-filter="" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">首页</option>
+                                    <option value="1">房型详情页</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label">酒店名称</label>
+                            <div class="layui-input-block option-box">
+                                <select name="modules" lay-verify="required" lay-search="">
+                                    <option value="">直接选择</option>
+                                    <option value="1">layer</option>
+                                    <option value="2">form</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">图片分类</label>
+                            <div class="layui-input-block">
+                               <select name="modules" lay-verify="required" lay-search="">
+                                    <option value="">直接选择</option>
+                                    <option value="经典客房1">经典客房1</option>
+                                    <option value="精选客房1">精选客房1</option>
+                               
+                                    <option value="外观">外观</option>
+                                    <option value="院子">院子</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">URL</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="http://" class="layui-input" lay-verify="required">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">alt</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input" >
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>启用</label>
+                            <div class="layui-input-block">
+                                <select name="" lay-filter="" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">是</option>
+                                    <option value="1">否</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>排序</label>
+                            <div class="layui-input-block">
+                                <input type="number" name=""  placeholder="1" class="layui-input" lay-verify="required">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">配图文字介绍</label>
+                            <div class="layui-input-block">
+                                <textarea placeholder="请输入内容" class="layui-textarea" name=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item" pane="">
+
+                        <label class="layui-form-label">图片</label>
+                        <ul class="upload-img">
+                            <li><img src="images/logo.png" alt="" class="img-thumbnail"></li>
+                            <li>
+                                <a href="javascript:;" class="file-upload layui-btn">上传图片
+                                    <input type="file">
+                                </a>
+                                <a href="#" class="tips-info">建议轮播图像素大小为1920*1080px.</a>
+                            </li>
+                            <li> </li>
+                        </ul>
+                    </div>
+                <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    <!--图片查看详情 弹框-->
+    <div class="layer-common layer-pic-detail  ">
+        <div class="pic-left">
+            <div class="pic-body imgbox">
+                <img src="images/login1.jpg"  alt="phone" id="phoneimg">   
+                <p id="decimg">房间</p>
+                <div class="pic-info">
+                    ddd
+                </div>
+            </div>
+            <div class="pic-all">
+                <table>
+                    <tbody>
+                      <tr>
+                        <td width="50px">
+                          <img src="images/login1.jpg"  alt="" ></td>
+                        <td width="50px">
+                          <img src="images/t1.png"  alt=""></td>
+                        <td width="50px">
+                          <img src="images/login1.jpg" alt=""></td>
+                        <td width="50px">
+                          <img src="images/t1.png" alt="" ></td>
+                         <td width="50px">
+                          <img src="images/t1.png" alt=""></td>  
+                         <td width="50px">
+                          <img src="images/t1.png" alt=""></td> 
+                      </tr>
+                    </tbody>
+               </table> 
+           </div>
+        </div>
+        <div class="pic-right">
+            <p>酒店名称：<span>ven</span></p>
+            <p>图片分类：<span>房间</span></p>
+           
+        </div>
+        <div class="clear"> </div>
+    </div>
+</div>
+</body>
+
+<script src="layui/layui_my.js"></script>
+<script>
+    $('.insert-btn').on('click',function () {
+        addLayer('新建图文','.layer-add-all',750,400 );
+    });
+    <!-- $('.edit-btn').on('click',function () { -->
+        <!-- editLayer('编辑图文','.layer-add-all',750,400 ); -->
+    <!-- }); -->
+    $('.open-btn').on('click', function () {
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $(this).html('查看图片展示规则 <i class="fa fa-caret-up"></i>');
+            $(this).parents('.operate-btns').siblings('.pic-upload-rule').fadeOut(500);
+        }
+        else {
+            $(this).addClass('active');
+            $(this).html('查看图片展示规则 <i class="fa fa-caret-down"></i>');
+            $(this).parents('.operate-btns').siblings('.pic-upload-rule').fadeIn(500);
+            // table.render();
+        }
+    });
+    //图片点击事件
+    $('.pic-info img').on('click',function(){
+        addLayer('图片详细信息','.layer-pic-detail',550,480 );
+    })
+    $('.pic-all img').on('mouseover',function(){
+        var whichpic = $(this);
+         var imgattr=whichpic.attr("src");
+         var phoneimg=document.getElementById("phoneimg");
+         phoneimg.setAttribute("src",imgattr);
+         <!-- var dectext=whichpic.attr("title"); -->
+         <!-- document.getElementById("decimg").innerHTML=dectext; -->
+    })
+    
+     //    删除数据
+    $(".del-btn").click(function () {
+        //确删除弹框
+        layer.confirm("确认删除吗？");
+        
+
+    });
+    layui.use('upload', function(){
+        var $ = layui.jquery
+        ,upload = layui.upload;
+        //设定文件大小限制
+        upload.render({
+            elem: '.layui-upload-drag'
+            //,url: '/upload/'
+            ,accept: 'file' //普通文件
+            ,auto: false
+            //,size: 60 //限制文件大小，单位 KB
+            ,choose: function(obj){
+                var item = this.item;
+                //alert(upload)
+               // var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+                //读取本地文件
+                obj.preview(function(index, file, result){ 
+                    $(item).parent('.pic-single-upload').css('display','none')
+                    $(item).parent('.pic-single-upload').siblings('.pic-choose').css('display','block')
+                    $(item).parent('.pic-single-upload').siblings('.pic-choose').find('img').attr('src',result)
+                });
+            }
+        });
+    })
+    
+    $('.pic-delete').on('click',function(){
+        layer.confirm("确认删除吗？");
+    })
+    //设为首图
+    $('.pic-setFirst').on('click',function(){
+        
+    })
+    //删除要上传的图片
+    $('.pic-deleteset').on('click',function(){
+        $(this).parents('.pic-infochoose').css('display','none')
+        $(this).parents('.pic-infochoose').siblings('.pic-single-upload').css('display','block')
+    })
+    //要上传的图片
+    $('.pic-setFirst').on('click',function(){
+       var src =  $(this).parents('.pic-infochoose').find('img').attr('src');//base码
+       //alert(src)
+    })
+</script>
+</html>

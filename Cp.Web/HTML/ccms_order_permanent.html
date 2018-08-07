@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+</head>
+<body>
+
+            <div class="list-info-section border-blue">
+                <div class="sec-filter">
+                    <form action="" class="layui-form selector">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">省份</label>
+                                <div class="layui-input-block ">
+                                    <select name="modules" lay-verify="required" lay-search="">
+                                        <option value="">直接选择</option>
+                                        <option value="1">layer</option>
+                                        <option value="2">form</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">城市</label>
+                                <div class="layui-input-block ">
+                                    <select name="modules" lay-verify="required" lay-search="">
+                                        <option value="">直接选择</option>
+                                        <option value="1">layer</option>
+                                        <option value="2">form</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">入住日期</label>
+                                <div class="layui-input-block">
+                                    <input type="text" class="layui-input" id="date1">
+                                </div>
+
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">离店日期</label>
+                                <div class="layui-input-block">
+                                    <input type="text" class="layui-input " id="date2">
+                                </div>
+
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">入住天数</label>
+                                <div class="layui-input-block">
+                                    <input type="number" name=""  placeholder="1" class="layui-input" >
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">酒店名称</label>
+                                <div class="layui-input-block ">
+                                    <select name="modules" lay-verify="required" lay-search="">
+                                        <option value="">直接选择</option>
+                                        <option value="1">layer</option>
+                                        <option value="2">form</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block btn-list">
+                                <button type="submit" onclick="return false;" class="layui-btn find_hotel">查询</button>
+                                <input type="reset" class="layui-btn " value="重置">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="list-info-section hotel_part">
+                <h4 class="sec-title">
+                    <b>酒店信息</b>
+                </h4>
+                <div class="sec-item1">
+                    <div class="hotel_bigbox">
+                        <div class="hotel_mes_box">
+                            <b class="hotel_mes hotel_name">99优选重庆火车北站酒店</b>
+                            <b class="hotel_mes hotel_score">评分：<span class="hotel_score_con">3.5分</span></b>
+                            <b class="hotel_mes hotel_tel">电话：<span class="hotel_tel_con">023-63015988</span></b>
+                            <b class="hotel_mes hotel_add">地址：<span class="hotel_add_con">重庆市渝北区泰山大道东段98号附9号</span></b>
+                        </div>
+                        <div class="hotel_notice">
+                            <p class="hotel_notice_title">酒店公告:</p>
+                            <div class="hotel_notice_con_box">
+                                <p class="hotel_notice_con">门店网络故障，开始日期2017-10-14，预计恢复日期2017-10-20</p>
+                                <p class="hotel_notice_con">更新供水管道 停水，开始日期2017-10-14，预计恢复日期2017-10-20</p>
+                            </div>
+
+                        </div>
+                        <table class="table table-hover table-bordered table-banner-config">
+                            <thead>
+                            <tr>
+                                <th>房型</th>
+                                <th>门市价</th>
+                                <th>折扣率</th>
+                                <th>长包房均价</th>
+                                <th>可订数</th>
+                                <th>预定间数</th>
+                                <!--<th>操作</th>-->
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>豪华大床</td>
+                                <td>1500</td>
+                                <td><input type="text" placeholder="98%" class="input_box"></td>
+                                <td><input type="text" placeholder="1500" class="input_box"></td>
+                                <td class="order_room_num">1</td>
+                                <td><div class="order_common_box">
+                                    <span class="order_count count_down">-</span>
+                                    <input type="text" placeholder="0" class="input_box" disabled value="0">
+                                    <span class="order_count count_up">+</span>
+                                    <div class="clearfloat"></div>
+                                </div></td>
+                                <!--<td><a href="javascript:;" class="room_order_btn order ">预定</a></td>-->
+                            </tr>
+                            <tr>
+                                <td>双床</td>
+                                <td>1450</td>
+                                <td><input type="text" placeholder="98%" class="input_box"></td>
+                                <td><input type="text" placeholder="1500" class="input_box"></td>
+                                <td class="order_room_num">1</td>
+                                <td><div class="order_common_box">
+                                    <span class="order_count count_down">-</span>
+                                    <input type="text" placeholder="0" class="input_box" disabled value="0">
+                                    <span class="order_count count_up">+</span>
+                                    <div class="clearfloat"></div>
+                                </div></td>
+                                <!--<td><a href="javascript:;" class="room_order_btn order">预定</a></td>-->
+                            </tr>
+                            </tbody>
+                            <tbody class="table_buttons"><tr>
+                                <td colspan="6"><button onclick="return false;"  class="room_order_btn order">预定</button></td>
+                            </tr></tbody>
+                        </table>
+
+                    </div>
+                    <div class="hotel_bigbox">
+                        <div class="hotel_mes_box">
+                            <b class="hotel_mes hotel_name">99优选天津之眼酒店</b>
+                            <b class="hotel_mes hotel_score">评分：<span class="hotel_score_con">3.5分</span></b>
+                            <b class="hotel_mes hotel_tel">电话：<span class="hotel_tel_con">023-63015988</span></b>
+                            <b class="hotel_mes hotel_add">地址：<span class="hotel_add_con">重庆市渝北区泰山大道东段98号附9号</span></b>
+                        </div>
+                        <div class="hotel_notice">
+                            <p class="hotel_notice_title">酒店公告:</p>
+                            <div class="hotel_notice_con_box">
+                                <p class="hotel_notice_con">门店网络故障，开始日期2017-10-14，预计恢复日期2017-10-20</p>
+                                <p class="hotel_notice_con">更新供水管道 停水，开始日期2017-10-14，预计恢复日期2017-10-20</p>
+                            </div>
+
+                        </div>
+                        <table class="table table-hover table-bordered table-banner-config">
+                            <thead>
+                            <tr>
+                                <th>房型</th>
+                                <th>门市价</th>
+                                <th>折扣率</th>
+                                <th>长包房均价</th>
+                                <th>可订数</th>
+                                <th>预定间数</th>
+                                <!--<th>操作</th>-->
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>豪华大床</td>
+                                <td>1500</td>
+                                <td><input type="text" placeholder="98%" class="input_box"></td>
+                                <td><input type="text" placeholder="1500" class="input_box"></td>
+                                <td class="order_room_num">1</td>
+                                <td><div class="order_common_box">
+                                    <span class="order_count count_down">-</span>
+                                    <input type="text" placeholder="0" class="input_box" disabled value="0">
+                                    <span class="order_count count_up">+</span>
+                                    <div class="clearfloat"></div>
+                                </div></td>
+                                <!--<td><a href="javascript:;" class="room_order_btn order ">预定</a></td>-->
+                            </tr>
+                            <tr>
+                                <td>双床</td>
+                                <td>1450</td>
+                                <td><input type="text" placeholder="98%" class="input_box"></td>
+                                <td><input type="text" placeholder="1500" class="input_box"></td>
+                                <td class="order_room_num">1</td>
+                                <td><div class="order_common_box">
+                                    <span class="order_count count_down">-</span>
+                                    <input type="text" placeholder="0" class="input_box" disabled value="0">
+                                    <span class="order_count count_up">+</span>
+                                    <div class="clearfloat"></div>
+                                </div></td>
+                                <!--<td><a href="javascript:;" class="room_order_btn order">预定</a></td>-->
+                            </tr>
+                            </tbody>
+                            <tbody class="table_buttons"><tr>
+                                <td colspan="6"><button onclick="return false;"  class="room_order_btn order">预定</button></td>
+                            </tr></tbody>
+                        </table>
+                        <div class="passger_box ">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        <!--预定订单弹框-->
+        <div class="layer-common modal-order-permanent">
+            <div class="modal-body">
+                <div class="modal-table modal-table-order">
+                    <div class="passger_box">
+                        <div class="list-info-section passger_box_mes">
+                                    <h4 class="sec-title">
+                                        <b>填写入住人信息</b>
+                                    </h4>
+                                    <div class="passger_mes">
+                                        <form action="" class="layui-form selector">
+                                            <div class="layui-form-item pass_index_box">
+                                                <div class="layui-inline"><label class="layui-form-label">入住人全名</label><div class="layui-input-block"><input type="text" name=""  placeholder="请输入姓名" class="layui-input"></div></div>
+                                                <div class="layui-inline"><label class="layui-form-label">联系手机</label><div class="layui-input-block"><input type="text" name=""  placeholder="请输入手机号" class="layui-input"></div></div>
+                                                <div class="layui-inline"><label class="layui-form-label">邮箱</label><div class="layui-input-block"><input type="text" name=""  placeholder="请输入邮箱" class="layui-input"></div> </div>
+                                            </div>
+                                            <div class="layui-inline"><div class="layui-input-block"><p class="layui-input add_user">增加入住人</p></div></div>
+                                            <div class="layui-form-item"><div class="layui-input-block btn-list "><a href="javascript:void(0);" class="layui-btn order_check" type="submit">确认</a></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                        <div class="list-info-section passger_box_sure">
+                                    <h4 class="sec-title">
+                                        <b>订单复述核对</b>
+                                    </h4>
+                                    <div class="order_mes">
+                                        <div class="order_mes_part"><p class="order_mes_title">预定门店</p><span class="order_mes_con">99优选天津之眼酒店</span> </div>
+                                        <div class="order_mes_part"><p class="order_mes_title">入住日期</p> <span class="order_mes_con">2017-11-28</span> </div>
+                                        <div class="order_mes_part"> <p class="order_mes_title">离店日期</p> <span class="order_mes_con">2017-12-28</span> </div>
+                                        <div class="order_mes_part"> <p class="order_mes_title">入住天数</p> <span class="order_mes_con">30</span> </div>
+                                        <div class="order_mes_part"> <p class="order_mes_title">预定房型</p> <span class="order_mes_con">豪华大床</span> </div>
+                                        <div class="order_mes_part"> <p class="order_mes_title">房间数</p> <span class="order_mes_con">3</span> </div>
+                                        <div class="order_mes_part"> <p class="order_mes_title">折扣率</p> <span class="order_mes_con">98%</span> </div>
+                                        <div class="order_mes_part"> <p class="order_mes_title">平均房价</p> <span class="order_mes_con">1000</span> </div>
+                                        <div class="order_mes_part"> <p class="order_mes_title">总计房费</p> <span class="order_mes_con">10000</span> </div>
+                                        <div class="order_mes_part"> <p class="order_mes_title">入住人全名</p> <span class="order_mes_con">张三</span> </div>
+                                        <div class="order_mes_part"> <p class="order_mes_title">联系手机</p> <span class="order_mes_con">15222222222</span> </div>
+                                    </div>
+                                    <div class="layui-form-item"><div class="layui-input-block btn-list "><a href="javascript:void(0);" class="layui-btn order_check" type="submit">确认</a>
+                                        <a href="javascript:void(0);" class="layui-btn cancel-common order_cancel"  type="button" data-dismiss="modal" aria-label="Close">取消</a>
+                                        </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+<script src="js/custom.js"></script>
+<script src="js/yangyan.js"></script>
+<script src="layui/layui_my.js"></script>
+<script>
+    $(".order").click(function () {
+        addLayer('预定信息','.modal-order-permanent',837,409 );
+        $(".order_check").click(function () {
+
+            $(this).parents(".passger_box_mes").siblings(".passger_box_sure").show();
+            $(this).parents(".passger_box_mes").hide();
+            $(".order_cancel").click(function () {
+
+            })
+        });
+        $(".add_user").click(function () {
+            var into='';
+            into +='<div class="passger_sma_box">';
+            into +='<div class="layui-form-item">'
+            into += '<div class="layui-inline"><label class="layui-form-label">入住人全名</label><div class="layui-input-block"><input type="text" name=""  placeholder="请输入姓名" class="layui-input"></div></div>';
+            into +='<div class="layui-inline"><label class="layui-form-label">联系手机</label><div class="layui-input-block"><input type="text" name=""  placeholder="请输入手机号" class="layui-input"></div></div>';
+            into += '<div class="layui-inline"><label class="layui-form-label">邮箱</label><div class="layui-input-block"><input type="text" name=""  placeholder="请输入邮箱" class="layui-input"></div> </div>';
+            into +='</div></div>';
+            $(".pass_index_box").after(into);
+        })
+    })
+</script>
+<script>
+    //日期选择器
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#date1' //指定元素
+        });
+        laydate.render({
+            elem: '#date2' //指定元素
+        });
+    });
+</script>
+</html>

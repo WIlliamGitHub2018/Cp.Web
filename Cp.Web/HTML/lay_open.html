@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+	<meta name="renderer" content="webkit">
+
+	<!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- 移动设备优先的 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+	<link rel="stylesheet" href="layui/css/layui.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="css/theme.css">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="layui/layui.all.js"></script>
+</head>
+<body>
+	<div class="layer-con">
+		<form class="layui-form selector" >
+			<div class="layui-form-item">		    
+		    	<div class="layui-inline">
+			       <label class="layui-form-label">订单号</label>
+			    	<div class="layui-input-block">
+			      		<input type="text" name="orderNum"  placeholder="请输入订单号" class="layui-input">
+			    	</div>
+			    </div>
+			    <div class="layui-inline">
+			       <label class="layui-form-label">会员号</label>
+			    	<div class="layui-input-block">
+			      		<input type="text" name="vipNum"  placeholder="请输入会员号" class="layui-input">
+			    	</div>
+			    </div>
+			    <div class="layui-inline">
+			       <label class="layui-form-label">客人姓名</label>
+			    	<div class="layui-input-block">
+			      		<input type="text" name="customerName"  placeholder="请输入客人姓名" class="layui-input">
+			    	</div>
+			    </div>
+			    <div class="layui-inline">
+			      	<label class="layui-form-label">会员等级</label>
+				    <div class="layui-input-block">
+				      <select name="degree" lay-filter="aihao">
+				        <option value=""></option>
+				        <option value="0">银卡</option>
+				        <option value="1" selected="">金卡</option>
+				      </select>
+				      <div class="layui-unselect layui-form-select">
+				      	<div class="layui-select-title">
+				      		<input type="text" placeholder="请选择" value="阅读" readonly="" class="layui-input layui-unselect">
+				      			<i class="layui-edge"></i>
+				      		</div>
+				      		<dl class="layui-anim layui-anim-upbit" style="">
+				      			<dd lay-value="" class="layui-select-tips">请选择</dd>
+				      			<dd lay-value="0" class="">银卡</dd>
+				      			<dd lay-value="1" class="layui-this">金卡</dd>
+				      		</dl>
+				      	</div>
+				    </div>
+				</div>
+		   </div>
+		    
+		  <div class="layui-form-item">
+		  	<div class="layui-inline">
+		      	<label class="layui-form-label">预订房型</label>
+			    <div class="layui-input-block">
+			      <select name="roomType" lay-filter="aihao">
+			        <option value=""></option>
+			        <option value="0">大床A</option>
+			        <option value="1" selected="">大床B</option>
+			      </select>
+			      <div class="layui-unselect layui-form-select">
+			      	<div class="layui-select-title">
+			      		<input type="text" placeholder="请选择" value="阅读" readonly="" class="layui-input layui-unselect">
+			      			<i class="layui-edge"></i>
+			      		</div>
+			      		<dl class="layui-anim layui-anim-upbit" style="">
+			      			<dd lay-value="" class="layui-select-tips">请选择</dd>
+			      			<dd lay-value="0" class="">大床A</dd>
+			      			<dd lay-value="1" class="layui-this">大床B</dd>
+			      		</dl>
+			      	</div>
+			    </div>
+			</div>
+			<div class="layui-inline">
+		      	<label class="layui-form-label">预订价格</label>
+			    <div class="layui-input-block">
+			      <select name="price" >
+			        <option value=""></option>
+			        <option value="0">298</option>
+			        <option value="1" selected="">398</option>
+			      </select>
+			      <div class="layui-unselect layui-form-select">
+			      	<div class="layui-select-title">
+			      		<input type="text" placeholder="请选择" value="阅读" readonly="" class="layui-input layui-unselect">
+			      			<i class="layui-edge"></i>
+			      		</div>
+			      		<dl class="layui-anim layui-anim-upbit" style="">
+			      			<dd lay-value="" class="layui-select-tips">请选择</dd>
+			      			<dd lay-value="0" class="">298</dd>
+			      			<dd lay-value="1" class="layui-this">398</dd>
+			      		</dl>
+			      	</div>
+			    </div>
+			</div>
+		    <div class="layui-inline">
+		      <label class="layui-form-label">入住日期</label>
+		      <div class="layui-input-inline">
+		        <input type="text" name="dateIn" id="date"  placeholder="yyyy-MM-dd"  class="layui-input" >
+		      </div>
+		    </div>
+		    <div class="layui-inline">
+		      <label class="layui-form-label">离店日期</label>
+		      <div class="layui-input-inline">
+		        <input type="text" name="dateLeave" id="date1" placeholder="yyyy-MM-dd"  class="layui-input">
+		      </div>
+		    </div>
+		  </div>
+		  <div class="layui-form-item layui-form-text">
+			    <label class="layui-form-label">备注</label>
+			    <div class="layui-input-block">
+			      <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+			    </div>
+			  </div>
+		</form>		
+</div>
+
+</body>
+<script src="js/custom.js"></script>
+<script src="layui/layui_my.js"></script>
+</html>

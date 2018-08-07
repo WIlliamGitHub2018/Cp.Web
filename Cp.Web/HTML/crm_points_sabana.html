@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/crm_custom.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/yangyan.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+    <aside class="sidebar active">
+    </aside>
+    <div class="main-body">
+        <div class="route">
+            <h3 class="">sabana积分配置</h3>
+            <span>当前位置：<a href="">CRM>sabana积分配置</a></span>
+        </div>
+        <div class="content-body">
+            <div class="list-info-section border-blue">
+                <div class="sec-filter">
+                    <form action="" class="layui-form selector">
+                        <div class="layui-form-item">
+                            <!--<label class="layui-form-label">联动选择框</label>-->
+                            <div class="layui-inline">
+                                <label class="layui-form-label">分类code</label>
+                                <div class="layui-input-block ">
+                                    <select name="modules" lay-verify="required" lay-search="" >
+                                        <option value="">请选择</option>
+                                        <option value="0">房费</option>
+                                        <option value="1">餐饮费</option>
+                                        <option value="2">其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">分类名称</label>
+                                <div class="layui-input-block ">
+                                    <select name="modules" lay-verify="required" lay-search="" >
+                                        <option value="">请选择</option>
+                                        <option value="0">房费</option>
+                                        <option value="1">餐饮费</option>
+                                        <option value="2">其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block btn-list">
+                                <button type="submit" class="layui-btn ">查询</button>
+                                <input type="reset" class="layui-btn " value="重置">
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="list-info-section ">
+                <h4 class="sec-title">
+                    <b>配置列表</b>
+                    <div class="operate-btns">
+                        <a href="javascript:;" class="operate-btn sabana_validity" >有效期</a>
+                        <a href="javascript:;" class="operate-btn insert-sabana" >新建</a>
+                        <a href="javascript:;" class="operate-btn edit-sabana" >编辑</a>
+                    </div>
+                </h4>
+                <div class="sec-item1">
+                    <table class="layui-table" id="crm_table_sabana" lay-filter="crm_table_sabana"></table>
+                </div>
+                <div id="pages" class="pages">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="layer-common layer-sabana " >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input mid_selector">
+            <div class="layui-form-item find_layui-form-item" pane="">
+                <div class="layui-inline">
+                    <label class="layui-form-label">分类code</label>
+                    <div class="layui-input-block">
+                        <input type="text" name=""  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">分类名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name=""  placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">启用</label>
+                    <div class="layui-input-block">
+                        <select name="" lay-filter="" lay-verify="required">
+                            <option value=""></option>
+                            <option value="0">是</option>
+                            <option value="1">否</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">固定比例</label>
+                    <div class="layui-input-block points_strategy">
+                        <input type="text" name=""  placeholder="" class="layui-input">
+                    </div>
+                </div>
+
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">确定</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="layer-common layer-validity " >
+    <div class="modal-body">
+        <form action="" class="layui-form selector mid-input mid_selector">
+            <div class="layui-form-item find_layui-form-item" pane="">
+                <div class="layui-inline mini-inline">
+                    <label class="layui-form-label">有效期</label>
+                    <div class="layui-input-inline layui-mini-input" >
+                        <input type="text" name=""  placeholder="" class="layui-input " lay-verify="required" value="1">
+                    </div>
+                    <div class="layui-form-mid">年</div>
+                    <div class="layui-input-inline layui-mini-select">
+                        <select lay-search="">
+                            <option value="0">自然年</option>
+                            <option value="1">整年</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">确定</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="layui/layui_my.js"></script>
+<script>
+    $('.sabana_validity').on('click', function () {
+        addLayer('有效期', '.layer-validity', 500, 220);
+    });
+    layui.use('table', function() {
+        $('.insert-sabana').on('click', function () {
+            addLayer('新建配置', '.layer-sabana', 500, 220);
+        });
+
+        var table = layui.table;
+        //会员管理页面表格
+        table.render({
+            elem: '#crm_table_sabana'
+            // ,url:''
+            , cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            , cols: [[
+                {type: 'checkbox'}
+                , {field: 'sabana_id', title: '编号', sort: true}
+                , {field: 'sabana_code', title: 'code'}
+                , {field: 'sabana_name', title: '分类名称'}
+                , {field: 'sabana_bili', title: '比例'}
+                , {field: 'sabana_use', title: '是否启用'}
+            ]]
+            , data: [{
+                "sabana_id": "10001"
+                , "sabana_code": "13355551251"
+                , "sabana_name": "张三"
+                , "sabana_bili": "会员注册"
+                , "sabana_use": "是"
+            }]
+            , even: true
+            , page: true
+        });
+        $('.edit-sabana').on('click',function () {
+            //alert(111)
+            var checkStatus = table.checkStatus('crm_table_sabana')
+                ,data = checkStatus.data;
+            if(data.length ==0 ){
+                layer.msg('请选中一条数据！');
+            }
+            else {
+               layerShow('新建配置', '.layer-sabana', 500, 220);
+            }
+        })
+    })
+</script>
+</body>
+
+</html>

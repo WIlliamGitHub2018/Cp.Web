@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.all.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+    <aside class="sidebar active">
+    </aside>
+		<div class="main-body">
+			<!-- <iframe src="de.html" width="100%" height="100%"></iframe>	 -->
+			<div class="route">
+				<h3 class="">酒店基本信息</h3>
+				<span>当前位置：<a href="">酒店信息后台管理 >酒店基本信息</a></span>
+			</div>
+				
+			<div class="content-body hotel-info">
+                <ul class="nav nav-pills nav-list">
+                  <li role="presentation" class="active"><a href="#hotel-base-info" data-toggle="tab" >基本信息</a></li>
+                  <li role="presentation" class=""><a href="#hotel-detail-info" data-toggle="tab" >详细信息</a></li>                
+                </ul>
+                <div class="tab-content">
+                    <section  id="hotel-base-info" class="tab-pane fade active in main-content">
+                        <h3 class="title">基本信息<span>(<em class="xing">*</em>为必填项)</span></h3>
+                        <table class="table  hotel-info-table">
+                            <tbody>
+                                <tr>
+                                    <th class="col-md-3"><em class="xing">*</em> 酒店中文名称</th>
+                                    <td class="col-md-9">
+                                        <div class="t-ct">
+                                            <span id="hotelName">贵阳文凡状元别院</span>
+                                            <a href="javascript:;" class="simple-btn" id="nameEdit">修改</a>
+                                        </div>                                        
+                                        <form class="t-edt layui-form">
+                                            <div class="edt-body col-md-9">                                                
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">                                                       
+                                                        <div class="layui-input-block">
+                                                            <input type="text" name="newName" placeholder="请输入酒店名称" class="layui-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="tips-info">
+                                                        1）以招牌为准；<br>
+                                                        2）名称前加城市名/景区名（位于4A/5A景区内的酒店名称前可加景区名）；<br>
+                                                        3）连锁型酒店的城市放在分店名称前，例：如家快捷酒店（上海虹桥火车站店）
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                            <div class="edt-btn col-md-3 ">
+                                                <a href="javascript:void(0);" class="layui-btn " id="saveName" type="button">保存</a>
+                                                <a href="javascript:void(0);" class="layui-btn cancel-edit" id="" type="button">取消</a>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="col-md-3"> 酒店英文名称</th>
+                                    <td class="col-md-9">
+                                        <div class="t-ct">
+                                            <span>无</span>
+                                        <a href="javascript:;" class="simple-btn" id="editENName">添加</a>
+                                        </div>
+                                        <form class="t-edt layui-form">
+                                            <div class="edt-body col-md-9">                                                
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <div class="layui-input-block">
+                                                            <input type="text" name="newENName" placeholder="请输入酒店英文名称" class="layui-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="tips-info">
+                                                        填写酒店特有的英文名称，如无特有名称，也可按全拼填写
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                            <div class="edt-btn col-md-3 ">
+                                                <a href="javascript:void(0);" class="layui-btn " id="saveENName" type="button">保存</a>
+                                                <a href="javascript:void(0);" class="layui-btn cancel-edit" id="" type="button">取消</a>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <th class="col-md-3"> 酒店简称</th>
+                                    <td class="col-md-9">
+                                        <div class="t-ct"><span>文凡状元</span> <a href="javascript:;" class="simple-btn" id="">修改</a></div>
+                                        <form class="t-edt layui-form">
+                                            <div class="edt-body col-md-9">                                                
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <div class="layui-input-block">
+                                                            <input type="text" name="newSimpleName" placeholder="请输入酒店简称" class="layui-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="tips-info">
+                                                        填写酒店特有的英文名称，如无特有名称，也可按全拼填写
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                            <div class="edt-btn col-md-3 ">
+                                                <a href="javascript:void(0);" class="layui-btn " id="saveSimpleName" type="button">保存</a>
+                                                <a href="javascript:void(0);" class="layui-btn cancel-edit" id="" type="button">取消</a>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <th class="col-md-3"> <em class="xing">*</em> 国家/省份/城市/行政区</th>
+                                    <td class="col-md-9">
+                                         <div class="t-ct"><span>中国/贵州/贵阳/花溪区</span> <a href="javascript:;" class="simple-btn"></a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="col-md-3"> <em class="xing">*</em>  酒店地址</th>
+                                    <td class="col-md-9">
+                                        <div class="t-ct"><span>青岩镇北街87号</span> <a href="javascript:;" class="simple-btn">修改</a></div>
+                                        <form class="t-edt layui-form">
+                                            <div class="edt-body col-md-9">                                                
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <div class="layui-input-block">
+                                                            <input type="text" name="hotelAddress" placeholder="请输入酒店地址" class="layui-input">
+                                                        </div>                                                        
+                                                    </div>
+                                                    <div class="tips-info">
+                                                        不允许出现省份、城市、行政区，字数最多支持20个汉字地址与相近路口不可有重复信息
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                            <div class="edt-btn col-md-3 ">
+                                                <a href="javascript:void(0);" class="layui-btn " id="savehotelAddress" type="button">保存</a>
+                                                <a href="javascript:void(0);" class="layui-btn cancel-edit" id="" type="button">取消</a>
+                                            </div>
+                                        </form>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th class="col-md-3">相近路口</th>
+                                    <td class="col-md-9">
+                                        <div class="t-ct"><span>近赵状元故居</span> <a href="javascript:;" class="simple-btn">修改</a></div>
+                                        <form class="t-edt layui-form">
+                                            <div class="edt-body col-md-9">                                                
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <div class="layui-input-block">
+                                                            <input type="text" name="roadNearby" placeholder="请输入酒店相近路口" class="layui-input">
+                                                        </div>                                                        
+                                                    </div>
+                                                    <div class="tips-info">
+                                                        1）相近路口与酒店地址不可有重复信息<br>
+                                                        2）必须要有方位词，例：近××路、××大厦内、×××西侧等<br>
+                                                        3）不能以其他酒店做为相近路口
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                            <div class="edt-btn col-md-3 ">
+                                                <a href="javascript:void(0);" class="layui-btn " id="saveRoadNearby" type="button">保存</a>
+                                                <a href="javascript:void(0);" class="layui-btn cancel-edit"  type="button">取消</a>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="col-md-3"> <em class="xing">*</em> 地图经纬度</th>
+                                    <td class="col-md-9">
+                                        <div class="t-ct">
+                                            <span>X：106.69383899886 Y：26.339113065238</span>
+                                             <a href="javascript:;" class="simple-btn">修改</a>
+                                             <div class="info-location" id="mapShow">
+                                                 <img src="images/map.png">
+                                             </div>
+                                        </div>
+                                        <form class="t-edt layui-form">
+                                            <div class="edt-body col-md-9">                                                
+                                                <div class="layui-form-item layui-input-float-left">
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label">经度：</label>
+                                                        <div class="layui-input-block">
+                                                            <input type="text" name="roadNearby" placeholder="请输入经度" class="layui-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label">纬度：</label>
+                                                        <div class="layui-input-block">
+                                                            <input type="text" name="roadNearby" placeholder="请输入纬度" class="layui-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label">地址：</label>
+                                                        <div class="layui-input-block">
+                                                            <input type="text" name="roadNearby" placeholder="请输入地址搜索" class="layui-input">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="edt-btn col-md-3 ">
+                                                <a href="javascript:void(0);" class="layui-btn " id="saveRoadNearby" type="button">保存</a>
+                                                <a href="javascript:void(0);" class="layui-btn cancel-edit" id="" type="button">取消</a>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </section>
+                    <section  id="hotel-detail-info" class="tab-pane fade main-content">
+                        <h3 class="title">详细信息<span>(<em class="xing">*</em>为必填项)</span></h3>
+                        <table class="table  hotel-info-table">
+                            <tbody>
+                                <tr>
+                                    <th class="col-md-3"> 所属管理集团品牌</th>
+                                    <td class="col-md-9">
+                                        <div class="t-ct">
+                                            <span id="">无</span>
+                                            <a href="javascript:;" class="simple-btn" id="groupEdit">添加</a>
+                                        </div>                                        
+                                        <form class="t-edt layui-form">
+                                            <div class="edt-body col-md-9">                                                
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">                                                       
+                                                        <div class="layui-input-block">
+                                                            <input type="text" name="newName" placeholder="请输入管理集团品牌" class="layui-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="tips-info">
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                            <div class="edt-btn col-md-3 ">
+                                                <a href="javascript:void(0);" class="layui-btn " id="saveGroup" type="button">保存</a>
+                                                <a href="javascript:void(0);" class="layui-btn cancel-edit" id="" type="button">取消</a>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="col-md-3"> 星级（是否挂牌星级）</th>
+                                    <td class="col-md-9">
+                                        <div class="t-ct">
+                                            <span>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </span>
+                                            <span>豪华型</span>
+                                        <a href="javascript:;" class="simple-btn" id="editDegree">添加</a>
+                                        </div>
+                                        <form class="t-edt layui-form">
+                                            <div class="edt-body col-md-9">                                                
+                                                <div class="layui-form-item">
+                                                    <div class="degreeStar">
+                                                        <a href="javascript:;" class="starDegree"><i class="fa fa-star"></i></a>
+                                                        <a href="javascript:;" class="starDegree"><i class="fa fa-star"></i></a>
+                                                        <a href="javascript:;" class="starDegree"><i class="fa fa-star"></i></a>
+                                                        <a href="javascript:;" class="starDegree"><i class="fa fa-star"></i></a>
+                                                        <a href="javascript:;" class="starDegree"><i class="fa fa-star"></i></a>
+                                                        <span><em></em>星级</span>
+                                                    </div>
+                                                    <div class="tips-info">
+                                                        
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                            <div class="edt-btn col-md-3 ">
+                                                <a href="javascript:void(0);" class="layui-btn " id="saveDegree" type="button">保存</a>
+                                                <a href="javascript:void(0);" class="layui-btn cancel-edit" id="" type="button">取消</a>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <th class="col-md-3"> 开业年月</th>
+                                    <td class="col-md-9">
+                                        <div class="t-ct"><span>2016-01</span> <a href="javascript:;" class="simple-btn" id="editOpenTime">修改</a></div>
+                                        <form class="t-edt layui-form">
+                                            <div class="edt-body col-md-9">                                                
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <div class="layui-input-block">
+                                                          <select name="openYear" lay-filter="">
+                                                            <option value="2017">2017</option>
+                                                            <option value="2016">2016</option>
+                                                            <option value="2015" selected="">2015</option>
+                                                          </select>
+                                                          <div class="layui-unselect layui-form-select">
+                                                            <div class="layui-select-title">
+                                                                <input type="text" placeholder="请选择" value="" readonly="" class="layui-input layui-unselect">
+                                                                <i class="layui-edge"></i>
+                                                            </div>
+                                                            <dl class="layui-anim layui-anim-upbit" style="">
+                                                                <dd lay-value="2017" >2017</dd>
+                                                                <dd lay-value="2016" class="">2016</dd>
+                                                                <dd lay-value="2015" class="layui-this">2015</dd>
+                                                            </dl>
+                                                          </div>                                                          
+                                                        </div>
+                                                    </div>
+                                                    <span class="layui-inline">年</span>
+                                                    <div class="layui-inline">
+                                                        <div class="layui-input-block">
+                                                          <select name="openMonth" lay-filter="">
+                                                            <option value="12">12</option>
+                                                            <option value="11">11</option>
+                                                            <option value="10" selected="">10</option>
+                                                          </select>
+                                                          <div class="layui-unselect layui-form-select">
+                                                            <div class="layui-select-title">
+                                                                <input type="text" placeholder="请选择" value="" readonly="" class="layui-input layui-unselect">
+                                                                <i class="layui-edge"></i>
+                                                            </div>
+                                                            <dl class="layui-anim layui-anim-upbit" style="">
+                                                                <dd lay-value="12" >12</dd>
+                                                                <dd lay-value="11" class="">11</dd>
+                                                                <dd lay-value="10" class="layui-this">10</dd>
+                                                            </dl>
+                                                          </div>                                                          
+                                                        </div>
+                                                    </div>
+                                                    <span class="layui-inline">月</span>
+                                                </div> 
+                                            </div>
+                                            <div class="edt-btn col-md-3 ">
+                                                <a href="javascript:void(0);" class="layui-btn " id="saveOpenDate" type="button">保存</a>
+                                                <a href="javascript:void(0);" class="layui-btn cancel-edit" id="" type="button">取消</a>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <th class="col-md-3"> <em class="xing">*</em> 客房总数</th>
+                                    <td class="col-md-9">
+                                         <div class="t-ct"><span>104 间</span> <a href="javascript:;" class="simple-btn" id="">修改</a></div>
+                                         <form class="t-edt layui-form">
+                                            <div class="edt-body col-md-9">                                                
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <div class="layui-input-block">
+                                                            <input type="text" name="newRoomNum" placeholder="104" class="layui-input">
+                                                        </div>
+                                                    </div>
+                                                    <span class="layui-inline">间</span>
+                                                    <div class="tips-info">
+                                                        酒店拥有的客房总数
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                            <div class="edt-btn col-md-3 ">
+                                                <a href="javascript:void(0);" class="layui-btn " id="saveRoomNum" type="button">保存</a>
+                                                <a href="javascript:void(0);" class="layui-btn cancel-edit" id="" type="button">取消</a>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="col-md-3"> <em class="xing">*</em>  酒店总机</th>
+                                    <td class="col-md-9">
+                                        <div class="t-ct"><span>0851-83222888</span> <a href="javascript:;" class="simple-btn" id="">修改</a></div>
+                                        <form class="t-edt layui-form">
+                                            <div class="edt-body col-md-9">                                                
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <div class="layui-input-block">
+                                                            <input type="text" name="telephone1" placeholder="区号" class="layui-input">
+                                                        </div>                                                        
+                                                    </div>
+                                                    <span class="layui-inline">-</span>
+                                                    <div class="layui-inline">
+                                                        <div class="layui-input-block">
+                                                            <input type="text" name="telephone2" placeholder="座机号/手机号" class="layui-input">
+                                                        </div>                                                        
+                                                    </div>
+                                                    <div class="tips-info">
+                                                        如无座机，可直接填写手机号
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                            <div class="edt-btn col-md-3 ">
+                                                <a href="javascript:void(0);" class="layui-btn " id="saveTelephone" type="button">保存</a>
+                                                <a href="javascript:void(0);" class="layui-btn cancel-edit" id="" type="button">取消</a>
+                                            </div>
+                                        </form>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th class="col-md-3">销售部传真</th>
+                                    <td class="col-md-9">
+                                        <div class="t-ct"><span>无</span> <a href="javascript:;" class="simple-btn">添加</a></div>
+                                        <form class="t-edt layui-form">
+                                            <div class="edt-body col-md-9">                                                
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <div class="layui-input-block">
+                                                            <input type="text" name="sellFax1" placeholder="区号" class="layui-input">
+                                                        </div>                                                        
+                                                    </div>
+                                                    <span class="layui-inline">-</span>
+                                                    <div class="layui-inline">
+                                                        <div class="layui-input-block">
+                                                            <input type="text" name="sellFax2" placeholder="座机号/手机号" class="layui-input">
+                                                        </div>                                                        
+                                                    </div>
+                                                    <div class="tips-info">区号+传真号
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                            <div class="edt-btn col-md-3 ">
+                                                <a href="javascript:void(0);" class="layui-btn " id="saveSellFax" type="button">保存</a>
+                                                <a href="javascript:void(0);" class="layui-btn cancel-edit" id="" type="button">取消</a>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="col-md-3">商务中心传真</th>
+                                    <td class="col-md-9">
+                                        <div class="t-ct"><span>无</span> <a href="javascript:;" class="simple-btn">添加</a></div>
+                                        <form class="t-edt layui-form">
+                                            <div class="edt-body col-md-9">                                                
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <div class="layui-input-block">
+                                                            <input type="text" name="businessFax1" placeholder="" class="layui-input">
+                                                        </div>                                                        
+                                                    </div>
+                                                    <span class="layui-inline">-</span>
+                                                    <div class="layui-inline">
+                                                        <div class="layui-input-block">
+                                                            <input type="text" name="businessFax2" placeholder="" class="layui-input">
+                                                        </div>                                                        
+                                                    </div>
+                                                    <div class="tips-info">区号+传真号
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                            <div class="edt-btn col-md-3 ">
+                                                <a href="javascript:void(0);" class="layui-btn " id="saveBusinessFax" type="button">保存</a>
+                                                <a href="javascript:void(0);" class="layui-btn cancel-edit" id="" type="button">取消</a>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="col-md-3"> 酒店简介</th>
+                                    <td class="col-md-9">
+                                        <div class="t-ct">
+                                            <span>贵阳文凡状元别院位于贵阳市南郊的青岩古镇内，与“琴鹤谱志，论语传家”的贵州第一位状元赵以炯的故居比邻而居，故此而名。</span> 
+                                            <a href="javascript:;" class="simple-btn">修改</a>
+                                        </div>
+                                        <form class="t-edt layui-form">
+                                            <div class="edt-body col-md-9">                                                
+                                                <div class="layui-form-item">
+                                                    
+                                                        <div class="layui-input-block">
+                                                            <textarea placeholder="请输入内容" class="layui-textarea" name="description"></textarea>
+                                                        </div> 
+                                                    <div class="tips-info">
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                            <div class="edt-btn col-md-3 ">
+                                                <a href="javascript:void(0);" class="layui-btn " id="saveDescription" type="button">保存</a>
+                                                <a href="javascript:void(0);" class="layui-btn cancel-edit" id="" type="button">取消</a>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script src="js/custom.js"></script>
+<script src="layui/layui_my.js"></script>
+</html>

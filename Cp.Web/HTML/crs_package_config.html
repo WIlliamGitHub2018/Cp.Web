@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+    <meta name="renderer" content="webkit">
+
+    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备优先的 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/custom.js"></script>
+    <style>
+        .lg-input-radio{width:257px !important;}
+        .product-details-left{float:left;width:400px;border:1px solid #00c1de;padding:10px;}
+        .product-details-right{float:left;width:450px;margin-left:40px;border:1px solid #00c1de;height:300px;margin-bottom:15px;}
+        .product-details-left .layui-form-label{width:70px;}
+        #product-header .layui-form-item{margin-top:0px;}
+        .product-details-left .btn-list{margin-top:10px;}
+        .product-savebtn{text-align:center;}
+        <!-- .product-details-right .detail-table{width:200px!important;height:350px;}  -->
+        .product-details-right .detail-table table{width:100%;}
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+    <aside class="sidebar active">
+    </aside>
+    <div class="main-body">
+        <!-- <iframe src="de.html" width="100%" height="100%"></iframe>	 -->
+        <div class="route">
+            <h3 class="">包价代码</h3>
+            <span>当前位置：<a href="">CRS>包价代码</a></span>
+        </div>
+
+        <div class="content-body ">
+            <div class="list-info-section border-blue">
+                <div class="sec-filter">
+                    <form class="layui-form selector " >
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">包价代码</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name=""  placeholder="请输入" class="layui-input">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="layui-form-item">
+                            <div class="layui-input-block btn-list">
+                                <button type="submit" class="layui-btn ">查询</button>
+                                <input type="reset" class="layui-btn " value="重置">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="list-info-section ">
+                <h4 class="sec-title">
+                    <b>产品列表</b>
+                    <div class="operate-btns">
+                        <a href="javascript:;" class="operate-btn insert-op ">新增</a>
+                        <a href="javascript:;" class="operate-btn edit-op ">编辑</a>
+                        <a href="javascript:;" class="operate-btn delete-op ">删除</a>
+                        <a href="javascript:;" class="operate-btn -btn ">复制</a>
+                        <a href="javascript:;" class="operate-btn -btn ">激活</a>
+                        <a href="javascript:;" class="operate-btn -btn ">禁用</a>
+                        <!-- <a href="javascript:;" class="operate-btn log-btn ">操作日志</a> -->
+                    </div>
+                </h4>
+                <div class="sec-item1">
+                    <table class="layui-hide" id="packageCode"></table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--包价代码新建弹框-->
+<div class="layer-common layer-edit">
+    <div class="modal-body">
+        <ul class="nav nav-pills nav-list border-blue">
+            <li role="presentation" class="active"><a href="#product-header" data-toggle="tab">产品头部信息</a></li>
+            <li role="presentation"><a href="#product-details" data-toggle="tab">产品详细信息</a></li>
+        </ul>
+        <div class="tab-content">
+			<section id="product-header"  class="tab-pane fade active in">
+                <form action="" class="layui-form selector mid-input">
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>产品名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="" placeholder="请输入" class="layui-input" lay-verify="required">
+                            </div>
+                        </div>
+                        <div class="layui-inline ">
+                            <label class="layui-form-label"><em class="xing">*</em>产品分类</label>
+                            <div class="layui-input-block ">
+                                <select name="modules" lay-verify="required" lay-search="">
+                                    <option value="">直接选择</option>
+                                    <option value="1">breakfast</option>
+                                    <option value="2">ticket</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">货币类型</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="" placeholder="请输入" class="layui-input" lay-verify="required">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>产品价格</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="" placeholder="请输入" class="layui-input" lay-verify="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label ">包价数量</label>
+                            <div class="layui-input-block lg-input-radio">
+                                <input type="radio" name="numberType" value="" title="跟随订单" >
+                                <input type="radio" name="numberType" value="" title="跟随客人数">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">服务费类型</label>
+                            <div class="layui-input-block lg-input-radio">
+                                <input type="radio" name="orderType" value="" title="内含服务费">
+                                <input type="radio" name="orderType" value="" title="外加服务费">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">服务费比例</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="" placeholder="请输入" class="layui-input" lay-verify="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline">
+                           <label class="layui-form-label">组合方式</label>
+                            <div class="layui-input-block lg-input-radio">
+                                <input type="radio" name="zuhe" value="" title="外加" >
+                                <input type="radio" name="zuhe" value="" title="内涵">
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>开始时间</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" placeholder="从" id="date1" >
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label"><em class="xing">*</em>截至时间</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" placeholder="到" id="date2" >
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="layui-form-item" pane="">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">单独销售</label>
+                            <div class="layui-input-block lg-input-radio">
+                                <input type="radio" name="orderType" value="" title="与单独销售" >
+                                <input type="radio" name="orderType" value="" title="不与单独销售">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">激活标记</label>
+                            <div class="layui-input-block lg-input-radio">
+                                <input type="radio" name="orderType" value="" title="激活" >
+                                <input type="radio" name="orderType" value="" title="禁用">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item" pane="">
+
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">显示顺序</label>
+                            <div class="layui-input-block">
+                                <input type="number" name=""  autocomplete="off" class="layui-input" placeholder="">
+                            </div>
+                        </div>
+                        
+                       
+                        <div class="layui-inline special-inline">
+                            <label class="layui-form-label">
+                                账项代码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name=""  placeholder="请输入" class="layui-input">
+                            </div>
+                            <label class="label-layer-btn code-choose-btn" ><i class="fa fa-bars"></i></label>
+                        </div>
+                        
+                    </div>
+
+                     <div class="layui-form-item layui-form-text">
+
+                        <label class="layui-form-label"><em class="xing">*</em>简要描述</label>
+                        <div class="layui-input-block">
+                            <textarea placeholder="请输入内容" class="layui-textarea" name=""></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+
+                        <label class="layui-form-label"><em class="xing">*</em>详细描述</label>
+                        <div class="layui-input-block">
+                            <textarea placeholder="请输入内容" class="layui-textarea" name=""></textarea>
+                        </div>
+                    </div>
+                    <!-- <div class="layui-form-item"> -->
+                        <!-- <div class="layui-input-block btn-list "> -->
+                            <!-- <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                </form>
+            </section>
+            <section id="product-details"  class="tab-pane fade ">
+                <div class="product-details-left">
+                    <form action="" class="layui-form selector">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">season_code</label>
+                            <div class="layui-input-inline">
+                              <select name="quiz3">
+                                <option value="">请选择</option>
+                                <option value="0">春季</option>
+                                <option value="1">夏季</option>
+                                <option value="1">秋季</option>
+                                <option value="1">冬季</option>
+                              </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">开始时间</label>
+                            <div class="layui-input-inline">
+                                <input type="text" class="layui-input"  id="date3" >
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">结束时间</label>
+                            <div class="layui-input-inline">
+                                <input type="text" class="layui-input"  id="date4" >
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block btn-list">
+                                <button type="submit" class="layui-btn ">新建</button>
+                                <button type="submit" class="layui-btn ">保存</button>
+                                <button type="submit" class="layui-btn ">删除</button>
+                                
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="product-details-right">
+                    <div class="sec-item1">
+                        <table class="layui-table" id="productdetail" lay-filter="productdetail"></table>
+                    </div>   
+                </div>
+                <div class="clear"></div>
+            </section>
+            <div class="layui-form-item product-savebtn">
+                <div class="layui-input-block btn-list ">
+                    <a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--市场代码、等弹框-->
+<div class=" layer-common layer-code-choose"></div>
+
+</body>
+<script src="layui/layui_my.js"></script>
+<script>
+    //市场代码等弹框load
+    $('.layer-code-choose').load('crs_code_query.html');
+    $('.code-choose-btn').on('click',function () {
+        var input = $(this).siblings('.layui-input-block').children('input');
+        var  title = $(this).siblings('.layui-form-label').text();
+        layerShow(title,'.layer-code-choose',500,400);
+    });
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#date1' //
+        });
+        laydate.render({
+            elem: '#date2'
+        });
+        laydate.render({
+            elem: '#date3' //
+        });
+        laydate.render({
+            elem: '#date4'
+        });
+    });
+    layui.use('table', function(){
+        var table = layui.table;
+        table.render({
+            elem: '#packageCode'
+            // ,url:''
+            ,cellMinWidth: 70 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            ,cols: [[
+                {type:'checkbox',"fixed":"left"}
+                ,{field:'class_code', title: '产品分类'}
+                ,{field:'product', title: '产品名称'}
+                ,{field:'short_description',title: '简要描述'}
+                ,{field:'active_yn', title: '状态'}
+                ,{field:'order_by', title: '显示顺序', sort: true}
+            ]]
+            ,data: [{
+                "class_code": "包价早餐"
+                ,"product": "HBFK"
+                ,"short_description": "内部早餐"
+                ,"active_yn": "是"
+                ,"order_by": "3"
+
+            },
+            {
+                "class_code": "包价早餐"
+                ,"product": "BKG"
+                ,"short_description": "包价早餐团"
+                ,"active_yn": "是"
+                ,"order_by": "1"
+
+            }]
+            ,even: true
+            ,page: true
+        });
+        
+        $('.insert-op').on('click',function () {
+            addLayer('新建产品','.layer-edit',940,400 );
+            table.render({
+            elem: '#productdetail'
+            // ,url:''
+            ,cellMinWidth: 70 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            ,cols: [[
+                 {field:'beign', title: '开始日期'}
+                ,{field:'end', title: '结束日期'}
+                ,{field:'price',title: '产品价格'}
+            ]]
+            ,data: [{
+                "beign": "2018-01-01"
+                ,"end": "2018-01-19"
+                ,"price": "99"
+
+            },
+            {
+                 "beign": "2018-01-01"
+                ,"end": "2018-01-19"
+                ,"price": "99"
+
+            }]
+            ,even: true
+            ,page: true
+        });
+        });
+        $('.edit-op').on('click',function () {
+            var checkStatus = table.checkStatus('packageCode')
+                ,data = checkStatus.data;
+            if(data.length ==0 ){
+                layer.msg('请选中一条数据！');
+            }
+            else{
+                //获取数据
+                // table.on('checkbox(rateCode)', function(obj){
+                //     console.log(obj['data']['room_type'])
+                // });
+                addLayer('编辑产品','.layer-edit',940,400 );
+            }
+        });
+        $('.delete-op').on('click',function(){
+            var checkStatus = table.checkStatus('packageCode')
+                ,data = checkStatus.data;
+            if(data.length ==0 ){
+                layer.msg('请选中一条数据！');
+            }
+            else{
+                layer.confirm("确认删除吗？");
+            }
+        });
+    });
+    
+</script>
+</html>

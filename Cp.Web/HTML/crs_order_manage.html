@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<!-- 可以让部分国产浏览器默认采用高速模式渲染页面： -->
+	<meta name="renderer" content="webkit">
+
+	<!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中： -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- 移动设备优先的 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- 禁用缩放
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+	<link rel="stylesheet" href="layui/css/layui.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="css/theme.css">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  IE8不支持媒体查询，需在服务器上运行respond.js 有效-->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="layui/layui.js"></script>
+	<script src="js/custom.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top top-nav-bar" role="navigation">
+
+</nav>
+<div class="body">
+	<aside class="sidebar active">
+	</aside>
+		<div class="main-body">
+			<!-- <iframe src="de.html" width="100%" height="100%"></iframe>	 -->
+			<div class="route">
+				<h3 class="">订单管理</h3>
+				<span>当前位置：<a href="">CRS>订单管理</a></span>
+			</div>
+				
+			<div class="content-body  crs-order-condition">
+				<ul class="nav nav-pills nav-list border-blue">
+				  <li role="presentation" class="active"><a href="#order_not_done" data-toggle="tab">未处理订单</a></li>
+				  <li role="presentation"><a href="#order_query" data-toggle="tab">订单查询</a></li>
+				</ul>
+				<div class="tab-content">
+					<section id="order_not_done"  class="tab-pane fade active in">
+						<div class="list-info-section ">
+							<div class="sec-filter border-blue">
+								<form class="layui-form selector " >
+									<div class="layui-form-item">
+										<div class="layui-inline ">
+											<label class="layui-form-label">酒店名称</label>
+											<div class="layui-input-block option-box">
+												<select name="" lay-verify="required" lay-search="">
+													<option value="">直接选择</option>
+													<option value="1">layer</option>
+													<option value="2">form</option>
+												</select>
+											</div>
+										</div>
+										<div class="layui-inline ">
+											<label class="layui-form-label">OTA渠道</label>
+											<div class="layui-input-block">
+												<select name="otaFrom" lay-filter="">
+													<option value=""></option>
+													<option value="0">携程</option>
+													<option value="1" selected="">百度</option>
+													<option value="2">美团</option>
+												</select>
+											</div>
+										</div>
+										<div class="layui-inline">
+											<label class="layui-form-label">订单号</label>
+											<div class="layui-input-block">
+												<input type="text" name="orderNum"  placeholder="请输入订单号" class="layui-input">
+											</div>
+										</div>
+										<div class="layui-inline">
+											<label class="layui-form-label">客人姓名</label>
+											<div class="layui-input-block">
+												<input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+											</div>
+										</div>
+										<div class="layui-inline ">
+											<label class="layui-form-label">房型</label>
+											<div class="layui-input-block">
+												<select name="otaFrom" lay-filter="">
+													<option value=""></option>
+													<option value="0">携程</option>
+													<option value="1" selected="">百度</option>
+													<option value="2">美团</option>
+												</select>
+											</div>
+										</div>
+										<div class="layui-inline">
+											<label class="layui-form-label">确认人</label>
+											<div class="layui-input-block">
+												<input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+											</div>
+										</div>
+										<div class="layui-inline">
+											<label class="layui-form-label">预订号</label>
+											<div class="layui-input-block">
+												<input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+											</div>
+										</div>
+										<div class="layui-inline">
+											<label class="layui-form-label">日期选择</label>
+											<div class="layui-input-block">
+												<select name="otaFrom" lay-filter="aihao">
+													<option value=""></option>
+													<option value="0" selected="">全部日期</option>
+													<option value="1">预订日期</option>
+													<option value="2" >入住日期</option>
+													<option value="3">离店日期</option>
+												</select>
+											</div>
+										</div>
+										<div class="layui-inline range-inline">
+											<label class="layui-form-label">日期</label>
+											<div class="layui-input-inline" >
+												<input type="text" class="layui-input" placeholder="从" id="date1" >
+											</div>
+											<div class="layui-form-mid">-</div>
+											<div class="layui-input-inline">
+												<input type="text" class="layui-input" placeholder="到" id="date2">
+											</div>
+										</div>
+
+									</div>
+									<div class="layui-form-item" pane="">
+										<div class="layui-inline">
+											<label class="layui-form-label">订单状态</label>
+											<div class="layui-input-block checkbox-input">
+												<input type="checkbox" class="" name="" lay-skin="primary" title="全选"  lay-filter="list-select-all">
+												<input type="checkbox" name="orderStatus[todo]" lay-skin="primary" title="待处理" lay-filter="list-checkbox">
+												<input type="checkbox" name="orderStatus[accept]" lay-skin="primary" title="已接单" lay-filter="list-checkbox">
+												<input type="checkbox" name="orderStatus[refuse]" lay-skin="primary" title="已拒单" lay-filter="list-checkbox" >
+												<input type="checkbox" name="orderStatus[cancel]" lay-skin="primary" title="已取消" lay-filter="list-checkbox">
+											</div>
+										</div>
+									</div>
+
+									<div class="layui-form-item">
+										<div class="layui-input-block btn-list">
+											<button type="submit" class="layui-btn ">查询</button>
+											<input type="reset" class="layui-btn " value="重置">
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="switch-div">
+								<a  class=" search-switch">收起查询 <i class="fa fa-angle-up"></i></a>
+							</div>
+						</div>
+						<div class="order-todo-body">
+							<div class="row">
+								<div class=" col-md-4">
+									<div class="order-todo-list">
+										<h4 class="title">
+											<a >共<span>	3</span>条订单未处理</a>
+											<!--<a >共<span>	1256</span>条记录</a>-->
+											<a class="operate-btn">下载订单列表</a>
+										</h4>
+										<ul class="order-todo-list-content">
+											<li class="list-box container-fluid active">
+												<div class="row list-item">
+													<div class="list-left">
+														<span class="tags tags-new">新订</span>
+														<span>42764976</span>
+													</div>
+													<div class="list-right">
+														10:27  14；27
+													</div>
+												</div>
+												<div class="row list-item">
+													<div class="list-left">
+														<span>经典客房Ⅰ(全日餐饮双人)</span>
+														<span>1间</span>
+													</div>
+												</div>
+												<div class="row list-item">
+													<div class="list-left">
+														<span>2017-10-28 至 2017-10-29</span>
+														<span>1晚</span>
+													</div>
+													<div class="list-right">
+														Heny/Gao
+													</div>
+												</div>
+											</li>
+											<li class="list-box container-fluid">
+												<div class="row list-item">
+													<div class="list-left">
+														<span class="tags tags-cancel">取消</span>
+														<span>42764976</span>
+													</div>
+													<div class="list-right">
+														10:27  14；27
+													</div>
+												</div>
+												<div class="row list-item">
+													<div class="list-left">
+														<span>经典客房Ⅰ(全日餐饮双人)</span>
+														<span>1间</span>
+													</div>
+												</div>
+												<div class="row list-item">
+													<div class="list-left">
+														<span>2017-10-28 至 2017-10-29</span>
+														<span>1晚</span>
+													</div>
+													<div class="list-right">
+														Heny/Gao
+													</div>
+												</div>
+											</li>
+											<li class="list-box container-fluid">
+												<div class="row list-item">
+													<div class="list-left">
+														<span class="tags tags-modify">修改</span>
+														<span>42764976</span>
+													</div>
+													<div class="list-right">
+														10:27  14；27
+													</div>
+												</div>
+												<div class="row list-item">
+													<div class="list-left">
+														<span>经典客房Ⅰ(全日餐饮双人)</span>
+														<span>1间</span>
+													</div>
+												</div>
+												<div class="row list-item">
+													<div class="list-left">
+														<span>2017-10-28 至 2017-10-29</span>
+														<span>1晚</span>
+													</div>
+													<div class="list-right">
+														Heny/Gao
+													</div>
+												</div>
+											</li>
+											<li class="list-box container-fluid">
+												<div class="row list-item">
+													<div class="list-left">
+														<span class="tags tags-cancel">无效</span>
+														<span>42764976</span>
+													</div>
+													<div class="list-right">
+														10:27  14；27
+													</div>
+												</div>
+												<div class="row list-item">
+													<div class="list-left">
+														<span>经典客房Ⅰ(全日餐饮双人)</span>
+														<span>1间</span>
+													</div>
+												</div>
+												<div class="row list-item">
+													<div class="list-left">
+														<span>2017-10-28 至 2017-10-29</span>
+														<span>1晚</span>
+													</div>
+													<div class="list-right">
+														Heny/Gao
+													</div>
+												</div>
+											</li>
+											<li class="list-box container-fluid">
+												<div class="row list-item">
+													<div class="list-left">
+														<span class="tags">新订</span>
+														<span>42764976</span>
+													</div>
+													<div class="list-right">
+														10:27  14；27
+													</div>
+												</div>
+												<div class="row list-item">
+													<div class="list-left">
+														<span>经典客房Ⅰ(全日餐饮双人)</span>
+														<span>1间</span>
+													</div>
+												</div>
+												<div class="row list-item">
+													<div class="list-left">
+														<span>2017-10-28 至 2017-10-29</span>
+														<span>1晚</span>
+													</div>
+													<div class="list-right">
+														Heny/Gao
+													</div>
+												</div>
+											</li>
+											<li class="list-box container-fluid">
+												<div class="row list-item">
+													<div class="list-left">
+														<span class="tags">新订</span>
+														<span>42764976</span>
+													</div>
+													<div class="list-right">
+														10:27  14；27
+													</div>
+												</div>
+												<div class="row list-item">
+													<div class="list-left">
+														<span>经典客房Ⅰ(全日餐饮双人)</span>
+														<span>1间</span>
+													</div>
+												</div>
+												<div class="row list-item">
+													<div class="list-left">
+														<span>2017-10-28 至 2017-10-29</span>
+														<span>1晚</span>
+													</div>
+													<div class="list-right">
+														Heny/Gao
+													</div>
+												</div>
+											</li>
+											<li class="list-box container-fluid">
+												<div class="row list-item">
+													<div class="list-left">
+														<span class="tags">新订</span>
+														<span>42764976</span>
+													</div>
+													<div class="list-right">
+														10:27  14；27
+													</div>
+												</div>
+												<div class="row list-item">
+													<div class="list-left">
+														<span>经典客房Ⅰ(全日餐饮双人)</span>
+														<span>1间</span>
+													</div>
+												</div>
+												<div class="row list-item">
+													<div class="list-left">
+														<span>2017-10-28 至 2017-10-29</span>
+														<span>1晚</span>
+													</div>
+													<div class="list-right">
+														Heny/Gao
+													</div>
+												</div>
+											</li>
+											<li class="list-box container-fluid">
+												<div class="row list-item">
+													<div class="list-left">
+														<span class="tags">新订</span>
+														<span>42764976</span>
+													</div>
+													<div class="list-right">
+														10:27  14；27
+													</div>
+												</div>
+												<div class="row list-item">
+													<div class="list-left">
+														<span>经典客房Ⅰ(全日餐饮双人)</span>
+														<span>1间</span>
+													</div>
+												</div>
+												<div class="row list-item">
+													<div class="list-left">
+														<span>2017-10-28 至 2017-10-29</span>
+														<span>1晚</span>
+													</div>
+													<div class="list-right">
+														Heny/Gao
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-md-8">
+									<div class="order-todo-content">
+										<h4 class="title row">
+											<div class="order-tit">
+												<span class="tags tags-new">新订</span>
+												<span>待处理</span>
+												<span>3454574</span>
+												<span>预付</span>
+											</div>
+											
+											<div class="order-time">
+												<a >10-27  14:58</a>
+												<div class="operate-btns">
+													<a href="javascript:;" class="operate-btn export-btn ">导出</a>
+													<a href="javascript:;" class="operate-btn log-op ">日志</a>
+												</div>
+											</div>
+
+										</h4>
+										<div class="order-todo-detail">
+											<ul  class=" list-detail">
+												<li class="row">
+													<div class="label col-md-2">客人姓名</div>
+													<div class="info-detail col-md-10">刘力为 <b>1</b>人</div>
+												</li>
+												<li class="row">
+													<div class="label col-md-2">预订房型</div>
+													<div class="info-detail col-md-10">精选客房Ⅰ<X礼包><景+酒> <b>1</b>间</div>
+												</li>
+												<li class="row">
+													<div class="label col-md-2">住宿日期</div>
+													<div class="info-detail col-md-10">2017-12-01 至 2017-12-11  <b>10</b>晚</div>
+												</li>
+												<li class="row">
+													<div class="label col-md-2">房价</div>
+													<div class="info-detail col-md-10">
+														<div class="price-box">
+															<span class="date">12-1(五)</span>
+															<span class="">RMB <em class="price">1710</em></span>
+															<span class="other">含双早</span>
+														</div>
+														<div class="price-box">
+															<span class="date">12-1(五)</span>
+															<span class="">RMB <em class="price">1710</em></span>
+															<span class="other">含双早</span>
+														</div>														
+													</div>
+												</li>
+												<li class="row">
+													<div class="label col-md-2">付款方式</div>
+													<div class="info-detail col-md-10">预付, 共计  <span>RMB 17100.00 </span> （含服务费） </div>
+												</li>
+												<li class="row">
+													<div class="label col-md-2">OTA渠道来源</div>
+													<div class="info-detail col-md-10">携程  </div>
+												</li>
+												<li class="row">
+													<div class="label col-md-2">礼盒信息</div>
+													<div class="info-detail col-md-10">享入住当日晚餐、第二日早午餐
+																				享茶室、轻餐坊、大堂吧全日小点及饮品
+																				酒吧酒水畅饮丰富户内外探索和亲子活动
+																				开始日期：2017-10-26 到 结束日期：2017-12-31
+													</div>
+												</li>
+												<li class="row">
+													<div class="label col-md-2">携程提示</div>
+													<div class="info-detail col-md-10"><b>提示</b>:温馨提示：此为大订单，请确认价格不高于贵酒店官网或前台价格，否则请回传不确认，并同时告知价格，谢谢！
+房费携程支付，无返佣(单结)。房价保密、请不要向客人透露。<br><b>预付</b>:预付订单，客人已支付房费，请贵酒店务必保留房间</div>
+												</li>
+											</ul>
+											<div class="layui-form-item">
+											    <div class="layui-input-block btn-list " >
+											    	<button type="submit" class="layui-btn ">接受</button>
+											    	<button type="submit" class="layui-btn">拒绝</button>
+											    </div>
+											  </div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</section>
+					<section id="order_query"  class="tab-pane fade ">
+						<div class="list-info-section border-blue">
+							<div class="sec-filter">
+								<form class="layui-form selector " >
+									<div class="layui-form-item">
+										<div class="layui-inline ">
+											<label class="layui-form-label">酒店名称</label>
+											<div class="layui-input-block option-box">
+												<select name="" lay-verify="required" lay-search="">
+													<option value="">直接选择</option>
+													<option value="1">layer</option>
+													<option value="2">form</option>
+												</select>
+											</div>
+										</div>
+										<div class="layui-inline ">
+											<label class="layui-form-label">OTA渠道</label>
+											<div class="layui-input-block">
+												<select name="otaFrom" lay-filter="">
+													<option value=""></option>
+													<option value="0">携程</option>
+													<option value="1" selected="">百度</option>
+													<option value="2">美团</option>
+												</select>
+											</div>
+										</div>
+										<div class="layui-inline">
+											<label class="layui-form-label">订单号</label>
+											<div class="layui-input-block">
+												<input type="text" name="orderNum"  placeholder="请输入订单号" class="layui-input">
+											</div>
+										</div>
+										<div class="layui-inline">
+											<label class="layui-form-label">客人姓名</label>
+											<div class="layui-input-block">
+												<input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+											</div>
+										</div>
+										<div class="layui-inline ">
+											<label class="layui-form-label">房型</label>
+											<div class="layui-input-block">
+												<select name="otaFrom" lay-filter="">
+													<option value=""></option>
+													<option value="0">携程</option>
+													<option value="1" selected="">百度</option>
+													<option value="2">美团</option>
+												</select>
+											</div>
+										</div>
+										<div class="layui-inline">
+											<label class="layui-form-label">确认人</label>
+											<div class="layui-input-block">
+												<input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+											</div>
+										</div>
+										<div class="layui-inline">
+											<label class="layui-form-label">预订号</label>
+											<div class="layui-input-block">
+												<input type="text" name="customerName"  placeholder="请输入" class="layui-input">
+											</div>
+										</div>
+										<div class="layui-inline">
+											<label class="layui-form-label">日期选择</label>
+											<div class="layui-input-block">
+												<select name="otaFrom" lay-filter="aihao">
+													<option value=""></option>
+													<option value="0" selected="">全部日期</option>
+													<option value="1">预订日期</option>
+													<option value="2" >入住日期</option>
+													<option value="3">离店日期</option>
+												</select>
+											</div>
+										</div>
+										<div class="layui-inline range-inline">
+											<label class="layui-form-label">日期</label>
+											<div class="layui-input-inline" >
+												<input type="text" class="layui-input" placeholder="从" id="date1" >
+											</div>
+											<div class="layui-form-mid">-</div>
+											<div class="layui-input-inline">
+												<input type="text" class="layui-input" placeholder="到" id="date2">
+											</div>
+										</div>
+
+									</div>
+									<div class="layui-form-item" pane="">
+										<div class="layui-inline">
+											<label class="layui-form-label">订单状态</label>
+											<div class="layui-input-block checkbox-input">
+												<input type="checkbox" class="" name="" lay-skin="primary" title="全选"  lay-filter="list-select-all">
+												<input type="checkbox" name="orderStatus[todo]" lay-skin="primary" title="待处理" lay-filter="list-checkbox">
+												<input type="checkbox" name="orderStatus[accept]" lay-skin="primary" title="已接单" lay-filter="list-checkbox">
+												<input type="checkbox" name="orderStatus[refuse]" lay-skin="primary" title="已拒单" lay-filter="list-checkbox" >
+												<input type="checkbox" name="orderStatus[cancel]" lay-skin="primary" title="已取消" lay-filter="list-checkbox">
+											</div>
+										</div>
+									</div>
+
+									<div class="layui-form-item">
+										<div class="layui-input-block btn-list">
+											<button type="submit" class="layui-btn ">查询</button>
+											<input type="reset" class="layui-btn " value="重置">
+										</div>
+									</div>
+								</form>
+							</div>
+
+							<!-- <div id="layerDemo"><button data-method="confirmTrans" class="layui-btn">配置一个透明的询问框</button></div> -->
+
+
+						</div>
+						<div class="list-info-section ">
+							<h4 class="sec-title">
+								<b>订单列表</b>
+								<div class="operate-btns">
+									<!--<a href="javascript:;" class="operate-btn insert-btn ">新增</a>-->
+									<!--<a href="javascript:;" class="operate-btn edit-btn ">编辑</a>-->
+									<!--<a href="javascript:;" class="operate-btn delete-btn ">删除</a>-->
+									<a href="javascript:;" class="operate-btn cancel-btn ">取消</a>
+									<a href="javascript:;" class="operate-btn message-btn ">发送短信</a>
+									<a href="javascript:;" class="operate-btn refund-btn ">退款</a>
+									<a href="javascript:;" class="operate-btn export-btn ">导出</a>
+									<a href="javascript:;" class="operate-btn log-btn ">操作日志</a>
+								</div>
+							</h4>
+							<div class="sec-item1">
+								<table class="layui-table" id="orderLists" lay-filter="orderLists"></table>
+
+							</div>
+
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--每日均价弹框-->
+<div class="layer-common modal-avg-price">
+	<div class="modal-body">
+		<table class=" table table-hover table-bordered ">
+			<thead>
+			<tr>
+				<th>周日</th>
+				<th>周一</th>
+				<th>周二</th>
+				<th>周三</th>
+				<th>周四</th>
+				<th>周五</th>
+				<th>周六</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>
+					<a class="date">8-12</a>
+					<a class="price">￥358</a>
+				</td>
+				<td>
+					<a class="date">8-12</a>
+					<a class="price">￥358</a>
+				</td>
+				<td>
+					<a class="date">8-12</a>
+					<a class="price">￥358</a>
+				</td>
+				<td>
+					<a class="date">8-12</a>
+					<a class="price">￥358</a>
+				</td>
+				<td>
+					<a class="date">8-12</a>
+					<a class="price">￥358</a>
+				</td>
+				<td>
+					<a class="date">8-12</a>
+					<a class="price">￥358</a>
+				</td>
+				<td>
+					<a class="date">8-12</a>
+					<a class="price">￥358</a>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<!--账户余额弹框-->
+<div class="layer-common modal-balance-account">
+	<div class="modal-body">
+		<div class="modal-table">
+			<table class="table table-hover ">
+				<thead>
+				<tr>
+					<th>状态</th>
+					<th>类型</th>
+					<th>详情</th>
+					<th>产生日期</th>
+					<th>积分值</th>
+					<th>是否使用</th>
+					<th>有效期</th>
+					<th>备注</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>未使用</td>
+					<td>张三</td>
+					<td>男</td>
+					<td>2017-8-9</td>
+					<td>500</td>
+					<td>否</td>
+					<td>2017-12-8</td>
+					<td class="table-comments"></td>
+				</tr>
+				<tr>
+					<td>未使用</td>
+					<td>张三</td>
+					<td>男</td>
+					<td>2017-8-9</td>
+					<td>500</td>
+					<td>否</td>
+					<td>2017-12-8</td>
+					<td class="table-comments"></td>
+				</tr>
+				<tr>
+					<td>未使用</td>
+					<td>张三</td>
+					<td>男</td>
+					<td>2017-8-9</td>
+					<td>500</td>
+					<td>否</td>
+					<td>2017-12-8</td>
+					<td class="table-comments"></td>
+				</tr>
+
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+</div>
+<!--操作日志弹框-->
+<div class="layer-common layer-log-operate">
+	<div class="modal-body">
+		<div class="modal-table">
+			<table class="table table-hover ">
+				<thead>
+				<tr>
+					<th>状态</th>
+					<th>类型</th>
+					<th>详情</th>
+					<th>产生日期</th>
+					<th>积分值</th>
+					<th>是否使用</th>
+					<th>有效期</th>
+					<th>备注</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>未使用</td>
+					<td>张三</td>
+					<td>男</td>
+					<td>2017-8-9</td>
+					<td>500</td>
+					<td>否</td>
+					<td>2017-12-8</td>
+					<td class="table-comments"></td>
+				</tr>
+				<tr>
+					<td>未使用</td>
+					<td>张三</td>
+					<td>男</td>
+					<td>2017-8-9</td>
+					<td>500</td>
+					<td>否</td>
+					<td>2017-12-8</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>未使用</td>
+					<td>张三</td>
+					<td>男</td>
+					<td>2017-8-9</td>
+					<td>500</td>
+					<td>否</td>
+					<td>2017-12-8</td>
+					<td class="table-comments"></td>
+				</tr>
+
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+</div>
+
+<!--退款弹框-->
+<div class="layer-common modal-refund-operate ">
+	<div class="modal-body">
+		<form action="" class="layui-form selector">
+			<div class="layui-form-item" pane="">
+				<label class="layui-form-label">可退款金额:</label>
+			</div>
+			<div class="layui-form-item" pane="">
+
+				<div class="layui-inline">
+					<label class="layui-form-label">在线支付</label>
+					<div class="layui-input-block">
+						<input type="text" name=""  placeholder="请输入在线支付可退款金额" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-inline">
+					<label class="layui-form-label">储值</label>
+					<div class="layui-input-block">
+						<input type="text" name=""  placeholder="请输入储值可退款金额" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-inline">
+					<label class="layui-form-label">积分</label>
+					<div class="layui-input-block">
+						<input type="text" name=""  placeholder="请输入积分可退款金额" class="layui-input">
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item" pane="">
+				<label class="layui-form-label">可退款操作</label>
+				<div class="layui-input-block clear-input">
+					<input type="checkbox" name="" lay-skin="primary" title="在线支付" checked="">
+					<input type="checkbox" name="" lay-skin="primary" title="储值">
+					<input type="checkbox" name="" lay-skin="primary" title="积分">
+				</div>
+			</div>
+			<div class="layui-form-item" pane="">
+				<label class="layui-form-label">退款原因</label>
+				<div class="layui-input-block clear-input">
+					<input type="checkbox" name="" lay-skin="primary" title="不办会员卡" checked="">
+					<input type="checkbox" name="" lay-skin="primary" title="储值">
+					<input type="checkbox" name="" lay-skin="primary" title="其他">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-input-block btn-list ">
+					<a href="javascript:void(0);" class="layui-btn " type="submit">保存</a>
+					<a href="javascript:void(0);" class="layui-btn cancel-common"  type="button" data-dismiss="modal" aria-label="Close">取消</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+</body>
+<script src="layui/layui_my.js"></script>
+<script>
+    //日期选择器
+    layui.use('laydate', function() {
+        var laydate = layui.laydate;
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#date1' //
+        });
+        laydate.render({
+            elem: '#date2'
+        });
+    });
+    layui.use('table', function() {
+        var table = layui.table;
+        table.render({
+            elem: '#orderLists'
+            // ,url:''
+            , cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            , cols: [[
+                {type: 'checkbox'}
+                , {field: 'id', title: '订单号', sort: true}
+                , {field: 'username', title: '预定状态'}
+                , {field: 'sex', title: '酒店名称', sort: true}
+                , {field: 'city', title: '入住人'}
+                , {field: 'sign', title: '联系手机', minWidth: 100}
+                , {field: 'experience', title: '会员姓名', sort: true}
+                , {field: 'score', title: '会员级别', sort: true}
+                , {field: 'score', title: '预定房型', sort: true}
+                , {field: 'score', title: '房间数', sort: true}
+                , {field: 'score', title: '均价', sort: true}
+                , {field: 'score', title: '总价', sort: true}
+                , {field: 'score', title: '入住日期', sort: true}
+                , {field: 'score', title: '离店日期', sort: true}
+                , {field: 'score', title: '入住天数', sort: true}
+                , {field: 'score', title: '预定类型', sort: true}
+                , {field: 'score', title: '预订人', sort: true}
+                , {field: 'score', title: '账户余额', sort: true}
+
+            ]]
+            , data: [{
+                "id": "10001"
+                , "username": "杜甫"
+                , "sex": "男"
+                , "city": "浙江杭州"
+                , "sign": "人生恰"
+                , "experience": "116"
+                , "score": "108"
+
+            }, {
+                "id": "10002"
+                , "username": "李白"
+                , "email": "xianxin@layui.com"
+                , "sex": "男"
+                , "city": "浙江杭州"
+                , "sign": "人生恰似"
+                , "experience": "12"
+                , "score": "108"
+            }, {
+                "id": "10005"
+                , "username": "贤心"
+                , "email": "xianxin@layui.com"
+                , "sex": "男"
+                , "city": "浙江杭州"
+                , "sign": "人生恰"
+                , "experience": "86"
+                , "score": "108"
+            }, {
+                "id": "10007"
+                , "username": "贤心"
+                , "email": "xianxin@layui.com"
+                , "sex": "男"
+                , "city": "浙江杭州"
+                , "sign": "人生恰似一场修行"
+                , "experience": "16"
+                , "score": "108"
+            }]
+            , even: true
+            , page: true
+        });
+
+    });
+
+    $('.avgPrice-btn').on('click',function () {
+        addLayer('均价','.modal-avg-price',700,300 );
+    });
+    $('.balance-btn').on('click',function () {
+        addLayer('账户余额','.modal-balance-account',700,300 );
+    });
+    $(".refund-btn").on('click',function () {
+        //  var modalRefund = $('.modal-refund-operate') ;
+        if(isDataSelected()){
+            //获取当前数据内容（ajax调后台）赋值;
+            addLayer('退款','.modal-refund-operate',800,389 );
+        }
+    });
+    $('.log-op').on('click',function () {
+       layerShow('操作日志','.layer-log-operate',500,300)
+    });//查看操作日志
+</script>
+</html>
