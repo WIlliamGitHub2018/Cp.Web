@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Cp.Model.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cp.Model
+namespace Cp.Model.Sys
 {
     public class User:BaseEntity
     {
@@ -44,5 +45,13 @@ namespace Cp.Model
         /// 状态
         /// </summary>
         public int Status { get; set; }
+        [NoDB]
+        public int RoleID { get; set; }
+        [NoDB]
+        public string RoleName { get; set; }
+        [NoDB]
+        public int RoleType { get; set; }
+
+
     }
 }

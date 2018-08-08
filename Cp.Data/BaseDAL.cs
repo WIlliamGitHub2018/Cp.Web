@@ -17,12 +17,9 @@ namespace Cp.Data
 
         public static string GetDefaultConnSting()
         {
-            return ConfigurationManager.ConnectionStrings["Normandy"].ConnectionString;
+            return ConfigurationManager.ConnectionStrings["MySql"].ConnectionString;
         }
-        public static string GetLogConnSting()
-        {
-            return ConfigurationManager.ConnectionStrings["BaseLog"].ConnectionString;
-        }
+       
 
        
 
@@ -487,11 +484,11 @@ namespace Cp.Data
                 T t = new T();
                 foreach (PropertyInfo pro in proList)
                 {
-                    Attribute noDBAttr = pro.GetCustomAttribute(typeof(NoDBAttribute));
-                    if (noDBAttr != null)
-                    {
-                        continue;
-                    }
+                    //object noDBAttr = pro.GetCustomAttributes(typeof(NoDBAttribute),true);
+                    //if (noDBAttr != null)
+                    //{
+                    //    continue;
+                    //}
 
                     GetFieldValue(pro, dr, t);
                 }
@@ -529,7 +526,7 @@ namespace Cp.Data
                 {
                     continue;
                 }
-                Attribute noDBAttr = pro.GetCustomAttribute(typeof(NoDBAttribute));
+                Attribute noDBAttr = pro.GetCustomAttribute(typeof(NoDBAttribute),true);
                 if (noDBAttr != null)
                 {
                     continue;
