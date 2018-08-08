@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Common.cs" />
     <Compile Include="ConfigUtil.cs" />
+    <Compile Include="CustomerCache.cs" />
     <Compile Include="Extension\ValidateExtension.cs" />
     <Compile Include="LogHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

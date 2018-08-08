@@ -53,6 +53,10 @@
       <Project>{51D65FC3-318D-4E95-BAE3-7195B862328E}</Project>
       <Name>Cp.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cp.Model\Cp.Model.csproj">
+      <Project>{3312658E-5C85-4010-B903-C2A9ECBA12E7}</Project>
+      <Name>Cp.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

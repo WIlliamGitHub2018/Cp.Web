@@ -12,5 +12,7 @@ namespace Cp.Utility
         /// 日志跟目录
         /// </summary>
         public static string LogRoot = ConfigUtil.GetStringValue("LogRoot");
+
+        public const string SessionUser = "Account";
     }
 }

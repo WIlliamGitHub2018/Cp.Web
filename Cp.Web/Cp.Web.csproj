@@ -162,7 +162,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Order\Controllers\OrderManagerController.cs" />
     <Compile Include="Areas\Order\OrderAreaRegistration.cs" />
+    <Compile Include="Areas\User\Controllers\UserManagerController.cs" />
+    <Compile Include="Areas\User\UserAreaRegistration.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Core\CheckLoginAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -601,6 +606,7 @@
     <Content Include="Areas\Order\Views\OrderManager\CreateOrder.cshtml" />
     <Content Include="Areas\Order\Views\OrderManager\MyOrder.cshtml" />
     <Content Include="Areas\Order\Views\OrderManager\AllOrder.cshtml" />
+    <Content Include="Areas\User\Views\web.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -634,11 +640,15 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Order\Models\" />
     <Folder Include="Areas\Order\Views\Shared\" />
+    <Folder Include="Areas\User\Models\" />
+    <Folder Include="Areas\User\Views\Shared\" />
+    <Folder Include="Areas\User\Views\UserManager\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -649,6 +659,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cp.Business\Cp.Business.csproj">
+      <Project>{51D65FC3-318D-4E95-BAE3-7195B862328E}</Project>
+      <Name>Cp.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cp.Model\Cp.Model.csproj">
+      <Project>{3312658E-5C85-4010-B903-C2A9ECBA12E7}</Project>
+      <Name>Cp.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cp.Utility\Cp.Utility.csproj">
+      <Project>{546AC9DA-17EF-4646-BAD2-9ABE2CFD2F64}</Project>
+      <Name>Cp.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
